@@ -39,11 +39,23 @@
             {
               "type": "object",
               "name": "resourceTypeConfig"
+            },
+            {
+              "type": "object",
+              "name": "regionConfig"
+            },
+            {
+              "type": "object",
+              "name": "environmentConfig"
+            },
+            {
+              "type": "object",
+              "name": "formatConfig"
             }
           ],
           "output": {
             "type": "object",
-            "value": "[reduce(items(parameters('placeholder')), createObject(), lambda('current1', 'next1', union(lambdaVariables('current1'), if(or(contains(lambdaVariables('next1').value, 'format'), contains(lambdaVariables('next1').value, 'resourceType')), createObject(format('{0}', lambdaVariables('next1').key), __bicep.formatName(coalesce(tryGet(lambdaVariables('next1').value, 'format'), __bicep.getFormatValue(__bicep.toEmptyIfNull(tryGet(lambdaVariables('next1').value, 'resourceType')), 'value', coalesce(parameters('userConfig'), createObject())).value), union(reduce(if(not(equals(tryGet(lambdaVariables('next1').value, 'value'), null())), items(lambdaVariables('next1').value.value), createArray()), parameters('value'), lambda('current2', 'next2', union(lambdaVariables('current2'), createObject(format('{0}', lambdaVariables('next2').key), lambdaVariables('next2').value)))), if(not(equals(__bicep.toEmptyIfNull(tryGet(lambdaVariables('next1').value, 'resourceType')), '')), createObject('RESOURCE_TYPE', lambdaVariables('next1').value.resourceType), createObject()), createObject('FORMAT_KEY', tryGet(lambdaVariables('next1').value, 'format'))), parameters('userConfig'), parameters('resourceTypeConfig'))), createObject(format('{0}', lambdaVariables('next1').key), lambdaVariables('next1').value)))))]"
+            "value": "[reduce(items(parameters('placeholder')), createObject(), lambda('current1', 'next1', union(lambdaVariables('current1'), if(or(contains(lambdaVariables('next1').value, 'format'), contains(lambdaVariables('next1').value, 'resourceType')), createObject(format('{0}', lambdaVariables('next1').key), __bicep.formatName(coalesce(tryGet(lambdaVariables('next1').value, 'format'), __bicep.getFormatValue(__bicep.toEmptyIfNull(tryGet(lambdaVariables('next1').value, 'resourceType')), 'value', coalesce(parameters('userConfig'), createObject()), parameters('formatConfig')).value), union(reduce(if(not(equals(tryGet(lambdaVariables('next1').value, 'value'), null())), items(lambdaVariables('next1').value.value), createArray()), parameters('value'), lambda('current2', 'next2', union(lambdaVariables('current2'), createObject(format('{0}', lambdaVariables('next2').key), lambdaVariables('next2').value)))), if(not(equals(__bicep.toEmptyIfNull(tryGet(lambdaVariables('next1').value, 'resourceType')), '')), createObject('RESOURCE_TYPE', lambdaVariables('next1').value.resourceType), createObject()), createObject('FORMAT_KEY', tryGet(lambdaVariables('next1').value, 'format'))), parameters('userConfig'), parameters('resourceTypeConfig'), parameters('regionConfig'), parameters('environmentConfig'), parameters('formatConfig'))), createObject(format('{0}', lambdaVariables('next1').key), lambdaVariables('next1').value)))))]"
           },
           "metadata": {
             "__bicep_export!": true
@@ -67,11 +79,23 @@
             {
               "type": "object",
               "name": "resourceTypeConfig"
+            },
+            {
+              "type": "object",
+              "name": "regionConfig"
+            },
+            {
+              "type": "object",
+              "name": "environmentConfig"
+            },
+            {
+              "type": "object",
+              "name": "formatConfig"
             }
           ],
           "output": {
             "type": "string",
-            "value": "[__bicep.validateLength(__bicep.validatePlaceholder(__bicep.setPlaceholder(join(map(split(__bicep.getFormatString(parameters('format'), coalesce(parameters('userConfig'), createObject()), parameters('resourceTypeConfig')), '['), lambda('item1', if(contains(lambdaVariables('item1'), ']'), format('{0}{1}', if(__bicep.placeholderReplaced(split(lambdaVariables('item1'), ']')[0], parameters('value'), createArray('-', 'SEPARATOR'), true()), __bicep.setPlaceholder(split(lambdaVariables('item1'), ']')[0], __bicep.toPlaceholder(parameters('value'), coalesce(parameters('userConfig'), createObject()), parameters('resourceTypeConfig')), true()), ''), join(skip(split(lambdaVariables('item1'), ']'), 1), '')), lambdaVariables('item1')))), ''), if(__bicep.placeholderReplaced(join(map(split(__bicep.getFormatString(parameters('format'), coalesce(parameters('userConfig'), createObject()), parameters('resourceTypeConfig')), '['), lambda('item1', if(contains(lambdaVariables('item1'), ']'), '', lambdaVariables('item1')))), ''), __bicep.nonEmptyProperties(parameters('value')), createArray('-', 'SEPARATOR'), false()), union(__bicep.toPlaceholder(parameters('value'), coalesce(parameters('userConfig'), createObject()), parameters('resourceTypeConfig')), createObject('-', coalesce(coalesce(tryGet(parameters('value'), '-'), tryGet(parameters('value'), 'SEPARATOR')), __bicep.getSeparatorValue(if(contains(__bicep.formatConfig().format, parameters('format')), parameters('format'), __bicep.toEmptyIfNull(tryGet(parameters('value'), 'RESOURCE_TYPE'))), coalesce(parameters('userConfig'), createObject()))), 'SEPARATOR', coalesce(coalesce(tryGet(parameters('value'), '-'), tryGet(parameters('value'), 'SEPARATOR')), __bicep.getSeparatorValue(if(contains(__bicep.formatConfig().format, parameters('format')), parameters('format'), __bicep.toEmptyIfNull(tryGet(parameters('value'), 'RESOURCE_TYPE'))), coalesce(parameters('userConfig'), createObject()))))), createObject()), false())), coalesce(tryGet(parameters('value'), 'FORMAT_KEY'), tryGet(parameters('value'), 'RESOURCE_TYPE')))]"
+            "value": "[__bicep.validateLength(__bicep.validatePlaceholder(__bicep.setPlaceholder(join(map(split(__bicep.getFormatString(parameters('format'), coalesce(parameters('userConfig'), createObject()), parameters('resourceTypeConfig'), parameters('formatConfig')), '['), lambda('item1', if(contains(lambdaVariables('item1'), ']'), format('{0}{1}', if(__bicep.placeholderReplaced(split(lambdaVariables('item1'), ']')[0], parameters('value'), createArray('-', 'SEPARATOR'), true()), __bicep.setPlaceholder(split(lambdaVariables('item1'), ']')[0], __bicep.toPlaceholder(parameters('value'), coalesce(parameters('userConfig'), createObject()), parameters('resourceTypeConfig'), parameters('regionConfig'), parameters('environmentConfig'), parameters('formatConfig')), true()), ''), join(skip(split(lambdaVariables('item1'), ']'), 1), '')), lambdaVariables('item1')))), ''), if(__bicep.placeholderReplaced(join(map(split(__bicep.getFormatString(parameters('format'), coalesce(parameters('userConfig'), createObject()), parameters('resourceTypeConfig'), parameters('formatConfig')), '['), lambda('item1', if(contains(lambdaVariables('item1'), ']'), '', lambdaVariables('item1')))), ''), __bicep.nonEmptyProperties(parameters('value')), createArray('-', 'SEPARATOR'), false()), union(__bicep.toPlaceholder(parameters('value'), coalesce(parameters('userConfig'), createObject()), parameters('resourceTypeConfig'), parameters('regionConfig'), parameters('environmentConfig'), parameters('formatConfig')), createObject('-', coalesce(coalesce(tryGet(parameters('value'), '-'), tryGet(parameters('value'), 'SEPARATOR')), __bicep.getSeparatorValue(if(contains(parameters('formatConfig').format, parameters('format')), parameters('format'), __bicep.toEmptyIfNull(tryGet(parameters('value'), 'RESOURCE_TYPE'))), coalesce(parameters('userConfig'), createObject()), parameters('formatConfig'))), 'SEPARATOR', coalesce(coalesce(tryGet(parameters('value'), '-'), tryGet(parameters('value'), 'SEPARATOR')), __bicep.getSeparatorValue(if(contains(parameters('formatConfig').format, parameters('format')), parameters('format'), __bicep.toEmptyIfNull(tryGet(parameters('value'), 'RESOURCE_TYPE'))), coalesce(parameters('userConfig'), createObject()), parameters('formatConfig'))))), createObject()), false())), coalesce(tryGet(parameters('value'), 'FORMAT_KEY'), tryGet(parameters('value'), 'RESOURCE_TYPE')), parameters('formatConfig'))]"
           },
           "metadata": {
             "__bicep_export!": true
@@ -87,11 +111,15 @@
               "type": "string",
               "nullable": true,
               "name": "resourceType"
+            },
+            {
+              "type": "object",
+              "name": "formatConfig"
             }
           ],
           "output": {
             "type": "string",
-            "value": "[if(not(equals(parameters('value'), '')), if(and(not(equals(parameters('resourceType'), null())), not(equals(__bicep.getFormatValue(coalesce(parameters('resourceType'), ''), 'length', createObject()).value, null()))), if(greater(range(0, coalesce(__bicep.getFormatValue(coalesce(parameters('resourceType'), ''), 'length', createObject()).value, 0))[sub(length(parameters('value')), 1)], 0), parameters('value'), ''), parameters('value')), string(__bicep.emptyArray()[0]))]"
+            "value": "[if(not(equals(parameters('value'), '')), if(and(not(equals(parameters('resourceType'), null())), not(equals(__bicep.getFormatValue(coalesce(parameters('resourceType'), ''), 'length', createObject(), parameters('formatConfig')).value, null()))), if(greater(range(0, coalesce(__bicep.getFormatValue(coalesce(parameters('resourceType'), ''), 'length', createObject(), parameters('formatConfig')).value, 0))[sub(length(parameters('value')), 1)], 0), parameters('value'), ''), parameters('value')), string(__bicep.emptyArray()[0]))]"
           }
         },
         "emptyArray": {
@@ -114,11 +142,15 @@
             {
               "type": "object",
               "name": "resourceTypeConfig"
+            },
+            {
+              "type": "object",
+              "name": "formatConfig"
             }
           ],
           "output": {
             "type": "string",
-            "value": "[if(contains(parameters('userConfig').format, parameters('format')), coalesce(tryGet(parameters('userConfig').format[parameters('format')], 'value'), __bicep.getFormatValue(parameters('format'), 'value', parameters('userConfig')).value), if(contains(__bicep.formatConfig().format, parameters('format')), coalesce(tryGet(__bicep.formatConfig().format[parameters('format')], 'value'), __bicep.getFormatValue(parameters('format'), 'value', parameters('userConfig')).value), if(contains(parameters('resourceTypeConfig'), parameters('format')), __bicep.getFormatValue('$default', 'value', parameters('userConfig')).value, parameters('format'))))]"
+            "value": "[if(contains(parameters('userConfig').format, parameters('format')), coalesce(tryGet(parameters('userConfig').format[parameters('format')], 'value'), __bicep.getFormatValue(parameters('format'), 'value', parameters('userConfig'), parameters('formatConfig')).value), if(contains(parameters('formatConfig').format, parameters('format')), coalesce(tryGet(parameters('formatConfig').format[parameters('format')], 'value'), __bicep.getFormatValue(parameters('format'), 'value', parameters('userConfig'), parameters('formatConfig')).value), if(contains(parameters('resourceTypeConfig'), parameters('format')), __bicep.getFormatValue('$default', 'value', parameters('userConfig'), parameters('formatConfig')).value, parameters('format'))))]"
           }
         },
         "setCasing": {
@@ -203,11 +235,23 @@
             {
               "type": "object",
               "name": "resourceTypeConfig"
+            },
+            {
+              "type": "object",
+              "name": "regionConfig"
+            },
+            {
+              "type": "object",
+              "name": "environmentConfig"
+            },
+            {
+              "type": "object",
+              "name": "formatConfig"
             }
           ],
           "output": {
             "type": "object",
-            "value": "[reduce(map(items(parameters('value')), lambda('item', createObject(format('{0}', lambdaVariables('item').key), __bicep.setCasing(__bicep.toEmptyIfNull(if(equals(lambdaVariables('item').key, 'ENVIRONMENT'), if(not(equals(__bicep.toEmptyIfNull(lambdaVariables('item').value), '')), if(contains(parameters('userConfig'), lambdaVariables('item').key), parameters('userConfig')[lambdaVariables('item').key][lambdaVariables('item').value].abbreviation, __bicep.environmentAbbreviation(lambdaVariables('item').value)), ''), if(equals(lambdaVariables('item').key, 'INSTANCE'), if(not(equals(lambdaVariables('item').value, null())), padLeft(__bicep.toInstance(lambdaVariables('item').value, 1, __bicep.formatConfig().$instance.maxValue), __bicep.formatConfig().$instance.padding.totalLength, __bicep.formatConfig().$instance.padding.character), ''), if(equals(lambdaVariables('item').key, 'REGION'), if(not(equals(__bicep.toEmptyIfNull(lambdaVariables('item').value), '')), __bicep.regionAbbreviation(lambdaVariables('item').value), ''), if(equals(lambdaVariables('item').key, 'RESOURCE_TYPE'), __bicep.resourceTypeAbbreviation(lambdaVariables('item').value, parameters('resourceTypeConfig')), if(equals(lambdaVariables('item').key, 'UNIQUE'), if(not(equals(lambdaVariables('item').value, null())), __bicep.toUnique(lambdaVariables('item').value, parameters('value')), ''), if(contains(parameters('userConfig'), lambdaVariables('item').key), if(not(equals(lambdaVariables('item').value, null())), if(contains(parameters('userConfig')[lambdaVariables('item').key], '$instance'), __bicep.getInstance(lambdaVariables('item'), parameters('userConfig')).result, if(contains(parameters('userConfig')[lambdaVariables('item').key], '$unique'), __bicep.getUnique(lambdaVariables('item'), parameters('value'), parameters('userConfig')), coalesce(tryGet(parameters('userConfig')[lambdaVariables('item').key][lambdaVariables('item').value], 'abbreviation'), lambdaVariables('item').value))), coalesce(tryGet(tryGet(parameters('userConfig')[lambdaVariables('item').key], '$default'), 'abbreviation'), lambdaVariables('item').value)), lambdaVariables('item').value))))))), coalesce(__bicep.getFormatValue(coalesce(tryGet(parameters('value'), 'FORMAT_KEY'), ''), 'casing', parameters('userConfig')).value, ''))))), createObject(), lambda('current', 'next', union(lambdaVariables('current'), lambdaVariables('next'))))]"
+            "value": "[reduce(map(items(parameters('value')), lambda('item', createObject(format('{0}', lambdaVariables('item').key), __bicep.setCasing(__bicep.toEmptyIfNull(if(equals(lambdaVariables('item').key, 'ENVIRONMENT'), if(not(equals(__bicep.toEmptyIfNull(lambdaVariables('item').value), '')), if(contains(parameters('userConfig'), lambdaVariables('item').key), parameters('userConfig')[lambdaVariables('item').key][lambdaVariables('item').value].abbreviation, __bicep.environmentAbbreviation(lambdaVariables('item').value, parameters('environmentConfig'))), ''), if(equals(lambdaVariables('item').key, 'INSTANCE'), if(not(equals(lambdaVariables('item').value, null())), padLeft(__bicep.toInstance(lambdaVariables('item').value, 1, parameters('formatConfig').$instance.maxValue), parameters('formatConfig').$instance.padding.totalLength, parameters('formatConfig').$instance.padding.character), ''), if(equals(lambdaVariables('item').key, 'REGION'), if(not(equals(__bicep.toEmptyIfNull(lambdaVariables('item').value), '')), __bicep.regionAbbreviation(lambdaVariables('item').value, parameters('regionConfig')), ''), if(equals(lambdaVariables('item').key, 'RESOURCE_TYPE'), __bicep.resourceTypeAbbreviation(lambdaVariables('item').value, parameters('resourceTypeConfig')), if(equals(lambdaVariables('item').key, 'UNIQUE'), if(not(equals(lambdaVariables('item').value, null())), __bicep.toUnique(lambdaVariables('item').value, parameters('value'), parameters('formatConfig')), ''), if(contains(parameters('userConfig'), lambdaVariables('item').key), if(not(equals(lambdaVariables('item').value, null())), if(contains(parameters('userConfig')[lambdaVariables('item').key], '$instance'), __bicep.getInstance(lambdaVariables('item'), parameters('userConfig')).result, if(contains(parameters('userConfig')[lambdaVariables('item').key], '$unique'), __bicep.getUnique(lambdaVariables('item'), parameters('value'), parameters('userConfig'), parameters('formatConfig')), coalesce(tryGet(parameters('userConfig')[lambdaVariables('item').key][lambdaVariables('item').value], 'abbreviation'), lambdaVariables('item').value))), coalesce(tryGet(tryGet(parameters('userConfig')[lambdaVariables('item').key], '$default'), 'abbreviation'), lambdaVariables('item').value)), lambdaVariables('item').value))))))), coalesce(__bicep.getFormatValue(coalesce(tryGet(parameters('value'), 'FORMAT_KEY'), ''), 'casing', parameters('userConfig'), parameters('formatConfig')).value, ''))))), createObject(), lambda('current', 'next', union(lambdaVariables('current'), lambdaVariables('next'))))]"
           }
         },
         "setPlaceholder": {
@@ -259,11 +303,15 @@
             {
               "type": "object",
               "name": "userConfig"
+            },
+            {
+              "type": "object",
+              "name": "formatConfig"
             }
           ],
           "output": {
             "type": "string",
-            "value": "[__bicep.toUnique(if(not(equals(coalesce(parameters('keyValue').value, createObject()), createObject())), parameters('keyValue').value, parameters('userConfig')[string(parameters('keyValue').key)].$unique), parameters('value'))]"
+            "value": "[__bicep.toUnique(if(not(equals(coalesce(parameters('keyValue').value, createObject()), createObject())), parameters('keyValue').value, parameters('userConfig')[string(parameters('keyValue').key)].$unique), parameters('value'), parameters('formatConfig'))]"
           }
         },
         "toUnique": {
@@ -276,11 +324,15 @@
             {
               "type": "object",
               "name": "value"
+            },
+            {
+              "type": "object",
+              "name": "formatConfig"
             }
           ],
           "output": {
             "type": "string",
-            "value": "[substring(uniqueString(coalesce(coalesce(tryGet(parameters('options'), 'seed'), tryGet(tryGet(__bicep.formatConfig(), '$unique'), 'seed')), reduce(map(items(parameters('value')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', lambdaVariables('item').value, 'result', ''))), createObject('key', '', 'value', '', 'result', ''), lambda('current', 'next', createObject('key', lambdaVariables('next').key, 'value', lambdaVariables('next').value, 'result', if(not(equals(lambdaVariables('next').key, 'UNIQUE')), if(equals(lambdaVariables('current').result, ''), lambdaVariables('next').value, format('{0},{1}', lambdaVariables('current').result, lambdaVariables('next').value)), lambdaVariables('current').result)))).result)), 0, coalesce(tryGet(parameters('options'), 'length'), __bicep.formatConfig().$unique.length))]"
+            "value": "[substring(uniqueString(coalesce(coalesce(tryGet(parameters('options'), 'seed'), tryGet(tryGet(parameters('formatConfig'), '$unique'), 'seed')), reduce(map(items(parameters('value')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', lambdaVariables('item').value, 'result', ''))), createObject('key', '', 'value', '', 'result', ''), lambda('current', 'next', createObject('key', lambdaVariables('next').key, 'value', lambdaVariables('next').value, 'result', if(not(equals(lambdaVariables('next').key, 'UNIQUE')), if(equals(lambdaVariables('current').result, ''), lambdaVariables('next').value, format('{0},{1}', lambdaVariables('current').result, lambdaVariables('next').value)), lambdaVariables('current').result)))).result)), 0, coalesce(tryGet(parameters('options'), 'length'), parameters('formatConfig').$unique.length))]"
           }
         },
         "toValue": {
@@ -327,11 +379,15 @@
             {
               "type": "object",
               "name": "userConfig"
+            },
+            {
+              "type": "object",
+              "name": "formatConfig"
             }
           ],
           "output": {
             "type": "object",
-            "value": "[if(and(and(not(equals(parameters('userConfig'), createObject())), contains(__bicep.propertyObject(parameters('userConfig').format, parameters('resourceType'), null()), parameters('name'))), not(equals(__bicep.propertyObject(parameters('userConfig').format, parameters('resourceType'), null())[parameters('name')], null()))), __bicep.toValue(__bicep.propertyObject(parameters('userConfig').format, parameters('resourceType'), null()), parameters('name')), if(and(contains(__bicep.propertyObject(__bicep.formatConfig().format, parameters('resourceType'), null()), parameters('name')), not(equals(__bicep.propertyObject(__bicep.formatConfig().format, parameters('resourceType'), null())[parameters('name')], null()))), __bicep.toValue(__bicep.propertyObject(__bicep.formatConfig().format, parameters('resourceType'), null()), parameters('name')), if(and(and(not(equals(parameters('userConfig'), createObject())), contains(__bicep.propertyObject(parameters('userConfig').format, '$default', null()), parameters('name'))), not(equals(__bicep.propertyObject(parameters('userConfig').format, '$default', null())[parameters('name')], null()))), __bicep.toValue(tryGet(parameters('userConfig').format, '$default'), parameters('name')), __bicep.toValue(tryGet(__bicep.formatConfig().format, '$default'), parameters('name')))))]"
+            "value": "[if(and(and(not(equals(parameters('userConfig'), createObject())), contains(__bicep.propertyObject(parameters('userConfig').format, parameters('resourceType'), null()), parameters('name'))), not(equals(__bicep.propertyObject(parameters('userConfig').format, parameters('resourceType'), null())[parameters('name')], null()))), __bicep.toValue(__bicep.propertyObject(parameters('userConfig').format, parameters('resourceType'), null()), parameters('name')), if(and(contains(__bicep.propertyObject(parameters('formatConfig').format, parameters('resourceType'), null()), parameters('name')), not(equals(__bicep.propertyObject(parameters('formatConfig').format, parameters('resourceType'), null())[parameters('name')], null()))), __bicep.toValue(__bicep.propertyObject(parameters('formatConfig').format, parameters('resourceType'), null()), parameters('name')), if(and(and(not(equals(parameters('userConfig'), createObject())), contains(__bicep.propertyObject(parameters('userConfig').format, '$default', null()), parameters('name'))), not(equals(__bicep.propertyObject(parameters('userConfig').format, '$default', null())[parameters('name')], null()))), __bicep.toValue(tryGet(parameters('userConfig').format, '$default'), parameters('name')), __bicep.toValue(tryGet(parameters('formatConfig').format, '$default'), parameters('name')))))]"
           }
         },
         "getSeparatorValue": {
@@ -343,11 +399,15 @@
             {
               "type": "object",
               "name": "userConfig"
+            },
+            {
+              "type": "object",
+              "name": "formatConfig"
             }
           ],
           "output": {
             "type": "object",
-            "value": "[__bicep.getFormatValue(parameters('resourceType'), 'separator', parameters('userConfig'))]"
+            "value": "[__bicep.getFormatValue(parameters('resourceType'), 'separator', parameters('userConfig'), parameters('formatConfig'))]"
           }
         },
         "placeholderReplaced": {
@@ -427,79 +487,21 @@
             "value": {}
           }
         },
-        "formatConfig": {
-          "parameters": [],
-          "output": {
-            "type": "object",
-            "value": {
-              "format": {
-                "$default": {
-                  "value": "{ENVIRONMENT}{-}{WORKLOAD}[{-}{INSTANCE}][{-}{REGION}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]",
-                  "separator": "-"
-                },
-                "deployment": {
-                  "value": "{ENVIRONMENT}{-}{WORKLOAD}[{-}{INSTANCE}][{-}{REGION}][{-}{RESOURCE_TYPE}][{-}v{VERSION}][{-}{UNIQUE}]",
-                  "length": 64
-                },
-                "storageAccount": {
-                  "separator": {
-                    "$value": null
-                  },
-                  "length": 24,
-                  "casing": "lower"
-                }
-              },
-              "$instance": {
-                "maxValue": 99,
-                "padding": {
-                  "totalLength": 2,
-                  "character": "0"
-                }
-              },
-              "$unique": {
-                "length": 4,
-                "seed": null
-              }
-            }
-          }
-        },
         "environmentAbbreviation": {
           "parameters": [
             {
               "type": "string",
               "nullable": true,
               "name": "environment"
+            },
+            {
+              "type": "object",
+              "name": "environmentConfig"
             }
           ],
           "output": {
             "type": "string",
-            "value": "[__bicep.environmentConfig()[__bicep.toEmptyIfNull(parameters('environment'))].abbreviation]"
-          }
-        },
-        "environmentConfig": {
-          "parameters": [],
-          "output": {
-            "type": "object",
-            "value": {
-              "dev": {
-                "abbreviation": "d"
-              },
-              "feat": {
-                "abbreviation": "f"
-              },
-              "prod": {
-                "abbreviation": "p"
-              },
-              "qa": {
-                "abbreviation": "q"
-              },
-              "stage": {
-                "abbreviation": "s"
-              },
-              "test": {
-                "abbreviation": "t"
-              }
-            }
+            "value": "[parameters('environmentConfig')[__bicep.toEmptyIfNull(parameters('environment'))].abbreviation]"
           }
         },
         "regionAbbreviation": {
@@ -508,22 +510,15 @@
               "type": "string",
               "nullable": true,
               "name": "region"
+            },
+            {
+              "type": "object",
+              "name": "regionConfig"
             }
           ],
           "output": {
             "type": "string",
-            "value": "[__bicep.regionConfig()[replace(__bicep.toEmptyIfNull(parameters('region')), ' ', '')].abbreviation]"
-          }
-        },
-        "regionConfig": {
-          "parameters": [],
-          "output": {
-            "type": "object",
-            "value": {
-              "westeurope": {
-                "abbreviation": "we"
-              }
-            }
+            "value": "[parameters('regionConfig')[replace(__bicep.toEmptyIfNull(parameters('region')), ' ', '')].abbreviation]"
           }
         },
         "propertyObject": {
@@ -615,7 +610,7 @@
   "outputs": {
     "nameObject": {
       "type": "object",
-      "value": "[__bicep.nameObject(parameters('value'), parameters('placeholder'), parameters('userConfig'), reference('resourceType_res').outputs.resourceType.value)]"
+      "value": "[__bicep.nameObject(parameters('value'), parameters('placeholder'), parameters('userConfig'), reference('resourceType_res').outputs.resourceType.value, reference('region_res').outputs.region.value, reference('environment_res').outputs.environment.value, reference('format_res').outputs.format.value)]"
     }
   }
 }
