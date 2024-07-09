@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "variables": {},
+  "resources": [],
+  "outputs": {
+    "resourceType": {
+      "value": {
+        "resourceGroup": {
+          "abbreviation": "rg"
+        },
+        "storageAccount": {
+          "abbreviation": "st"
+        },
+        "webApp": {
+          "abbreviation": "app"
+        }
+      },
+      "type": "object"
+    }
+  }
+}
