@@ -21,8 +21,8 @@
   },
   "variables": {
     "environmentName": "[concat('environment-', parameters('utcValue'))]",
-    "formatName": "[concat('format-', parameters('utcValue'))]"
-    "regionName": "[concat('region-', parameters('utcValue'))]"
+    "formatName": "[concat('format-', parameters('utcValue'))]",
+    "regionName": "[concat('region-', parameters('utcValue'))]",
     "resourceTypeName": "[concat('resourceType-', parameters('utcValue'))]"
   },
   "resources": [
