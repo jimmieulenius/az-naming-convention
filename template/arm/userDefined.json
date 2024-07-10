@@ -1,0 +1,65 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "resources": [],
+  "outputs": {
+    "userConfig": {
+      "value": {
+        "format": {
+          "$default": {
+            "value": "{ENVIRONMENT}{-}{ORGANIZATION}{-}{PROJECT}[{-}{SUBPROJECT}][{-}{INSTANCE}][{-}{REGION}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]"
+          },
+          "deployment": {
+            "value": "{ENVIRONMENT}{-}{ORGANIZATION}{-}{PROJECT}[{-}{SUBPROJECT}][{-}{INSTANCE}][{-}{REGION}][{-}{RESOURCE_TYPE}][{-}v{VERSION}][{-}{DEPLOYMENT_PHASE}][{-}{SUFFIX}][{-}{UNIQUE}]"
+          }
+        },
+        "ORGANIZATION": {
+          "$default": {
+            "abbreviation": "dra"
+          },
+          "draftit": {
+            "abbreviation": "dra"
+          }
+        },
+        "ENVIRONMENT": {
+          "stage": {
+            "abbreviation": "stage"
+          },
+          "prod": {
+            "abbreviation": "prod"
+          }
+        },
+        "PROJECT": {
+          "$default": {
+            "abbreviation": "ppp"
+          },
+          "ju": {
+            "abbreviation": "ju"
+          },
+          "myFirstApp": {
+            "abbreviation": "mfa"
+          },
+          "mySecondApp": {
+            "abbreviation": "msa"
+          }
+        },
+        "SUBPROJECT": {
+          "api": {
+            "abbreviation": "api"
+          },
+          "client": {
+            "abbreviation": "clt"
+          }
+        },
+        "DEPLOYMENT_PHASE": {
+          "$unique": {
+            "length": 6,
+            "seed": "aaa"
+          }
+        }
+      },
+      "type": "object"
+    }
+  }
+}
