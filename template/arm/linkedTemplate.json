@@ -1,19 +1,48 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
-  "parameters": {},
-  "resources": [],
-  "variables": {
-    "baseTemplateUri": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/"
+  "parameters": {
+    "environment": {
+      "type": "string",
+      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/environment.json"
+    },
+    "format": {
+      "type": "string",
+      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/format.json"
+    },
+    "region": {
+      "type": "string",
+      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/region.json"
+    },
+    "resourceType": {
+      "type": "string",
+      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/resourceType.json"
+    },
+    "utcValue": {
+      "type": "string",
+      "defaultValue": "[utcNow()]"
+    }
   },
+  "variables": {
+    "regionName": "[concat('region-', parameters('utcValue'))]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2022-09-01",
+      "name": "[variables('regionName')]",
+      "properties": {
+        "mode": "incremental",
+        "templateLink": {
+          "uri": "[parameters('region')]",
+          "contentVersion": "1.0.0.0"
+        }
+      }
+    }
+  ],
   "outputs": {
-    "linkedTemplateUri": {
-      "value": {
-        "environment": "[uri(variables('baseTemplateUri'),'environment.json')]",
-        "format": "[uri(variables('baseTemplateUri'),'format.json')]",
-        "region": "[uri(variables('baseTemplateUri'),'region.json')]",
-        "resourceType": "[uri(variables('baseTemplateUri'),'resourceType.json')]"
-      },
+    "region": {
+      "value": "[reference(variables('regionName')).outputs.region.value]",
       "type": "object"
     }
   }
