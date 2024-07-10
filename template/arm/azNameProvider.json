@@ -555,13 +555,17 @@
     "userConfig": {
       "type": "object",
       "nullable": true
+    },
+    "utcValue": {
+      "type": "string",
+      "defaultValue": "[utcNow()]"
     }
   },
   "resources": {
     "environment_res": {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
-      "name": "environment",
+      "name": "[concat('environment-', parameters('utcValue'))]",
       "properties": {
         "mode": "incremental",
         "templateLink": {
@@ -573,7 +577,7 @@
     "format_res": {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
-      "name": "format",
+      "name": "[concat('format-', parameters('utcValue'))]",
       "properties": {
         "mode": "incremental",
         "templateLink": {
@@ -585,7 +589,7 @@
     "region_res": {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
-      "name": "region",
+      "name": "[concat('region-', parameters('utcValue'))]",
       "properties": {
         "mode": "incremental",
         "templateLink": {
@@ -597,7 +601,7 @@
     "resourceType_res": {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
-      "name": "resourceType",
+      "name": "[concat('resourceType-', parameters('utcValue'))]",
       "properties": {
         "mode": "incremental",
         "templateLink": {
