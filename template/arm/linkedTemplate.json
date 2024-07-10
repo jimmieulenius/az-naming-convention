@@ -3,19 +3,16 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "environment": {
-      "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/environment.json"
+      "type": "string"
     },
     "format": {
-      "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/format.json"
+      "type": "string"
     },
     "region": {
       "type": "string"
     },
     "resourceType": {
-      "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/resourceType.json"
+      "type": "string"
     },
     "utcValue": {
       "type": "string",
