@@ -556,6 +556,10 @@
       "type": "object",
       "nullable": true
     },
+    "regionTemplateUri": {
+      "type": "string",
+      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/region.json"
+    },
     "utcValue": {
       "type": "string",
       "defaultValue": "[utcNow()]"
@@ -571,6 +575,11 @@
         "templateLink": {
           "uri": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/linkedTemplate.json",
           "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "region": {
+            "value": "[parameters('regionTemplateUri')]"
+          }
         }
       }
     },
@@ -594,18 +603,6 @@
         "mode": "incremental",
         "templateLink": {
           "uri": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/format.json",
-          "contentVersion": "1.0.0.0"
-        }
-      }
-    },
-    "region_res": {
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2022-09-01",
-      "name": "[concat('region-', parameters('utcValue'))]",
-      "properties": {
-        "mode": "incremental",
-        "templateLink": {
-          "uri": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/region.json",
           "contentVersion": "1.0.0.0"
         }
       }
