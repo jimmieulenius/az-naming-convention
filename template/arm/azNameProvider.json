@@ -562,18 +562,6 @@
     }
   },
   "resources": {
-    "linkedTemplate_res": {
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2022-09-01",
-      "name": "[concat('linkedTemplate-', parameters('utcValue'))]",
-      "properties": {
-        "mode": "incremental",
-        "templateLink": {
-          "uri": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/linkedTemplate.json",
-          "contentVersion": "1.0.0.0"
-        }
-      }
-    },
     "environment_res": {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
@@ -581,13 +569,10 @@
       "properties": {
         "mode": "incremental",
         "templateLink": {
-          "uri": "[reference('linkedTemplate_res').outputs.linkedTemplateUri.value.environment]",
+          "uri": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/environment.json",
           "contentVersion": "1.0.0.0"
         }
-      },
-      "dependsOn": [
-        "linkedTemplate_res"
-      ]
+      }
     },
     "format_res": {
       "type": "Microsoft.Resources/deployments",
