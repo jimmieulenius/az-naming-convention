@@ -111,7 +111,7 @@
       "type": "object"
     },
     "userConfig": {
-      "value": "[reference(variables('userConfigName')).outputs.userConfig.value]",
+      "value": "[if(not(equals(parameters('userConfig'),'')),reference(variables('userConfigName')).outputs.userConfig.value,createObject())]",
       "type": "object"
     }
   }
