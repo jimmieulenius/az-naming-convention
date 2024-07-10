@@ -1,0 +1,20 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "resources": [],
+  "variables": {
+    "baseTemplateUri": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/"
+  }
+  "outputs": {
+    "linkedTemplateUri": {
+      "value": {
+        "environment": "[uri(variables('baseTemplateUri'),'environment.json')]",
+        "format": "[uri(variables('baseTemplateUri'),'format.json')]",
+        "region": "[uri(variables('baseTemplateUri'),'region.json')]",
+        "resourceType": "[uri(variables('baseTemplateUri'),'resourceType.json')]"
+      },
+      "type": "object"
+    }
+  }
+}
