@@ -11,8 +11,7 @@
       "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/format.json"
     },
     "region": {
-      "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/region.json"
+      "type": "string"
     },
     "resourceType": {
       "type": "string",
