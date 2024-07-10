@@ -3,6 +3,9 @@
   "contentVersion": "1.0.0.0",
   "parameters": {},
   "resources": [],
+  "variables": {
+    "baseTemplateUri": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/"
+  },
   "outputs": {
     "linkedTemplateUri": {
       "value": {
