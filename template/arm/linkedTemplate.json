@@ -5,7 +5,7 @@
   "resources": [],
   "variables": {
     "baseTemplateUri": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/"
-  }
+  },
   "outputs": {
     "linkedTemplateUri": {
       "value": {
