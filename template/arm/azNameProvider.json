@@ -556,9 +556,21 @@
       "type": "object",
       "nullable": true
     },
+    "environmentTemplateUri": {
+      "type": "string",
+      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/environment.json"
+    },
+    "formatTemplateUri": {
+      "type": "string",
+      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/format.json"
+    },
     "regionTemplateUri": {
       "type": "string",
       "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/region.json"
+    },
+    "resourceTypeTemplateUri": {
+      "type": "string",
+      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/resourceType.json"
     },
     "utcValue": {
       "type": "string",
@@ -577,45 +589,18 @@
           "contentVersion": "1.0.0.0"
         },
         "parameters": {
+          "environment": {
+            "value": "[parameters('environmentTemplateUri')]"
+          },
+          "format": {
+            "value": "[parameters('formatTemplateUri')]"
+          },
           "region": {
             "value": "[parameters('regionTemplateUri')]"
+          },
+          "resourceType": {
+            "value": "[parameters('resourceTypeTemplateUri')]"
           }
-        }
-      }
-    },
-    "environment_res": {
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2022-09-01",
-      "name": "[concat('environment-', parameters('utcValue'))]",
-      "properties": {
-        "mode": "incremental",
-        "templateLink": {
-          "uri": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/environment.json",
-          "contentVersion": "1.0.0.0"
-        }
-      }
-    },
-    "format_res": {
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2022-09-01",
-      "name": "[concat('format-', parameters('utcValue'))]",
-      "properties": {
-        "mode": "incremental",
-        "templateLink": {
-          "uri": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/format.json",
-          "contentVersion": "1.0.0.0"
-        }
-      }
-    },
-    "resourceType_res": {
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2022-09-01",
-      "name": "[concat('resourceType-', parameters('utcValue'))]",
-      "properties": {
-        "mode": "incremental",
-        "templateLink": {
-          "uri": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/resourceType.json",
-          "contentVersion": "1.0.0.0"
         }
       }
     }
@@ -623,7 +608,7 @@
   "outputs": {
     "nameObject": {
       "type": "object",
-      "value": "[__bicep.nameObject(parameters('value'), parameters('placeholder'), parameters('userConfig'), reference('resourceType_res').outputs.resourceType.value, reference('linkedTemplate_res').outputs.region.value, reference('environment_res').outputs.environment.value, reference('format_res').outputs.format.value)]"
+      "value": "[__bicep.nameObject(parameters('value'), parameters('placeholder'), parameters('userConfig'), reference('linkedTemplate_res').outputs.resourceType.value, reference('linkedTemplate_res').outputs.region.value, reference('linkedTemplate_res').outputs.environment.value, reference('linkedTemplate_res').outputs.format.value)]"
     }
   }
 }
