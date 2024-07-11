@@ -12,6 +12,9 @@
           },
           "deployment": {
             "value": "{ENVIRONMENT}{-}{ORGANIZATION}{-}{PROJECT}[{-}{SUBPROJECT}][{-}{INSTANCE}][{-}{REGION}][{-}{RESOURCE_TYPE}][{-}v{VERSION}][{-}{DEPLOYMENT_PHASE}][{-}{SUFFIX}][{-}{UNIQUE}]"
+          },
+          "subnet": {
+            "value": "{ENVIRONMENT}-{PROJECT}-{INSTANCE}[{-}{UNIQUE}]"
           }
         },
         "ORGANIZATION": {
