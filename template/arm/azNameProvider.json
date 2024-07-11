@@ -150,7 +150,7 @@
           ],
           "output": {
             "type": "string",
-            "value": "[if(contains(parameters('userConfig').format, parameters('format')), coalesce(tryGet(parameters('userConfig').format[parameters('format')], 'value'), __bicep.getFormatValue(parameters('format'), 'value', parameters('userConfig'), parameters('formatConfig')).value), if(contains(parameters('formatConfig').format, parameters('format')), coalesce(tryGet(parameters('formatConfig').format[parameters('format')], 'value'), __bicep.getFormatValue(parameters('format'), 'value', parameters('userConfig'), parameters('formatConfig')).value), if(contains(parameters('resourceTypeConfig'), parameters('format')), __bicep.getFormatValue('$default', 'value', parameters('userConfig'), parameters('formatConfig')).value, parameters('format'))))]"
+            "value": "[if(and(not(equals(parameters('userConfig'), createObject())), contains(parameters('userConfig').format, parameters('format'))), coalesce(tryGet(parameters('userConfig').format[parameters('format')], 'value'), __bicep.getFormatValue(parameters('format'), 'value', parameters('userConfig'), parameters('formatConfig')).value), if(contains(parameters('formatConfig').format, parameters('format')), coalesce(tryGet(parameters('formatConfig').format[parameters('format')], 'value'), __bicep.getFormatValue(parameters('format'), 'value', parameters('userConfig'), parameters('formatConfig')).value), if(contains(parameters('resourceTypeConfig'), parameters('format')), __bicep.getFormatValue('$default', 'value', parameters('userConfig'), parameters('formatConfig')).value, parameters('format'))))]"
           }
         },
         "setCasing": {
