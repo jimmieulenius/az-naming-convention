@@ -206,7 +206,7 @@
           ],
           "output": {
             "type": "string",
-            "value": "[if(contains(createArray('deployment'), parameters('resourceType')), '', parameters('resourceTypeConfig')[__bicep.toEmptyIfNull(parameters('resourceType'))].abbreviation)]"
+            "value": "[if(contains(createArray('deployment'), parameters('resourceType')), '', tryGet(parameters('resourceTypeConfig'), __bicep.toEmptyIfNull(parameters('resourceType')), 'abbreviation'))]"
           }
         },
         "toEmptyIfNull": {
