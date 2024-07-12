@@ -17,48 +17,50 @@
             "value": "{ENVIRONMENT}-{PROJECT}-{INSTANCE}[{-}{UNIQUE}]"
           }
         },
-        "ORGANIZATION": {
-          "$default": {
-            "abbreviation": "dra"
+        "placeholder": {
+          "ORGANIZATION": {
+            "$default": {
+              "abbreviation": "dra"
+            },
+            "draftit": {
+              "abbreviation": "dra"
+            }
           },
-          "draftit": {
-            "abbreviation": "dra"
-          }
-        },
-        "ENVIRONMENT": {
-          "stage": {
-            "abbreviation": "stage"
+          "ENVIRONMENT": {
+            "stage": {
+              "abbreviation": "stage"
+            },
+            "prod": {
+              "abbreviation": "prod"
+            }
           },
-          "prod": {
-            "abbreviation": "prod"
-          }
-        },
-        "PROJECT": {
-          "$default": {
-            "abbreviation": "ppp"
+          "PROJECT": {
+            "$default": {
+              "abbreviation": "ppp"
+            },
+            "ju": {
+              "abbreviation": "ju"
+            },
+            "myFirstApp": {
+              "abbreviation": "mfa"
+            },
+            "mySecondApp": {
+              "abbreviation": "msa"
+            }
           },
-          "ju": {
-            "abbreviation": "ju"
+          "SUBPROJECT": {
+            "api": {
+              "abbreviation": "api"
+            },
+            "client": {
+              "abbreviation": "clt"
+            }
           },
-          "myFirstApp": {
-            "abbreviation": "mfa"
-          },
-          "mySecondApp": {
-            "abbreviation": "msa"
-          }
-        },
-        "SUBPROJECT": {
-          "api": {
-            "abbreviation": "api"
-          },
-          "client": {
-            "abbreviation": "clt"
-          }
-        },
-        "DEPLOYMENT_PHASE": {
-          "$unique": {
-            "length": 6,
-            "seed": "aaa"
+          "DEPLOYMENT_PHASE": {
+            "$unique": {
+              "length": 6,
+              "seed": "aaa"
+            }
           }
         }
       },
