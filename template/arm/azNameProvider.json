@@ -553,20 +553,16 @@
       "type": "object"
     },
     "environmentTemplateUri": {
-      "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/environment.json"
+      "type": "string"
     },
     "formatTemplateUri": {
-      "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/format.json"
+      "type": "string"
     },
     "regionTemplateUri": {
-      "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/region.json"
+      "type": "string"
     },
     "resourceTypeTemplateUri": {
-      "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/resourceType.json"
+      "type": "string"
     },
     "userConfigTemplateUri": {
       "type": "string",
