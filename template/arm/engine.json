@@ -577,7 +577,7 @@
     "linkedTemplate_res": {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
-      "name": "[concat('linkedTemplate-', parameters('utcValue'))]",
+      "name": "[concat('nc-linkedTemplate-', parameters('utcValue'))]",
       "properties": {
         "mode": "incremental",
         "templateLink": {
