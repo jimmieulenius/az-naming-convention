@@ -24,11 +24,11 @@
     }
   },
   "variables": {
-    "environmentName": "[concat('environment-', parameters('utcValue'))]",
-    "formatName": "[concat('format-', parameters('utcValue'))]",
-    "regionName": "[concat('region-', parameters('utcValue'))]",
-    "resourceTypeName": "[concat('resourceType-', parameters('utcValue'))]",
-    "userConfigName": "[concat('userConfig-', parameters('utcValue'))]",
+    "environmentName": "[concat('nc-environment-', parameters('utcValue'))]",
+    "formatName": "[concat('nc-format-', parameters('utcValue'))]",
+    "regionName": "[concat('nc-region-', parameters('utcValue'))]",
+    "resourceTypeName": "[concat('nc-resourceType-', parameters('utcValue'))]",
+    "userConfigName": "[concat('nc-userConfig-', parameters('utcValue'))]",
   },
   "resources": [
     {
