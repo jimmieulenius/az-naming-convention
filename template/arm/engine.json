@@ -408,7 +408,7 @@
           "output": {
             "type": "object",
             "value": {
-              "value": "-"
+              "value": "[__bicep.getFormatValue(parameters('resourceType'), 'separator', parameters('userConfig'), parameters('formatConfig'))]"
             }
           }
         },
