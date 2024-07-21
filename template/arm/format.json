@@ -9,9 +9,7 @@
         "format": {
           "$default": {
             "value": "{ENVIRONMENT}{-}{WORKLOAD}[{-}{INSTANCE}][{-}{REGION}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]",
-            "separator": {
-              "$value": "-"
-            }
+            "separator": "-"
           },
           "deployment": {
             "value": "{ENVIRONMENT}{-}{WORKLOAD}[{-}{INSTANCE}][{-}{REGION}][{-}{RESOURCE_TYPE}][{-}v{VERSION}][{-}{UNIQUE}]",
