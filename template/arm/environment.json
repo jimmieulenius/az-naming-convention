@@ -5,6 +5,7 @@
   "resources": [],
   "outputs": {
     "environment": {
+      "type": "object",
       "value": {
         "dev": {
           "abbreviation": "d"
@@ -24,8 +25,7 @@
         "test": {
           "abbreviation": "t"
         }
-      },
-      "type": "object"
+      }
     }
   }
 }
