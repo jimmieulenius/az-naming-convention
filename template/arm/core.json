@@ -101,7 +101,7 @@
             "_generator": {
               "name": "bicep",
               "version": "0.29.45.22436",
-              "templateHash": "1829933590509768423"
+              "templateHash": "9845869082677018583"
             }
           },
           "definitions": {
@@ -560,7 +560,7 @@
                   ],
                   "output": {
                     "type": "object",
-                    "value": "[union(coalesce(parameters('params'), createObject()), createObject('formatString', coalesce(map(createArray(coalesce(tryGet(parameters('value'), 'formatString'), tryGet(parameters('params'), 'formatString'))), lambda('item', if(and(contains(coalesce(lambdaVariables('item'), ''), '{'), contains(coalesce(lambdaVariables('item'), ''), '}')), lambdaVariables('item'), if(not(equals(lambdaVariables('item'), 'deployment')), coalesce(tryGet(tryGet(parameters('value'), 'values'), 'RESOURCE_TYPE'), tryGet(tryGet(parameters('params'), 'values'), 'RESOURCE_TYPE')), lambdaVariables('item')))))[0], '$default'), 'values', union(coalesce(tryGet(parameters('params'), 'values'), createObject()), coalesce(tryGet(parameters('value'), 'values'), createObject()))))]"
+                    "value": "[union(coalesce(parameters('params'), createObject()), createObject('formatString', if(not(equals(tryGet(parameters('value'), 'formatString'), '')), coalesce(map(createArray(coalesce(tryGet(parameters('value'), 'formatString'), tryGet(parameters('params'), 'formatString'))), lambda('item', if(and(contains(coalesce(lambdaVariables('item'), ''), '{'), contains(coalesce(lambdaVariables('item'), ''), '}')), lambdaVariables('item'), if(not(equals(lambdaVariables('item'), 'deployment')), coalesce(tryGet(tryGet(parameters('value'), 'values'), 'RESOURCE_TYPE'), tryGet(tryGet(parameters('params'), 'values'), 'RESOURCE_TYPE')), lambdaVariables('item')))))[0], '$default'), '$default'), 'values', union(coalesce(tryGet(parameters('params'), 'values'), createObject()), coalesce(tryGet(parameters('value'), 'values'), createObject()))))]"
                   }
                 },
                 "isNameObject": {
