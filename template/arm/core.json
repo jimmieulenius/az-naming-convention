@@ -6,7 +6,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.29.45.22436",
-      "templateHash": "1001484449894526847"
+      "templateHash": "9016349222301068213"
     }
   },
   "definitions": {
@@ -343,7 +343,7 @@
           ],
           "output": {
             "type": "object",
-            "value": "[__bicep.applyOnGraph0(parameters('graph'), parameters('function'), createObject('formatString', parameters('commonFormatString'), 'values', coalesce(parameters('commonValues'), createObject()), 'formatConfig', parameters('formatConfig'), 'resourceTypeConfig', parameters('resourceTypeConfig'), 'regionConfig', parameters('regionConfig'), 'environmentConfig', parameters('environmentConfig'), 'userConfig', parameters('userConfig'), 'additionalValues', parameters('additionalValues')))]"
+            "value": "[__bicep.applyOnGraph0(parameters('graph'), parameters('function'), createObject('formatString', if(equals(parameters('commonFormatString'), ''), null(), parameters('commonFormatString')), 'values', coalesce(parameters('commonValues'), createObject()), 'formatConfig', parameters('formatConfig'), 'resourceTypeConfig', parameters('resourceTypeConfig'), 'regionConfig', parameters('regionConfig'), 'environmentConfig', parameters('environmentConfig'), 'userConfig', parameters('userConfig'), 'additionalValues', parameters('additionalValues')))]"
           },
           "metadata": {
             "__bicep_export!": true
@@ -465,7 +465,7 @@
           ],
           "output": {
             "type": "object",
-            "value": "[union(coalesce(parameters('params'), createObject()), createObject('formatString', if(not(equals(tryGet(parameters('value'), 'formatString'), '')), coalesce(map(createArray(coalesce(tryGet(parameters('value'), 'formatString'), tryGet(parameters('params'), 'formatString'))), lambda('item', if(and(contains(coalesce(lambdaVariables('item'), ''), '{'), contains(coalesce(lambdaVariables('item'), ''), '}')), lambdaVariables('item'), if(not(equals(lambdaVariables('item'), 'deployment')), coalesce(tryGet(tryGet(parameters('value'), 'values'), 'RESOURCE_TYPE'), tryGet(tryGet(parameters('params'), 'values'), 'RESOURCE_TYPE')), lambdaVariables('item')))))[0], '$default'), '$default'), 'values', union(coalesce(tryGet(parameters('params'), 'values'), createObject()), coalesce(tryGet(parameters('value'), 'values'), createObject()))))]"
+            "value": "[union(coalesce(parameters('params'), createObject()), createObject('formatString', coalesce(map(createArray(coalesce(tryGet(parameters('value'), 'formatString'), tryGet(parameters('params'), 'formatString'))), lambda('item', if(and(contains(coalesce(lambdaVariables('item'), ''), '{'), contains(coalesce(lambdaVariables('item'), ''), '}')), lambdaVariables('item'), if(not(equals(lambdaVariables('item'), 'deployment')), coalesce(tryGet(tryGet(parameters('value'), 'values'), 'RESOURCE_TYPE'), tryGet(tryGet(parameters('params'), 'values'), 'RESOURCE_TYPE')), lambdaVariables('item')))))[0], '$default'), 'values', union(coalesce(tryGet(parameters('params'), 'values'), createObject()), coalesce(tryGet(parameters('value'), 'values'), createObject()))))]"
           }
         },
         "isNameObject": {
