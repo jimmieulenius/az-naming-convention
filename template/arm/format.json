@@ -5,23 +5,11 @@
   "resources": [],
   "outputs": {
     "format": {
+      "type": "object",
       "value": {
-        "format": {
-          "$default": {
-            "value": "{ENVIRONMENT}{-}{WORKLOAD}[{-}{INSTANCE}][{-}{REGION}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]",
-            "separator": "-"
-          },
-          "deployment": {
-            "value": "{ENVIRONMENT}{-}{WORKLOAD}[{-}{INSTANCE}][{-}{REGION}][{-}{RESOURCE_TYPE}][{-}v{VERSION}][{-}{UNIQUE}]",
-            "length": 64
-          },
-          "storageAccount": {
-            "separator": {
-              "$value": null
-            },
-            "length": 24,
-            "casing": "lower"
-          }
+        "$default": {
+          "formatString": "{ENVIRONMENT}{-}{WORKLOAD}[{-}{INSTANCE}][{-}{REGION}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]",
+          "separator": "-"
         },
         "$instance": {
           "maxValue": 99,
@@ -33,9 +21,19 @@
         "$unique": {
           "length": 4,
           "seed": null
+        },
+        "deployment": {
+          "formatString": "{ENVIRONMENT}{-}{WORKLOAD}[{-}{INSTANCE}][{-}{REGION}][{-}{RESOURCE_TYPE}][{-}v{VERSION}][{-}{UNIQUE}]",
+          "maxLength": 64
+        },
+        "storageAccount": {
+          "separator": {
+            "$value": null
+          },
+          "maxLength": 24,
+          "casing": "lower"
         }
-      },
-      "type": "object"
+      }
     }
   }
 }
