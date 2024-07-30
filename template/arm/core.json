@@ -6,7 +6,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.29.45.22436",
-      "templateHash": "16527629104371990290"
+      "templateHash": "1001484449894526847"
     }
   },
   "definitions": {
@@ -210,6 +210,11 @@
               "name": "values"
             },
             {
+              "type": "bool",
+              "nullable": true,
+              "name": "additionalValues"
+            },
+            {
               "type": "object",
               "name": "formatConfig"
             },
@@ -229,16 +234,11 @@
               "type": "object",
               "nullable": true,
               "name": "userConfig"
-            },
-            {
-              "type": "bool",
-              "nullable": true,
-              "name": "additionalValues"
             }
           ],
           "output": {
             "type": "string",
-            "value": "[__bicep.evaluateName(parameters('formatString'), parameters('values'), parameters('formatConfig'), parameters('resourceTypeConfig'), parameters('regionConfig'), parameters('environmentConfig'), parameters('userConfig'), parameters('additionalValues'), true()).result]"
+            "value": "[__bicep.evaluateName(parameters('formatString'), parameters('values'), parameters('additionalValues'), true(), parameters('formatConfig'), parameters('resourceTypeConfig'), parameters('regionConfig'), parameters('environmentConfig'), parameters('userConfig')).result]"
           },
           "metadata": {
             "__bicep_export!": true
@@ -255,6 +255,16 @@
               "name": "values"
             },
             {
+              "type": "bool",
+              "nullable": true,
+              "name": "additionalValues"
+            },
+            {
+              "type": "bool",
+              "nullable": true,
+              "name": "throwError"
+            },
+            {
               "type": "object",
               "name": "formatConfig"
             },
@@ -274,16 +284,6 @@
               "type": "object",
               "nullable": true,
               "name": "userConfig"
-            },
-            {
-              "type": "bool",
-              "nullable": true,
-              "name": "additionalValues"
-            },
-            {
-              "type": "bool",
-              "nullable": true,
-              "name": "throwError"
             }
           ],
           "output": {
@@ -315,6 +315,11 @@
               "name": "function"
             },
             {
+              "type": "bool",
+              "nullable": true,
+              "name": "additionalValues"
+            },
+            {
               "type": "object",
               "name": "formatConfig"
             },
@@ -334,11 +339,6 @@
               "type": "object",
               "nullable": true,
               "name": "userConfig"
-            },
-            {
-              "type": "bool",
-              "nullable": true,
-              "name": "additionalValues"
             }
           ],
           "output": {
@@ -447,7 +447,7 @@
           "output": {
             "type": "object",
             "value": {
-              "result": "[if(equals(parameters('function'), 'formatName'), __bicep.formatName(parameters('params').formatString, parameters('params').values, parameters('params').formatConfig, parameters('params').resourceTypeConfig, parameters('params').regionConfig, parameters('params').environmentConfig, parameters('params').userConfig, parameters('params').additionalValues), __bicep.evaluateName(parameters('params').formatString, parameters('params').values, parameters('params').formatConfig, parameters('params').resourceTypeConfig, parameters('params').regionConfig, parameters('params').environmentConfig, parameters('params').userConfig, parameters('params').additionalValues, null()))]"
+              "result": "[if(equals(parameters('function'), 'formatName'), __bicep.formatName(parameters('params').formatString, parameters('params').values, parameters('params').additionalValues, parameters('params').formatConfig, parameters('params').resourceTypeConfig, parameters('params').regionConfig, parameters('params').environmentConfig, parameters('params').userConfig), __bicep.evaluateName(parameters('params').formatString, parameters('params').values, parameters('params').additionalValues, null(), parameters('params').formatConfig, parameters('params').resourceTypeConfig, parameters('params').regionConfig, parameters('params').environmentConfig, parameters('params').userConfig))]"
             }
           }
         },
@@ -1298,7 +1298,7 @@
   "outputs": {
     "nameGraph": {
       "type": "object",
-      "value": "[__bicep.nameGraph(parameters('commonFormatString'), parameters('commonValues'), parameters('graph'), parameters('function'), parameters('additionalValues'), reference('linkedTemplate').outputs.userConfig.value, reference('linkedTemplate').outputs.resourceType.value, reference('linkedTemplate').outputs.region.value, reference('linkedTemplate').outputs.environment.value, reference('linkedTemplate').outputs.format.value)]"
+      "value": "[__bicep.nameGraph(parameters('commonFormatString'), parameters('commonValues'), parameters('graph'), parameters('function'), parameters('additionalValues'), reference('linkedTemplate').outputs.format.value, reference('linkedTemplate').outputs.resourceType.value, reference('linkedTemplate').outputs.region.value, reference('linkedTemplate').outputs.environment.value, reference('linkedTemplate').outputs.userConfig.value)]"
     }
   }
 }
