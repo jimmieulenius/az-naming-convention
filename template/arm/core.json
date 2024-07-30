@@ -14,6 +14,14 @@
     "graph": {
       "type": "object"
     },
+    "function": {
+      "type": "string",
+      "defaultValue": "formatName"
+    },
+    "additionalValues": {
+      "type": "bool",
+      "defaultValue": true
+    },
     "environmentTemplateUri": {
       "type": "string",
       "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/environment.json"
@@ -33,14 +41,6 @@
     "userConfigTemplateUri": {
       "type": "string",
       "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/userDefined.json"
-    },
-    "function": {
-      "type": "string",
-      "defaultValue": "formatName"
-    },
-    "additionalValues": {
-      "type": "bool",
-      "defaultValue": true
     },
     "utcValue": {
       "type": "string",
@@ -74,6 +74,9 @@
           "function": {
             "value": "[parameters('function')]"
           },
+          "additionalValues": {
+            "value": "[parameters('additionalValues')]"
+          },
           "environmentConfig": {
             "value": "[reference('linkedTemplate').outputs.environment.value]"
           },
@@ -88,9 +91,6 @@
           },
           "userConfig": {
             "value": "[reference('linkedTemplate').outputs.userConfig.value]"
-          },
-          "additionalValues": {
-            "value": "[parameters('additionalValues')]"
           }
         },
         "template": {
