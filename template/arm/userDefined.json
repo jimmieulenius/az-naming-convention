@@ -8,58 +8,68 @@
       "value": {
         "format": {
           "$default": {
-            "value": "{ENVIRONMENT}{-}{ORGANIZATION}{-}{PROJECT}[{-}{SUBPROJECT}][{-}{INSTANCE}][{-}{REGION}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]"
+            "formatString": "{ENVIRONMENT}{-}{ORGANIZATION}{-}{PROJECT}[{-}{SUBPROJECT}][{-}{INSTANCE}][{-}{REGION}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]"
           },
           "deployment": {
-            "value": "{ENVIRONMENT}{-}{ORGANIZATION}{-}{PROJECT}[{-}{SUBPROJECT}][{-}{INSTANCE}][{-}{REGION}][{-}{RESOURCE_TYPE}][{-}v{VERSION}][{-}{DEPLOYMENT_PHASE}][{-}{SUFFIX}][{-}{UNIQUE}]"
+            "formatString": "{ENVIRONMENT}{-}{ORGANIZATION}{-}{PROJECT}[{-}{SUBPROJECT}][{-}{INSTANCE}][{-}{REGION}][{-}{RESOURCE_TYPE}][{-}v{VERSION}][{-}{DEPLOYMENT_PHASE}][{-}{SUFFIX}][{-}{UNIQUE}]"
           },
           "subnet": {
-            "value": "{ENVIRONMENT}-{PROJECT}-{INSTANCE}[{-}{UNIQUE}]"
+            "formatString": "{ENVIRONMENT}{-}{PROJECT}{-}{INSTANCE}[{-}{UNIQUE}]"
           }
         },
         "placeholder": {
           "ORGANIZATION": {
-            "$default": {
-              "abbreviation": "dra"
-            },
-            "draftit": {
-              "abbreviation": "dra"
+            "default": "draftit",
+            "allowedValues": {
+              "draftit": {
+                "abbreviation": "dra"
+              }
             }
           },
           "ENVIRONMENT": {
-            "stage": {
-              "abbreviation": "stage"
-            },
-            "prod": {
-              "abbreviation": "prod"
+            "allowedValues": {
+              "stage": {
+                "abbreviation": "stg"
+              },
+              "prod": {
+                "abbreviation": "prd"
+              }
             }
           },
           "PROJECT": {
-            "$default": {
-              "abbreviation": "ppp"
-            },
-            "ju": {
-              "abbreviation": "ju"
-            },
-            "myFirstApp": {
-              "abbreviation": "mfa"
-            },
-            "mySecondApp": {
-              "abbreviation": "msa"
+            "default": "ju",
+            "allowedValues": {
+              "ju": {},
+              "myFirstApp": {
+                "abbreviation": "mfa"
+              },
+              "mySecondApp": {
+                "abbreviation": "msa"
+              }
             }
           },
           "SUBPROJECT": {
-            "api": {
-              "abbreviation": "api"
-            },
-            "client": {
-              "abbreviation": "clt"
+            "allowedValues": {
+              "api": {
+                "abbreviation": "api"
+              },
+              "client": {
+                "abbreviation": "clt"
+              }
             }
           },
           "DEPLOYMENT_PHASE": {
             "$unique": {
               "length": 6,
               "seed": "aaa"
+            }
+          },
+          "SUFFIX": {
+            "$instance": {
+              "maxValue": 999,
+              "padding": {
+                "totalLength": 3
+              }
             }
           }
         }
