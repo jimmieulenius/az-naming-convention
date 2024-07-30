@@ -101,7 +101,7 @@
             "_generator": {
               "name": "bicep",
               "version": "0.29.45.22436",
-              "templateHash": "9845869082677018583"
+              "templateHash": "10024700489399517858"
             }
           },
           "definitions": {
@@ -1357,7 +1357,7 @@
           },
           "resources": {},
           "outputs": {
-            "nameGraph": {
+            "graph": {
               "type": "object",
               "value": "[__bicep.nameGraph(parameters('commonFormatString'), parameters('commonValues'), parameters('graph'), parameters('function'), parameters('formatConfig'), parameters('resourceTypeConfig'), parameters('regionConfig'), parameters('environmentConfig'), parameters('userConfig'), parameters('additionalValues'))]"
             }
@@ -1396,6 +1396,12 @@
           }
         }
       }
+    }
+  },
+  "outputs": {
+    "nameGraph": {
+      "type": "object",
+      "value": "[reference('core').outputs.graph.value]"
     }
   }
 }
