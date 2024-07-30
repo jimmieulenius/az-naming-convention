@@ -5,6 +5,7 @@
   "resources": [],
   "outputs": {
     "resourceType": {
+      "type": "object",
       "value": {
         "resourceGroup": {
           "abbreviation": "rg"
@@ -15,8 +16,7 @@
         "webApp": {
           "abbreviation": "app"
         }
-      },
-      "type": "object"
+      }
     }
   }
 }
