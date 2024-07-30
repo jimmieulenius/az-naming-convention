@@ -5,12 +5,12 @@
   "resources": [],
   "outputs": {
     "region": {
+      "type": "object",
       "value": {
         "westeurope": {
           "abbreviation": "we"
         }
-      },
-      "type": "object"
+      }
     }
   }
 }
