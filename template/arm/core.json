@@ -6,7 +6,7 @@
     "_generator": {
       "name": "bicep",
       "version": "0.29.45.22436",
-      "templateHash": "10024700489399517858"
+      "templateHash": "16527629104371990290"
     }
   },
   "definitions": {
@@ -1219,6 +1219,37 @@
       }
     }
   ],
+  "resources": {
+    "linkedTemplate": {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2022-09-01",
+      "name": "[concat('nc-linkedTemplate-', parameters('utcValue'))]",
+      "properties": {
+        "mode": "incremental",
+        "templateLink": {
+          "uri": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/linkedTemplate.json",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "environment": {
+            "value": "[parameters('environmentTemplateUri')]"
+          },
+          "format": {
+            "value": "[parameters('formatTemplateUri')]"
+          },
+          "region": {
+            "value": "[parameters('regionTemplateUri')]"
+          },
+          "resourceType": {
+            "value": "[parameters('resourceTypeTemplateUri')]"
+          },
+          "userConfig": {
+            "value": "[parameters('userConfigTemplateUri')]"
+          }
+        }
+      }
+    }
+  },
   "parameters": {
     "commonFormatString": {
       "type": "string",
@@ -1264,41 +1295,10 @@
       "defaultValue": "[utcNow()]"
     }
   },
-  "resources": {
-    "linkedTemplate": {
-      "type": "Microsoft.Resources/deployments",
-      "apiVersion": "2022-09-01",
-      "name": "[concat('nc-linkedTemplate-', parameters('utcValue'))]",
-      "properties": {
-        "mode": "incremental",
-        "templateLink": {
-          "uri": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/linkedTemplate.json",
-          "contentVersion": "1.0.0.0"
-        },
-        "parameters": {
-          "environment": {
-            "value": "[parameters('environmentTemplateUri')]"
-          },
-          "format": {
-            "value": "[parameters('formatTemplateUri')]"
-          },
-          "region": {
-            "value": "[parameters('regionTemplateUri')]"
-          },
-          "resourceType": {
-            "value": "[parameters('resourceTypeTemplateUri')]"
-          },
-          "userConfig": {
-            "value": "[parameters('userConfigTemplateUri')]"
-          }
-        }
-      }
-    }
-  },
   "outputs": {
     "nameGraph": {
       "type": "object",
-      "value": "[__bicep.nameGraph(parameters('commonFormatString'), parameters('commonValues'), parameters('graph'), parameters('function'), parameters('additionalValues'), reference('linkedTemplate_res').outputs.userConfig.value, reference('linkedTemplate_res').outputs.resourceType.value, reference('linkedTemplate_res').outputs.region.value, reference('linkedTemplate_res').outputs.environment.value, reference('linkedTemplate_res').outputs.format.value)]"
+      "value": "[__bicep.nameGraph(parameters('commonFormatString'), parameters('commonValues'), parameters('graph'), parameters('function'), parameters('additionalValues'), reference('linkedTemplate').outputs.userConfig.value, reference('linkedTemplate').outputs.resourceType.value, reference('linkedTemplate').outputs.region.value, reference('linkedTemplate').outputs.environment.value, reference('linkedTemplate').outputs.format.value)]"
     }
   }
 }
