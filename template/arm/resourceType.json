@@ -7,14 +7,781 @@
     "resourceType": {
       "type": "object",
       "value": {
+        "aISearch": {
+          "ShortName": "srch",
+          "Namespace": "Microsoft.Search/searchServices"
+        },
+        "aksCluster": {
+          "ShortName": "aks",
+          "Namespace": "Microsoft.ContainerService/managedClusters"
+        },
+        "aksSystemNodePool": {
+          "ShortName": "npsystem",
+          "Namespace": "Microsoft.ContainerService/managedClusters/agentPools"
+        },
+        "aksUserNodePool": {
+          "ShortName": "np",
+          "Namespace": "Microsoft.ContainerService/managedClusters/agentPools"
+        },
+        "apiManagementServiceInstance": {
+          "ShortName": "apim",
+          "Namespace": "Microsoft.ApiManagement/service"
+        },
+        "appConfigurationStore": {
+          "ShortName": "appcs",
+          "Namespace": "Microsoft.AppConfiguration/configurationStores"
+        },
+        "applicationGateway": {
+          "ShortName": "agw",
+          "Namespace": "Microsoft.Network/applicationGateways"
+        },
+        "applicationInsights": {
+          "ShortName": "appi",
+          "Namespace": "Microsoft.Insights/components"
+        },
+        "applicationSecurityGroup": {
+          "ShortName": "asg",
+          "Namespace": "Microsoft.Network/applicationSecurityGroups"
+        },
+        "appServiceEnvironment": {
+          "ShortName": "ase",
+          "Namespace": "Microsoft.Web/hostingEnvironments"
+        },
+        "appServicePlan": {
+          "ShortName": "asp",
+          "Namespace": "Microsoft.Web/serverFarms"
+        },
+        "automationAccount": {
+          "ShortName": "aa",
+          "Namespace": "Microsoft.Automation/automationAccounts"
+        },
+        "availabilitySet": {
+          "ShortName": "avail",
+          "Namespace": "Microsoft.Compute/availabilitySets"
+        },
+        "azureAIServicesMultiServiceAccount": {
+          "ShortName": "aisa",
+          "Namespace": "Microsoft.CognitiveServices/accounts"
+        },
+        "azureAIVideoIndexer": {
+          "ShortName": "avi",
+          "Namespace": "Microsoft.VideoIndexer/accounts"
+        },
+        "azureAnalysisServicesServer": {
+          "ShortName": "as",
+          "Namespace": "Microsoft.AnalysisServices/servers"
+        },
+        "azureArcEnabledKubernetesCluster": {
+          "ShortName": "arck",
+          "Namespace": "Microsoft.Kubernetes/connectedClusters"
+        },
+        "azureArcEnabledServer": {
+          "ShortName": "arcs",
+          "Namespace": "Microsoft.HybridCompute/machines"
+        },
+        "azureBastion": {
+          "ShortName": "bas",
+          "Namespace": "Microsoft.Network/bastionHosts"
+        },
+        "azureCacheForRedisInstance": {
+          "ShortName": "redis",
+          "Namespace": "Microsoft.Cache/Redis"
+        },
+        "azureCosmosDBDatabase": {
+          "ShortName": "cosmos",
+          "Namespace": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases"
+        },
+        "azureCosmosDBForApacheCassandraAccount": {
+          "ShortName": "coscas",
+          "Namespace": "Microsoft.DocumentDB/databaseAccounts"
+        },
+        "azureCosmosDBForApacheGremlinAccount": {
+          "ShortName": "cosgrm",
+          "Namespace": "Microsoft.DocumentDb/databaseAccounts"
+        },
+        "azureCosmosDBForMongoDBAccount": {
+          "ShortName": "cosmon",
+          "Namespace": "Microsoft.DocumentDB/databaseAccounts"
+        },
+        "azureCosmosDBForNoSQLAccount": {
+          "ShortName": "cosno",
+          "Namespace": "Microsoft.DocumentDb/databaseAccounts"
+        },
+        "azureCosmosDBForTableAccount": {
+          "ShortName": "costab",
+          "Namespace": "Microsoft.DocumentDb/databaseAccounts"
+        },
+        "azureCosmosDBPostgreSQLCluster": {
+          "ShortName": "cospos",
+          "Namespace": "Microsoft.DBforPostgreSQL/serverGroupsv2"
+        },
+        "azureDatabricksWorkspace": {
+          "ShortName": "dbw",
+          "Namespace": "Microsoft.Databricks/workspaces"
+        },
+        "azureDataExplorerCluster": {
+          "ShortName": "dec",
+          "Namespace": "Microsoft.Kusto/clusters"
+        },
+        "azureDataExplorerClusterDatabase": {
+          "ShortName": "dedb",
+          "Namespace": "Microsoft.Kusto/clusters/databases"
+        },
+        "azureDataFactory": {
+          "ShortName": "adf",
+          "Namespace": "Microsoft.DataFactory/factories"
+        },
+        "azureDigitalTwinInstance": {
+          "ShortName": "dt",
+          "Namespace": "Microsoft.DigitalTwins/digitalTwinsInstances"
+        },
+        "azureLoadTestingInstance": {
+          "ShortName": "lt",
+          "Namespace": "Microsoft.LoadTestService/loadTests"
+        },
+        "azureMachineLearningWorkspace": {
+          "ShortName": "mlw",
+          "Namespace": "Microsoft.MachineLearningServices/workspaces"
+        },
+        "azureManagedGrafana": {
+          "ShortName": "amg",
+          "Namespace": "Microsoft.Dashboard/grafana"
+        },
+        "azureMigrateProject": {
+          "ShortName": "migr",
+          "Namespace": "Microsoft.Migrate/assessmentProjects"
+        },
+        "azureMonitorActionGroup": {
+          "ShortName": "ag",
+          "Namespace": "Microsoft.Insights/actionGroups"
+        },
+        "azureMonitorAlertProcessingRule": {
+          "ShortName": "apr",
+          "Namespace": "Microsoft.AlertsManagement/actionRules"
+        },
+        "azureMonitorDataCollectionRule": {
+          "ShortName": "dcr",
+          "Namespace": "Microsoft.Insights/dataCollectionRules"
+        },
+        "azureOpenAIService": {
+          "ShortName": "oai",
+          "Namespace": "Microsoft.CognitiveServices/accounts"
+        },
+        "azurePolicyDefinition": {
+          "ShortName": "<descriptive>",
+          "Namespace": "Microsoft.Authorization/policyDefinitions"
+        },
+        "azureSQLDatabase": {
+          "ShortName": "sqldb",
+          "Namespace": "Microsoft.Sql/servers/databases"
+        },
+        "azureSQLDatabaseServer": {
+          "ShortName": "sql",
+          "Namespace": "Microsoft.Sql/servers"
+        },
+        "azureSQLElasticJobAgent": {
+          "ShortName": "sqlja",
+          "Namespace": "Microsoft.Sql/servers/jobAgents"
+        },
+        "azureSQLElasticPool": {
+          "ShortName": "sqlep",
+          "Namespace": "Microsoft.Sql/servers/elasticpool"
+        },
+        "azureStorSimple": {
+          "ShortName": "ssimp",
+          "Namespace": "Microsoft.StorSimple/managers"
+        },
+        "azureStreamAnalytics": {
+          "ShortName": "asa",
+          "Namespace": "Microsoft.StreamAnalytics/cluster"
+        },
+        "azureSynapseAnalyticsPrivateLinkHub": {
+          "ShortName": "synplh",
+          "Namespace": "Microsoft.Synapse/privateLinkHubs"
+        },
+        "azureSynapseAnalyticsSparkPool": {
+          "ShortName": "synsp",
+          "Namespace": "Microsoft.Synapse/workspaces/bigDataPools"
+        },
+        "azureSynapseAnalyticsSQLDedicatedPool": {
+          "ShortName": "syndp",
+          "Namespace": "Microsoft.Synapse/workspaces/sqlPools"
+        },
+        "azureSynapseAnalyticsWorkspaces": {
+          "ShortName": "synw",
+          "Namespace": "Microsoft.Synapse/workspaces"
+        },
+        "backupVaul": {
+          "ShortName": "bvault",
+          "Namespace": "Microsoft.DataProtection/backupVaults"
+        },
+        "backupVaultPolicy": {
+          "ShortName": "bkpol",
+          "Namespace": "Microsoft.DataProtection/backupVaults/backupPolicies"
+        },
+        "batchAccounts": {
+          "ShortName": "ba",
+          "Namespace": "Microsoft.Batch/batchAccounts"
+        },
+        "blueprint": {
+          "ShortName": "bp",
+          "Namespace": "Microsoft.Blueprint/blueprints"
+        },
+        "blueprintAssignment": {
+          "ShortName": "bpa",
+          "Namespace": "Microsoft.Blueprint/blueprints/artifacts"
+        },
+        "botService": {
+          "ShortName": "bot",
+          "Namespace": "Microsoft.BotService/botServices"
+        },
+        "cdnEndpoint": {
+          "ShortName": "cdne",
+          "Namespace": "Microsoft.Cdn/profiles/endpoints"
+        },
+        "cdnProfile": {
+          "ShortName": "cdnp",
+          "Namespace": "Microsoft.Cdn/profiles"
+        },
+        "cloudService": {
+          "ShortName": "cld",
+          "Namespace": "Microsoft.Compute/cloudServices"
+        },
+        "communicationServices": {
+          "ShortName": "acs",
+          "Namespace": "Microsoft.Communication/communicationServices"
+        },
+        "computerVision": {
+          "ShortName": "cv",
+          "Namespace": "Microsoft.CognitiveServices/accounts"
+        },
+        "connections": {
+          "ShortName": "con",
+          "Namespace": "Microsoft.Network/connections"
+        },
+        "containerApps": {
+          "ShortName": "ca",
+          "Namespace": "Microsoft.App/containerApps"
+        },
+        "containerAppsEnvironment": {
+          "ShortName": "cae",
+          "Namespace": "Microsoft.App/managedEnvironments"
+        },
+        "containerInstance": {
+          "ShortName": "ci",
+          "Namespace": "Microsoft.ContainerInstance/containerGroups"
+        },
+        "containerRegistry": {
+          "ShortName": "cr",
+          "Namespace": "Microsoft.ContainerRegistry/registries"
+        },
+        "contentModerator": {
+          "ShortName": "cm",
+          "Namespace": "Microsoft.CognitiveServices/accounts"
+        },
+        "contentSafety": {
+          "ShortName": "cs",
+          "Namespace": "Microsoft.CognitiveServices/accounts"
+        },
+        "customVision": {
+          "ShortName": "cstvt",
+          "Namespace": "Microsoft.CognitiveServices/accounts"
+        },
+        "databaseMigrationServiceInstance": {
+          "ShortName": "dms",
+          "Namespace": "Microsoft.DataMigration/services"
+        },
+        "dataCollectionEndpoint": {
+          "ShortName": "dce",
+          "Namespace": "Microsoft.Insights/dataCollectionEndpoints"
+        },
+        "dataLakeAnalyticsAccount": {
+          "ShortName": "dla",
+          "Namespace": "Microsoft.DataLakeAnalytics/accounts"
+        },
+        "dataLakeStoreAccount": {
+          "ShortName": "dls",
+          "Namespace": "Microsoft.DataLakeStore/accounts"
+        },
+        "diskEncryptionSet": {
+          "ShortName": "des",
+          "Namespace": "Microsoft.Compute/diskEncryptionSets"
+        },
+        "dnsForwardingRuleset": {
+          "ShortName": "dnsfrs",
+          "Namespace": "Microsoft.Network/dnsForwardingRulesets"
+        },
+        "dnsPrivateResolver": {
+          "ShortName": "dnspr",
+          "Namespace": "Microsoft.Network/dnsResolvers"
+        },
+        "dnsPrivateResolverInboundEndpoint": {
+          "ShortName": "in",
+          "Namespace": "Microsoft.Network/dnsResolvers/inboundEndpoints"
+        },
+        "dnsPrivateResolverOutboundEndpoint": {
+          "ShortName": "out",
+          "Namespace": "Microsoft.Network/dnsResolvers/outboundEndpoints"
+        },
+        "documentIntelligence": {
+          "ShortName": "di",
+          "Namespace": "Microsoft.CognitiveServices/accounts"
+        },
+        "eventGridDomain": {
+          "ShortName": "evgd",
+          "Namespace": "Microsoft.EventGrid/domains"
+        },
+        "eventGridSubscriptions": {
+          "ShortName": "evgs",
+          "Namespace": "Microsoft.EventGrid/eventSubscriptions"
+        },
+        "eventGridSystemTopic": {
+          "ShortName": "egst",
+          "Namespace": "Microsoft.EventGrid/systemTopics"
+        },
+        "eventGridTopic": {
+          "ShortName": "evgt",
+          "Namespace": "Microsoft.EventGrid/domains/topics"
+        },
+        "eventHub": {
+          "ShortName": "evh",
+          "Namespace": "Microsoft.EventHub/namespaces/eventHubs"
+        },
+        "eventHubsNamespace": {
+          "ShortName": "evhns",
+          "Namespace": "Microsoft.EventHub/namespaces"
+        },
+        "expressRouteCircuit": {
+          "ShortName": "erc",
+          "Namespace": "Microsoft.Network/expressRouteCircuits"
+        },
+        "expressRouteGateway": {
+          "ShortName": "ergw",
+          "Namespace": "Microsoft.Network/virtualNetworkGateways"
+        },
+        "faceAPI": {
+          "ShortName": "face",
+          "Namespace": "Microsoft.CognitiveServices/accounts"
+        },
+        "fileShare": {
+          "ShortName": "share",
+          "Namespace": "Microsoft.Storage/storageAccounts/fileServices/shares"
+        },
+        "firewall": {
+          "ShortName": "afw",
+          "Namespace": "Microsoft.Network/azureFirewalls"
+        },
+        "firewallPolicy": {
+          "ShortName": "afwp",
+          "Namespace": "Microsoft.Network/firewallPolicies"
+        },
+        "frontDoor": {
+          "ShortName": "afd",
+          "Namespace": "Microsoft.Network/frontDoors"
+        },
+        "frontDoorEndpoint": {
+          "ShortName": "fde",
+          "Namespace": "Microsoft.Cdn/profiles/afdEndpoints"
+        },
+        "frontDoorFirewallPolicy": {
+          "ShortName": "fdfp",
+          "Namespace": "Microsoft.Network/frontdoorWebApplicationFirewallPolicies"
+        },
+        "frontDoorProfile": {
+          "ShortName": "afd",
+          "Namespace": "Microsoft.Cdn/profiles"
+        },
+        "functionApp": {
+          "ShortName": "func",
+          "Namespace": "Microsoft.Web/sites"
+        },
+        "gallery": {
+          "ShortName": "gal",
+          "Namespace": "Microsoft.Compute/galleries"
+        },
+        "hdInsightHadoopCluster": {
+          "ShortName": "hadoop",
+          "Namespace": "Microsoft.HDInsight/clusters"
+        },
+        "hdInsightHBaseCluster": {
+          "ShortName": "hbase",
+          "Namespace": "Microsoft.HDInsight/clusters"
+        },
+        "hdInsightKafkaCluster": {
+          "ShortName": "kafka",
+          "Namespace": "Microsoft.HDInsight/clusters"
+        },
+        "hdInsightMLServicesCluster": {
+          "ShortName": "mls",
+          "Namespace": "Microsoft.HDInsight/clusters"
+        },
+        "hdInsightSparkCluster": {
+          "ShortName": "spark",
+          "Namespace": "Microsoft.HDInsight/clusters"
+        },
+        "hdInsightStormCluster": {
+          "ShortName": "storm",
+          "Namespace": "Microsoft.HDInsight/clusters"
+        },
+        "healthInsights": {
+          "ShortName": "hi",
+          "Namespace": "Microsoft.CognitiveServices/accounts"
+        },
+        "hostingEnvironment": {
+          "ShortName": "host",
+          "Namespace": "Microsoft.Web/hostingEnvironments"
+        },
+        "imageTemplate": {
+          "ShortName": "it",
+          "Namespace": "Microsoft.VirtualMachineImages/imageTemplates"
+        },
+        "immersiveReader": {
+          "ShortName": "ir",
+          "Namespace": "Microsoft.CognitiveServices/accounts"
+        },
+        "integrationAccount": {
+          "ShortName": "ia",
+          "Namespace": "Microsoft.Logic/integrationAccounts"
+        },
+        "iotHub": {
+          "ShortName": "iot",
+          "Namespace": "Microsoft.Devices/IotHubs"
+        },
+        "ipGroup": {
+          "ShortName": "ipg",
+          "Namespace": "Microsoft.Network/ipGroups"
+        },
+        "keyVault": {
+          "ShortName": "kv",
+          "Namespace": "Microsoft.KeyVault/vaults"
+        },
+        "keyVaultManagedHSM": {
+          "ShortName": "kvmhsm",
+          "Namespace": "Microsoft.KeyVault/managedHSMs"
+        },
+        "languageService": {
+          "ShortName": "lang",
+          "Namespace": "Microsoft.CognitiveServices/accounts"
+        },
+        "loadBalancerExternal": {
+          "ShortName": "lbe",
+          "Namespace": "Microsoft.Network/loadBalancers"
+        },
+        "loadBalancerInternal": {
+          "ShortName": "lbi",
+          "Namespace": "Microsoft.Network/loadBalancers"
+        },
+        "loadBalancerRule": {
+          "ShortName": "rule",
+          "Namespace": "Microsoft.Network/loadBalancers/inboundNatRules"
+        },
+        "localNetworkGateway": {
+          "ShortName": "lgw",
+          "Namespace": "Microsoft.Network/localNetworkGateways"
+        },
+        "logAnalyticsQueryPacks": {
+          "ShortName": "pack",
+          "Namespace": "Microsoft.OperationalInsights/querypacks"
+        },
+        "logAnalyticsWorkspace": {
+          "ShortName": "log",
+          "Namespace": "Microsoft.OperationalInsights/workspaces"
+        },
+        "logicApp": {
+          "ShortName": "logic",
+          "Namespace": "Microsoft.Logic/workflows"
+        },
+        "managedDisk": {
+          "ShortName": "disk",
+          "Namespace": "Microsoft.Compute/disks"
+        },
+        "managedIdentity": {
+          "ShortName": "id",
+          "Namespace": "Microsoft.ManagedIdentity/userAssignedIdentities"
+        },
+        "managementGroup": {
+          "ShortName": "mg",
+          "Namespace": "Microsoft.Management/managementGroups"
+        },
+        "mapsAccount": {
+          "ShortName": "map",
+          "Namespace": "Microsoft.Maps/accounts"
+        },
+        "mariaDBDatabase": {
+          "ShortName": "mariadb",
+          "Namespace": "Microsoft.DBforMariaDB/servers/databases"
+        },
+        "mariaDBServer": {
+          "ShortName": "maria",
+          "Namespace": "Microsoft.DBforMariaDB/servers"
+        },
+        "microsoftPurviewInstance": {
+          "ShortName": "pview",
+          "Namespace": "Microsoft.Purview/accounts"
+        },
+        "mySQLDatabase": {
+          "ShortName": "mysql",
+          "Namespace": "Microsoft.DBforMySQL/servers"
+        },
+        "natGateway": {
+          "ShortName": "ng",
+          "Namespace": "Microsoft.Network/natGateways"
+        },
+        "networkInterface": {
+          "ShortName": "nic",
+          "Namespace": "Microsoft.Network/networkInterfaces"
+        },
+        "networkSecurityGroup": {
+          "ShortName": "nsg",
+          "Namespace": "Microsoft.Network/networkSecurityGroups"
+        },
+        "networkSecurityGroupSecurityRules": {
+          "ShortName": "nsgsr",
+          "Namespace": "Microsoft.Network/networkSecurityGroups/securityRules"
+        },
+        "networkWatcher": {
+          "ShortName": "nw",
+          "Namespace": "Microsoft.Network/networkWatchers"
+        },
+        "notificationHubs": {
+          "ShortName": "ntf",
+          "Namespace": "Microsoft.NotificationHubs/namespaces/notificationHubs"
+        },
+        "notificationHubsNamespace": {
+          "ShortName": "ntfns",
+          "Namespace": "Microsoft.NotificationHubs/namespaces"
+        },
+        "postgreSQLDatabase": {
+          "ShortName": "psql",
+          "Namespace": "Microsoft.DBforPostgreSQL/servers"
+        },
+        "powerBIEmbedded": {
+          "ShortName": "pbi",
+          "Namespace": "Microsoft.PowerBIDedicated/capacities"
+        },
+        "privateEndpoint": {
+          "ShortName": "pep",
+          "Namespace": "Microsoft.Network/privateEndpoints"
+        },
+        "privateLink": {
+          "ShortName": "pl",
+          "Namespace": "Microsoft.Network/privateLinkServices"
+        },
+        "provisioningServices": {
+          "ShortName": "provs",
+          "Namespace": "Microsoft.Devices/provisioningServices"
+        },
+        "provisioningServicesCertificate": {
+          "ShortName": "pcert",
+          "Namespace": "Microsoft.Devices/provisioningServices/certificates"
+        },
+        "proximityPlacementGroup": {
+          "ShortName": "ppg",
+          "Namespace": "Microsoft.Compute/proximityPlacementGroups"
+        },
+        "publicIPAddress": {
+          "ShortName": "pip",
+          "Namespace": "Microsoft.Network/publicIPAddresses"
+        },
+        "publicIPAddressPrefix": {
+          "ShortName": "ippre",
+          "Namespace": "Microsoft.Network/publicIPPrefixes"
+        },
+        "recoveryServicesVault": {
+          "ShortName": "rsv",
+          "Namespace": "Microsoft.RecoveryServices/vaults"
+        },
         "resourceGroup": {
-          "abbreviation": "rg"
+          "ShortName": "rg",
+          "Namespace": "Microsoft.Resources/resourceGroups"
+        },
+        "restorePointCollection": {
+          "ShortName": "rpc",
+          "Namespace": "Microsoft.Compute/restorePointCollections"
+        },
+        "routeFilter": {
+          "ShortName": "rf",
+          "Namespace": "Microsoft.Network/routeFilters"
+        },
+        "routeServer": {
+          "ShortName": "rtserv",
+          "Namespace": "Microsoft.Network/virtualHubs"
+        },
+        "routeTable": {
+          "ShortName": "rt",
+          "Namespace": "Microsoft.Network/routeTables"
+        },
+        "serviceBusNamespace": {
+          "ShortName": "sbns",
+          "Namespace": "Microsoft.ServiceBus/namespaces"
+        },
+        "serviceBusQueue": {
+          "ShortName": "sbq",
+          "Namespace": "Microsoft.ServiceBus/namespaces/queues"
+        },
+        "serviceBusTopic": {
+          "ShortName": "sbt",
+          "Namespace": "Microsoft.ServiceBus/namespaces/topics"
+        },
+        "serviceBusTopicSubscription": {
+          "ShortName": "sbts",
+          "Namespace": "Microsoft.ServiceBus/namespaces/topics/subscriptions"
+        },
+        "serviceEndpointPolicy": {
+          "ShortName": "se",
+          "Namespace": "Microsoft.serviceEndPointPolicies"
+        },
+        "serviceFabricCluster": {
+          "ShortName": "sf",
+          "Namespace": "Microsoft.ServiceFabric/clusters"
+        },
+        "serviceFabricManagedCluster": {
+          "ShortName": "sfmc",
+          "Namespace": "Microsoft.ServiceFabric/managedClusters"
+        },
+        "signalR": {
+          "ShortName": "sigr",
+          "Namespace": "Microsoft.SignalRService/SignalR"
+        },
+        "snapshot": {
+          "ShortName": "snap",
+          "Namespace": "Microsoft.Compute/snapshots"
+        },
+        "speechService": {
+          "ShortName": "spch",
+          "Namespace": "Microsoft.CognitiveServices/accounts"
+        },
+        "sqlManagedInstance": {
+          "ShortName": "sqlmi",
+          "Namespace": "Microsoft.Sql/managedInstances"
+        },
+        "sqlServerStretchDatabase": {
+          "ShortName": "sqlstrdb",
+          "Namespace": "Microsoft.Sql/servers/databases"
+        },
+        "sshKey": {
+          "ShortName": "sshkey",
+          "Namespace": "Microsoft.Compute/sshPublicKeys"
+        },
+        "staticWebApp": {
+          "ShortName": "stapp",
+          "Namespace": "Microsoft.Web/staticSites"
         },
         "storageAccount": {
-          "abbreviation": "st"
+          "ShortName": "st",
+          "Namespace": "Microsoft.Storage/storageAccounts"
+        },
+        "storageSyncServic": {
+          "ShortName": "sss",
+          "Namespace": "Microsoft.StorageSync/storageSyncServices"
+        },
+        "templateSpec": {
+          "ShortName": "ts",
+          "Namespace": "Microsoft.Resources/templateSpecs"
+        },
+        "timeSeriesInsightsEnvironment": {
+          "ShortName": "tsi",
+          "Namespace": "Microsoft.TimeSeriesInsights/environments"
+        },
+        "trafficManagerProfile": {
+          "ShortName": "traf",
+          "Namespace": "Microsoft.Network/trafficManagerProfiles"
+        },
+        "translator": {
+          "ShortName": "trsl",
+          "Namespace": "Microsoft.CognitiveServices/accounts"
+        },
+        "userDefinedRoute": {
+          "ShortName": "udr",
+          "Namespace": "Microsoft.Network/routeTables/routes"
+        },
+        "virtualDesktopApplicationGroup": {
+          "ShortName": "vdag",
+          "Namespace": "Microsoft.DesktopVirtualization/applicationGroups"
+        },
+        "virtualDesktopHostPool": {
+          "ShortName": "vdpool",
+          "Namespace": "Microsoft.DesktopVirtualization/hostPools"
+        },
+        "virtualDesktopScalingPlan": {
+          "ShortName": "vdscaling",
+          "Namespace": "Microsoft.DesktopVirtualization/scalingPlans"
+        },
+        "virtualDesktopWorkspace": {
+          "ShortName": "vdws",
+          "Namespace": "Microsoft.DesktopVirtualization/workspaces"
+        },
+        "virtualMachine": {
+          "ShortName": "vm",
+          "Namespace": "Microsoft.Compute/virtualMachines"
+        },
+        "virtualMachineMaintenanceConfiguration": {
+          "ShortName": "mc",
+          "Namespace": "Microsoft.Maintenance/maintenanceConfigurations"
+        },
+        "virtualMachineScaleSet": {
+          "ShortName": "vmss",
+          "Namespace": "Microsoft.Compute/virtualMachineScaleSets"
+        },
+        "virtualNetwork": {
+          "ShortName": "vnet",
+          "Namespace": "Microsoft.Network/virtualNetworks"
+        },
+        "virtualNetworkGateway": {
+          "ShortName": "vgw",
+          "Namespace": "Microsoft.Network/virtualNetworkGateways"
+        },
+        "virtualNetworkManager": {
+          "ShortName": "vnm",
+          "Namespace": "Microsoft.Network/networkManagers"
+        },
+        "virtualNetworkPeering": {
+          "ShortName": "peer",
+          "Namespace": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings"
+        },
+        "virtualNetworkSubnet": {
+          "ShortName": "snet",
+          "Namespace": "Microsoft.Network/virtualNetworks/subnets"
+        },
+        "virtualWAN": {
+          "ShortName": "vwan",
+          "Namespace": "Microsoft.Network/virtualWans"
+        },
+        "virtualWANHub": {
+          "ShortName": "vhub",
+          "Namespace": "Microsoft.Network/virtualHubs"
+        },
+        "vmStorageAccount": {
+          "ShortName": "stvm",
+          "Namespace": "Microsoft.Storage/storageAccounts"
+        },
+        "vpnConnection": {
+          "ShortName": "vcn",
+          "Namespace": "Microsoft.Network/vpnGateways/vpnConnections"
+        },
+        "vpnGateway": {
+          "ShortName": "vpng",
+          "Namespace": "Microsoft.Network/vpnGateways"
+        },
+        "vpnSite": {
+          "ShortName": "vst",
+          "Namespace": "Microsoft.Network/vpnGateways/vpnSites"
         },
         "webApp": {
-          "abbreviation": "app"
+          "ShortName": "app",
+          "Namespace": "Microsoft.Web/sites"
+        },
+        "webApplicationFirewallPolicy": {
+          "ShortName": "waf",
+          "Namespace": "Microsoft.Network/firewallPolicies"
+        },
+        "webApplicationFirewallPolicyRuleGroup": {
+          "ShortName": "wafrg",
+          "Namespace": "Microsoft.Network/firewallPolicies/ruleGroups"
+        },
+        "webPubSub": {
+          "ShortName": "wps",
+          "Namespace": "Microsoft.SignalRService/webPubSub"
         }
       }
     }
