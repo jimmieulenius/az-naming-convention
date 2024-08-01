@@ -1270,6 +1270,14 @@
       "type": "bool",
       "defaultValue": true
     },
+    "userConfig": {
+      "type": "object",
+      "defaultValue": {}
+    },
+    "userConfigTemplateUri": {
+      "type": "string",
+      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/userDefined.json"
+    },
     "environmentTemplateUri": {
       "type": "string",
       "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/environment.json"
@@ -1286,10 +1294,6 @@
       "type": "string",
       "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/resourceType.json"
     },
-    "userConfigTemplateUri": {
-      "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/userDefined.json"
-    },
     "utcValue": {
       "type": "string",
       "defaultValue": "[utcNow()]"
@@ -1298,7 +1302,7 @@
   "outputs": {
     "nameGraph": {
       "type": "object",
-      "value": "[__bicep.nameGraph(parameters('commonFormatString'), parameters('commonValues'), parameters('graph'), parameters('function'), parameters('additionalValues'), reference('linkedTemplate').outputs.format.value, reference('linkedTemplate').outputs.resourceType.value, reference('linkedTemplate').outputs.region.value, reference('linkedTemplate').outputs.environment.value, reference('linkedTemplate').outputs.userConfig.value)]"
+      "value": "[__bicep.nameGraph(parameters('commonFormatString'), parameters('commonValues'), parameters('graph'), parameters('function'), parameters('additionalValues'), reference('linkedTemplate').outputs.format.value, reference('linkedTemplate').outputs.resourceType.value, reference('linkedTemplate').outputs.region.value, reference('linkedTemplate').outputs.environment.value, if(not(equals(parameters('userConfig'), createObject())), parameters('userConfig'), reference('linkedTemplate').outputs.userConfig.value))]"
     }
   }
 }
