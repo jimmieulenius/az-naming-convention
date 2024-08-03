@@ -10,780 +10,586 @@
         "RESOURCE_TYPE": {
           "allowedValues": {
             "aISearch": {
-              "abbreviation": "srch",
-              "namespace": "Microsoft.Search/searchServices"
+              "abbreviation": "srch"
             },
             "aksCluster": {
-              "abbreviation": "aks",
-              "namespace": "Microsoft.ContainerService/managedClusters"
+              "abbreviation": "aks"
             },
             "aksSystemNodePool": {
-              "abbreviation": "npsystem",
-              "namespace": "Microsoft.ContainerService/managedClusters/agentPools"
+              "abbreviation": "npsystem"
             },
             "aksUserNodePool": {
-              "abbreviation": "np",
-              "namespace": "Microsoft.ContainerService/managedClusters/agentPools"
+              "abbreviation": "np"
             },
             "apiManagementServiceInstance": {
-              "abbreviation": "apim",
-              "namespace": "Microsoft.ApiManagement/service"
+              "abbreviation": "apim"
             },
             "appConfigurationStore": {
-              "abbreviation": "appcs",
-              "namespace": "Microsoft.AppConfiguration/configurationStores"
+              "abbreviation": "appcs"
             },
             "applicationGateway": {
-              "abbreviation": "agw",
-              "namespace": "Microsoft.Network/applicationGateways"
+              "abbreviation": "agw"
             },
             "applicationInsights": {
-              "abbreviation": "appi",
-              "namespace": "Microsoft.Insights/components"
+              "abbreviation": "appi"
             },
             "applicationSecurityGroup": {
-              "abbreviation": "asg",
-              "namespace": "Microsoft.Network/applicationSecurityGroups"
+              "abbreviation": "asg"
             },
             "appServiceEnvironment": {
-              "abbreviation": "ase",
-              "namespace": "Microsoft.Web/hostingEnvironments"
+              "abbreviation": "ase"
             },
             "appServicePlan": {
-              "abbreviation": "asp",
-              "namespace": "Microsoft.Web/serverFarms"
+              "abbreviation": "asp"
             },
             "automationAccount": {
-              "abbreviation": "aa",
-              "namespace": "Microsoft.Automation/automationAccounts"
+              "abbreviation": "aa"
             },
             "availabilitySet": {
-              "abbreviation": "avail",
-              "namespace": "Microsoft.Compute/availabilitySets"
+              "abbreviation": "avail"
             },
             "azureAIServicesMultiServiceAccount": {
-              "abbreviation": "aisa",
-              "namespace": "Microsoft.CognitiveServices/accounts"
+              "abbreviation": "aisa"
             },
             "azureAIVideoIndexer": {
-              "abbreviation": "avi",
-              "namespace": "Microsoft.VideoIndexer/accounts"
+              "abbreviation": "avi"
             },
             "azureAnalysisServicesServer": {
-              "abbreviation": "as",
-              "namespace": "Microsoft.AnalysisServices/servers"
+              "abbreviation": "as"
             },
             "azureArcEnabledKubernetesCluster": {
-              "abbreviation": "arck",
-              "namespace": "Microsoft.Kubernetes/connectedClusters"
+              "abbreviation": "arck"
             },
             "azureArcEnabledServer": {
-              "abbreviation": "arcs",
-              "namespace": "Microsoft.HybridCompute/machines"
+              "abbreviation": "arcs"
             },
             "azureBastion": {
-              "abbreviation": "bas",
-              "namespace": "Microsoft.Network/bastionHosts"
+              "abbreviation": "bas"
             },
             "azureCacheForRedisInstance": {
-              "abbreviation": "redis",
-              "namespace": "Microsoft.Cache/Redis"
+              "abbreviation": "redis"
             },
             "azureCosmosDBDatabase": {
-              "abbreviation": "cosmos",
-              "namespace": "Microsoft.DocumentDB/databaseAccounts/sqlDatabases"
+              "abbreviation": "cosmos"
             },
             "azureCosmosDBForApacheCassandraAccount": {
-              "abbreviation": "coscas",
-              "namespace": "Microsoft.DocumentDB/databaseAccounts"
+              "abbreviation": "coscas"
             },
             "azureCosmosDBForApacheGremlinAccount": {
-              "abbreviation": "cosgrm",
-              "namespace": "Microsoft.DocumentDb/databaseAccounts"
+              "abbreviation": "cosgrm"
             },
             "azureCosmosDBForMongoDBAccount": {
-              "abbreviation": "cosmon",
-              "namespace": "Microsoft.DocumentDB/databaseAccounts"
+              "abbreviation": "cosmon"
             },
             "azureCosmosDBForNoSQLAccount": {
-              "abbreviation": "cosno",
-              "namespace": "Microsoft.DocumentDb/databaseAccounts"
+              "abbreviation": "cosno"
             },
             "azureCosmosDBForTableAccount": {
-              "abbreviation": "costab",
-              "namespace": "Microsoft.DocumentDb/databaseAccounts"
+              "abbreviation": "costab"
             },
             "azureCosmosDBPostgreSQLCluster": {
-              "abbreviation": "cospos",
-              "namespace": "Microsoft.DBforPostgreSQL/serverGroupsv2"
+              "abbreviation": "cospos"
             },
             "azureDatabricksWorkspace": {
-              "abbreviation": "dbw",
-              "namespace": "Microsoft.Databricks/workspaces"
+              "abbreviation": "dbw"
             },
             "azureDataExplorerCluster": {
-              "abbreviation": "dec",
-              "namespace": "Microsoft.Kusto/clusters"
+              "abbreviation": "dec"
             },
             "azureDataExplorerClusterDatabase": {
-              "abbreviation": "dedb",
-              "namespace": "Microsoft.Kusto/clusters/databases"
+              "abbreviation": "dedb"
             },
             "azureDataFactory": {
-              "abbreviation": "adf",
-              "namespace": "Microsoft.DataFactory/factories"
+              "abbreviation": "adf"
             },
             "azureDigitalTwinInstance": {
-              "abbreviation": "dt",
-              "namespace": "Microsoft.DigitalTwins/digitalTwinsInstances"
+              "abbreviation": "dt"
             },
             "azureLoadTestingInstance": {
-              "abbreviation": "lt",
-              "namespace": "Microsoft.LoadTestService/loadTests"
+              "abbreviation": "lt"
             },
             "azureMachineLearningWorkspace": {
-              "abbreviation": "mlw",
-              "namespace": "Microsoft.MachineLearningServices/workspaces"
+              "abbreviation": "mlw"
             },
             "azureManagedGrafana": {
-              "abbreviation": "amg",
-              "namespace": "Microsoft.Dashboard/grafana"
+              "abbreviation": "amg"
             },
             "azureMigrateProject": {
-              "abbreviation": "migr",
-              "namespace": "Microsoft.Migrate/assessmentProjects"
+              "abbreviation": "migr"
             },
             "azureMonitorActionGroup": {
-              "abbreviation": "ag",
-              "namespace": "Microsoft.Insights/actionGroups"
+              "abbreviation": "ag"
             },
             "azureMonitorAlertProcessingRule": {
-              "abbreviation": "apr",
-              "namespace": "Microsoft.AlertsManagement/actionRules"
+              "abbreviation": "apr"
             },
             "azureMonitorDataCollectionRule": {
-              "abbreviation": "dcr",
-              "namespace": "Microsoft.Insights/dataCollectionRules"
+              "abbreviation": "dcr"
             },
             "azureOpenAIService": {
-              "abbreviation": "oai",
-              "namespace": "Microsoft.CognitiveServices/accounts"
+              "abbreviation": "oai"
             },
             "azurePolicyDefinition": {
-              "abbreviation": "<descriptive>",
-              "namespace": "Microsoft.Authorization/policyDefinitions"
+              "abbreviation": "<descriptive>"
             },
             "azureSQLDatabase": {
-              "abbreviation": "sqldb",
-              "namespace": "Microsoft.Sql/servers/databases"
+              "abbreviation": "sqldb"
             },
             "azureSQLDatabaseServer": {
-              "abbreviation": "sql",
-              "namespace": "Microsoft.Sql/servers"
+              "abbreviation": "sql"
             },
             "azureSQLElasticJobAgent": {
-              "abbreviation": "sqlja",
-              "namespace": "Microsoft.Sql/servers/jobAgents"
+              "abbreviation": "sqlja"
             },
             "azureSQLElasticPool": {
-              "abbreviation": "sqlep",
-              "namespace": "Microsoft.Sql/servers/elasticpool"
+              "abbreviation": "sqlep"
             },
             "azureStorSimple": {
-              "abbreviation": "ssimp",
-              "namespace": "Microsoft.StorSimple/managers"
+              "abbreviation": "ssimp"
             },
             "azureStreamAnalytics": {
-              "abbreviation": "asa",
-              "namespace": "Microsoft.StreamAnalytics/cluster"
+              "abbreviation": "asa"
             },
             "azureSynapseAnalyticsPrivateLinkHub": {
-              "abbreviation": "synplh",
-              "namespace": "Microsoft.Synapse/privateLinkHubs"
+              "abbreviation": "synplh"
             },
             "azureSynapseAnalyticsSparkPool": {
-              "abbreviation": "synsp",
-              "namespace": "Microsoft.Synapse/workspaces/bigDataPools"
+              "abbreviation": "synsp"
             },
             "azureSynapseAnalyticsSQLDedicatedPool": {
-              "abbreviation": "syndp",
-              "namespace": "Microsoft.Synapse/workspaces/sqlPools"
+              "abbreviation": "syndp"
             },
             "azureSynapseAnalyticsWorkspaces": {
-              "abbreviation": "synw",
-              "namespace": "Microsoft.Synapse/workspaces"
+              "abbreviation": "synw"
             },
             "backupVaul": {
-              "abbreviation": "bvault",
-              "namespace": "Microsoft.DataProtection/backupVaults"
+              "abbreviation": "bvault"
             },
             "backupVaultPolicy": {
-              "abbreviation": "bkpol",
-              "namespace": "Microsoft.DataProtection/backupVaults/backupPolicies"
+              "abbreviation": "bkpol"
             },
             "batchAccounts": {
-              "abbreviation": "ba",
-              "namespace": "Microsoft.Batch/batchAccounts"
+              "abbreviation": "ba"
             },
             "blueprint": {
-              "abbreviation": "bp",
-              "namespace": "Microsoft.Blueprint/blueprints"
+              "abbreviation": "bp"
             },
             "blueprintAssignment": {
-              "abbreviation": "bpa",
-              "namespace": "Microsoft.Blueprint/blueprints/artifacts"
+              "abbreviation": "bpa"
             },
             "botService": {
-              "abbreviation": "bot",
-              "namespace": "Microsoft.BotService/botServices"
+              "abbreviation": "bot"
             },
             "cdnEndpoint": {
-              "abbreviation": "cdne",
-              "namespace": "Microsoft.Cdn/profiles/endpoints"
+              "abbreviation": "cdne"
             },
             "cdnProfile": {
-              "abbreviation": "cdnp",
-              "namespace": "Microsoft.Cdn/profiles"
+              "abbreviation": "cdnp"
             },
             "cloudService": {
-              "abbreviation": "cld",
-              "namespace": "Microsoft.Compute/cloudServices"
+              "abbreviation": "cld"
             },
             "communicationServices": {
-              "abbreviation": "acs",
-              "namespace": "Microsoft.Communication/communicationServices"
+              "abbreviation": "acs"
             },
             "computerVision": {
-              "abbreviation": "cv",
-              "namespace": "Microsoft.CognitiveServices/accounts"
+              "abbreviation": "cv"
             },
             "connections": {
-              "abbreviation": "con",
-              "namespace": "Microsoft.Network/connections"
+              "abbreviation": "con"
             },
             "containerApps": {
-              "abbreviation": "ca",
-              "namespace": "Microsoft.App/containerApps"
+              "abbreviation": "ca"
             },
             "containerAppsEnvironment": {
-              "abbreviation": "cae",
-              "namespace": "Microsoft.App/managedEnvironments"
+              "abbreviation": "cae"
             },
             "containerInstance": {
-              "abbreviation": "ci",
-              "namespace": "Microsoft.ContainerInstance/containerGroups"
+              "abbreviation": "ci"
             },
             "containerRegistry": {
-              "abbreviation": "cr",
-              "namespace": "Microsoft.ContainerRegistry/registries"
+              "abbreviation": "cr"
             },
             "contentModerator": {
-              "abbreviation": "cm",
-              "namespace": "Microsoft.CognitiveServices/accounts"
+              "abbreviation": "cm"
             },
             "contentSafety": {
-              "abbreviation": "cs",
-              "namespace": "Microsoft.CognitiveServices/accounts"
+              "abbreviation": "cs"
             },
             "customVision": {
-              "abbreviation": "cstvt",
-              "namespace": "Microsoft.CognitiveServices/accounts"
+              "abbreviation": "cstvt"
             },
             "databaseMigrationServiceInstance": {
-              "abbreviation": "dms",
-              "namespace": "Microsoft.DataMigration/services"
+              "abbreviation": "dms"
             },
             "dataCollectionEndpoint": {
-              "abbreviation": "dce",
-              "namespace": "Microsoft.Insights/dataCollectionEndpoints"
+              "abbreviation": "dce"
             },
             "dataLakeAnalyticsAccount": {
-              "abbreviation": "dla",
-              "namespace": "Microsoft.DataLakeAnalytics/accounts"
+              "abbreviation": "dla"
             },
             "dataLakeStoreAccount": {
-              "abbreviation": "dls",
-              "namespace": "Microsoft.DataLakeStore/accounts"
+              "abbreviation": "dls"
             },
             "diskEncryptionSet": {
-              "abbreviation": "des",
-              "namespace": "Microsoft.Compute/diskEncryptionSets"
+              "abbreviation": "des"
             },
             "dnsForwardingRuleset": {
-              "abbreviation": "dnsfrs",
-              "namespace": "Microsoft.Network/dnsForwardingRulesets"
+              "abbreviation": "dnsfrs"
             },
             "dnsPrivateResolver": {
-              "abbreviation": "dnspr",
-              "namespace": "Microsoft.Network/dnsResolvers"
+              "abbreviation": "dnspr"
             },
             "dnsPrivateResolverInboundEndpoint": {
-              "abbreviation": "in",
-              "namespace": "Microsoft.Network/dnsResolvers/inboundEndpoints"
+              "abbreviation": "in"
             },
             "dnsPrivateResolverOutboundEndpoint": {
-              "abbreviation": "out",
-              "namespace": "Microsoft.Network/dnsResolvers/outboundEndpoints"
+              "abbreviation": "out"
             },
             "documentIntelligence": {
-              "abbreviation": "di",
-              "namespace": "Microsoft.CognitiveServices/accounts"
+              "abbreviation": "di"
             },
             "eventGridDomain": {
-              "abbreviation": "evgd",
-              "namespace": "Microsoft.EventGrid/domains"
+              "abbreviation": "evgd"
             },
             "eventGridSubscriptions": {
-              "abbreviation": "evgs",
-              "namespace": "Microsoft.EventGrid/eventSubscriptions"
+              "abbreviation": "evgs"
             },
             "eventGridSystemTopic": {
-              "abbreviation": "egst",
-              "namespace": "Microsoft.EventGrid/systemTopics"
+              "abbreviation": "egst"
             },
             "eventGridTopic": {
-              "abbreviation": "evgt",
-              "namespace": "Microsoft.EventGrid/domains/topics"
+              "abbreviation": "evgt"
             },
             "eventHub": {
-              "abbreviation": "evh",
-              "namespace": "Microsoft.EventHub/namespaces/eventHubs"
+              "abbreviation": "evh"
             },
             "eventHubsNamespace": {
-              "abbreviation": "evhns",
-              "namespace": "Microsoft.EventHub/namespaces"
+              "abbreviation": "evhns"
             },
             "expressRouteCircuit": {
-              "abbreviation": "erc",
-              "namespace": "Microsoft.Network/expressRouteCircuits"
+              "abbreviation": "erc"
             },
             "expressRouteGateway": {
-              "abbreviation": "ergw",
-              "namespace": "Microsoft.Network/virtualNetworkGateways"
+              "abbreviation": "ergw"
             },
             "faceAPI": {
-              "abbreviation": "face",
-              "namespace": "Microsoft.CognitiveServices/accounts"
+              "abbreviation": "face"
             },
             "fileShare": {
-              "abbreviation": "share",
-              "namespace": "Microsoft.Storage/storageAccounts/fileServices/shares"
+              "abbreviation": "share"
             },
             "firewall": {
-              "abbreviation": "afw",
-              "namespace": "Microsoft.Network/azureFirewalls"
+              "abbreviation": "afw"
             },
             "firewallPolicy": {
-              "abbreviation": "afwp",
-              "namespace": "Microsoft.Network/firewallPolicies"
+              "abbreviation": "afwp"
             },
             "frontDoor": {
-              "abbreviation": "afd",
-              "namespace": "Microsoft.Network/frontDoors"
+              "abbreviation": "afd"
             },
             "frontDoorEndpoint": {
-              "abbreviation": "fde",
-              "namespace": "Microsoft.Cdn/profiles/afdEndpoints"
+              "abbreviation": "fde"
             },
             "frontDoorFirewallPolicy": {
-              "abbreviation": "fdfp",
-              "namespace": "Microsoft.Network/frontdoorWebApplicationFirewallPolicies"
+              "abbreviation": "fdfp"
             },
             "frontDoorProfile": {
-              "abbreviation": "afd",
-              "namespace": "Microsoft.Cdn/profiles"
+              "abbreviation": "afd"
             },
             "functionApp": {
-              "abbreviation": "func",
-              "namespace": "Microsoft.Web/sites"
+              "abbreviation": "func"
             },
             "gallery": {
-              "abbreviation": "gal",
-              "namespace": "Microsoft.Compute/galleries"
+              "abbreviation": "gal"
             },
             "hdInsightHadoopCluster": {
-              "abbreviation": "hadoop",
-              "namespace": "Microsoft.HDInsight/clusters"
+              "abbreviation": "hadoop"
             },
             "hdInsightHBaseCluster": {
-              "abbreviation": "hbase",
-              "namespace": "Microsoft.HDInsight/clusters"
+              "abbreviation": "hbase"
             },
             "hdInsightKafkaCluster": {
-              "abbreviation": "kafka",
-              "namespace": "Microsoft.HDInsight/clusters"
+              "abbreviation": "kafka"
             },
             "hdInsightMLServicesCluster": {
-              "abbreviation": "mls",
-              "namespace": "Microsoft.HDInsight/clusters"
+              "abbreviation": "mls"
             },
             "hdInsightSparkCluster": {
-              "abbreviation": "spark",
-              "namespace": "Microsoft.HDInsight/clusters"
+              "abbreviation": "spark"
             },
             "hdInsightStormCluster": {
-              "abbreviation": "storm",
-              "namespace": "Microsoft.HDInsight/clusters"
+              "abbreviation": "storm"
             },
             "healthInsights": {
-              "abbreviation": "hi",
-              "namespace": "Microsoft.CognitiveServices/accounts"
+              "abbreviation": "hi"
             },
             "hostingEnvironment": {
-              "abbreviation": "host",
-              "namespace": "Microsoft.Web/hostingEnvironments"
+              "abbreviation": "host"
             },
             "imageTemplate": {
-              "abbreviation": "it",
-              "namespace": "Microsoft.VirtualMachineImages/imageTemplates"
+              "abbreviation": "it"
             },
             "immersiveReader": {
-              "abbreviation": "ir",
-              "namespace": "Microsoft.CognitiveServices/accounts"
+              "abbreviation": "ir"
             },
             "integrationAccount": {
-              "abbreviation": "ia",
-              "namespace": "Microsoft.Logic/integrationAccounts"
+              "abbreviation": "ia"
             },
             "iotHub": {
-              "abbreviation": "iot",
-              "namespace": "Microsoft.Devices/IotHubs"
+              "abbreviation": "iot"
             },
             "ipGroup": {
-              "abbreviation": "ipg",
-              "namespace": "Microsoft.Network/ipGroups"
+              "abbreviation": "ipg"
             },
             "keyVault": {
-              "abbreviation": "kv",
-              "namespace": "Microsoft.KeyVault/vaults"
+              "abbreviation": "kv"
             },
             "keyVaultManagedHSM": {
-              "abbreviation": "kvmhsm",
-              "namespace": "Microsoft.KeyVault/managedHSMs"
+              "abbreviation": "kvmhsm"
             },
             "languageService": {
-              "abbreviation": "lang",
-              "namespace": "Microsoft.CognitiveServices/accounts"
+              "abbreviation": "lang"
             },
             "loadBalancerExternal": {
-              "abbreviation": "lbe",
-              "namespace": "Microsoft.Network/loadBalancers"
+              "abbreviation": "lbe"
             },
             "loadBalancerInternal": {
-              "abbreviation": "lbi",
-              "namespace": "Microsoft.Network/loadBalancers"
+              "abbreviation": "lbi"
             },
             "loadBalancerRule": {
-              "abbreviation": "rule",
-              "namespace": "Microsoft.Network/loadBalancers/inboundNatRules"
+              "abbreviation": "rule"
             },
             "localNetworkGateway": {
-              "abbreviation": "lgw",
-              "namespace": "Microsoft.Network/localNetworkGateways"
+              "abbreviation": "lgw"
             },
             "logAnalyticsQueryPacks": {
-              "abbreviation": "pack",
-              "namespace": "Microsoft.OperationalInsights/querypacks"
+              "abbreviation": "pack"
             },
             "logAnalyticsWorkspace": {
-              "abbreviation": "log",
-              "namespace": "Microsoft.OperationalInsights/workspaces"
+              "abbreviation": "log"
             },
             "logicApp": {
-              "abbreviation": "logic",
-              "namespace": "Microsoft.Logic/workflows"
+              "abbreviation": "logic"
             },
             "managedDisk": {
-              "abbreviation": "disk",
-              "namespace": "Microsoft.Compute/disks"
+              "abbreviation": "disk"
             },
             "managedIdentity": {
-              "abbreviation": "id",
-              "namespace": "Microsoft.ManagedIdentity/userAssignedIdentities"
+              "abbreviation": "id"
             },
             "managementGroup": {
-              "abbreviation": "mg",
-              "namespace": "Microsoft.Management/managementGroups"
+              "abbreviation": "mg"
             },
             "mapsAccount": {
-              "abbreviation": "map",
-              "namespace": "Microsoft.Maps/accounts"
+              "abbreviation": "map"
             },
             "mariaDBDatabase": {
-              "abbreviation": "mariadb",
-              "namespace": "Microsoft.DBforMariaDB/servers/databases"
+              "abbreviation": "mariadb"
             },
             "mariaDBServer": {
-              "abbreviation": "maria",
-              "namespace": "Microsoft.DBforMariaDB/servers"
+              "abbreviation": "maria"
             },
             "microsoftPurviewInstance": {
-              "abbreviation": "pview",
-              "namespace": "Microsoft.Purview/accounts"
+              "abbreviation": "pview"
             },
             "mySQLDatabase": {
-              "abbreviation": "mysql",
-              "namespace": "Microsoft.DBforMySQL/servers"
+              "abbreviation": "mysql"
             },
             "natGateway": {
-              "abbreviation": "ng",
-              "namespace": "Microsoft.Network/natGateways"
+              "abbreviation": "ng"
             },
             "networkInterface": {
-              "abbreviation": "nic",
-              "namespace": "Microsoft.Network/networkInterfaces"
+              "abbreviation": "nic"
             },
             "networkSecurityGroup": {
-              "abbreviation": "nsg",
-              "namespace": "Microsoft.Network/networkSecurityGroups"
+              "abbreviation": "nsg"
             },
             "networkSecurityGroupSecurityRules": {
-              "abbreviation": "nsgsr",
-              "namespace": "Microsoft.Network/networkSecurityGroups/securityRules"
+              "abbreviation": "nsgsr"
             },
             "networkWatcher": {
-              "abbreviation": "nw",
-              "namespace": "Microsoft.Network/networkWatchers"
+              "abbreviation": "nw"
             },
             "notificationHubs": {
-              "abbreviation": "ntf",
-              "namespace": "Microsoft.NotificationHubs/namespaces/notificationHubs"
+              "abbreviation": "ntf"
             },
             "notificationHubsNamespace": {
-              "abbreviation": "ntfns",
-              "namespace": "Microsoft.NotificationHubs/namespaces"
+              "abbreviation": "ntfns"
             },
             "postgreSQLDatabase": {
-              "abbreviation": "psql",
-              "namespace": "Microsoft.DBforPostgreSQL/servers"
+              "abbreviation": "psql"
             },
             "powerBIEmbedded": {
-              "abbreviation": "pbi",
-              "namespace": "Microsoft.PowerBIDedicated/capacities"
+              "abbreviation": "pbi"
             },
             "privateEndpoint": {
-              "abbreviation": "pep",
-              "namespace": "Microsoft.Network/privateEndpoints"
+              "abbreviation": "pep"
             },
             "privateLink": {
-              "abbreviation": "pl",
-              "namespace": "Microsoft.Network/privateLinkServices"
+              "abbreviation": "pl"
             },
             "provisioningServices": {
-              "abbreviation": "provs",
-              "namespace": "Microsoft.Devices/provisioningServices"
+              "abbreviation": "provs"
             },
             "provisioningServicesCertificate": {
-              "abbreviation": "pcert",
-              "namespace": "Microsoft.Devices/provisioningServices/certificates"
+              "abbreviation": "pcert"
             },
             "proximityPlacementGroup": {
-              "abbreviation": "ppg",
-              "namespace": "Microsoft.Compute/proximityPlacementGroups"
+              "abbreviation": "ppg"
             },
             "publicIPAddress": {
-              "abbreviation": "pip",
-              "namespace": "Microsoft.Network/publicIPAddresses"
+              "abbreviation": "pip"
             },
             "publicIPAddressPrefix": {
-              "abbreviation": "ippre",
-              "namespace": "Microsoft.Network/publicIPPrefixes"
+              "abbreviation": "ippre"
             },
             "recoveryServicesVault": {
-              "abbreviation": "rsv",
-              "namespace": "Microsoft.RecoveryServices/vaults"
+              "abbreviation": "rsv"
             },
             "resourceGroup": {
-              "abbreviation": "rg",
-              "namespace": "Microsoft.Resources/resourceGroups"
+              "abbreviation": "rg"
             },
             "restorePointCollection": {
-              "abbreviation": "rpc",
-              "namespace": "Microsoft.Compute/restorePointCollections"
+              "abbreviation": "rpc"
             },
             "routeFilter": {
-              "abbreviation": "rf",
-              "namespace": "Microsoft.Network/routeFilters"
+              "abbreviation": "rf"
             },
             "routeServer": {
-              "abbreviation": "rtserv",
-              "namespace": "Microsoft.Network/virtualHubs"
+              "abbreviation": "rtserv"
             },
             "routeTable": {
-              "abbreviation": "rt",
-              "namespace": "Microsoft.Network/routeTables"
+              "abbreviation": "rt"
             },
             "serviceBusNamespace": {
-              "abbreviation": "sbns",
-              "namespace": "Microsoft.ServiceBus/namespaces"
+              "abbreviation": "sbns"
             },
             "serviceBusQueue": {
-              "abbreviation": "sbq",
-              "namespace": "Microsoft.ServiceBus/namespaces/queues"
+              "abbreviation": "sbq"
             },
             "serviceBusTopic": {
-              "abbreviation": "sbt",
-              "namespace": "Microsoft.ServiceBus/namespaces/topics"
+              "abbreviation": "sbt"
             },
             "serviceBusTopicSubscription": {
-              "abbreviation": "sbts",
-              "namespace": "Microsoft.ServiceBus/namespaces/topics/subscriptions"
+              "abbreviation": "sbts"
             },
             "serviceEndpointPolicy": {
-              "abbreviation": "se",
-              "namespace": "Microsoft.serviceEndPointPolicies"
+              "abbreviation": "se"
             },
             "serviceFabricCluster": {
-              "abbreviation": "sf",
-              "namespace": "Microsoft.ServiceFabric/clusters"
+              "abbreviation": "sf"
             },
             "serviceFabricManagedCluster": {
-              "abbreviation": "sfmc",
-              "namespace": "Microsoft.ServiceFabric/managedClusters"
+              "abbreviation": "sfmc"
             },
             "signalR": {
-              "abbreviation": "sigr",
-              "namespace": "Microsoft.SignalRService/SignalR"
+              "abbreviation": "sigr"
             },
             "snapshot": {
-              "abbreviation": "snap",
-              "namespace": "Microsoft.Compute/snapshots"
+              "abbreviation": "snap"
             },
             "speechService": {
-              "abbreviation": "spch",
-              "namespace": "Microsoft.CognitiveServices/accounts"
+              "abbreviation": "spch"
             },
             "sqlManagedInstance": {
-              "abbreviation": "sqlmi",
-              "namespace": "Microsoft.Sql/managedInstances"
+              "abbreviation": "sqlmi"
             },
             "sqlServerStretchDatabase": {
-              "abbreviation": "sqlstrdb",
-              "namespace": "Microsoft.Sql/servers/databases"
+              "abbreviation": "sqlstrdb"
             },
             "sshKey": {
-              "abbreviation": "sshkey",
-              "namespace": "Microsoft.Compute/sshPublicKeys"
+              "abbreviation": "sshkey"
             },
             "staticWebApp": {
-              "abbreviation": "stapp",
-              "namespace": "Microsoft.Web/staticSites"
+              "abbreviation": "stapp"
             },
             "storageAccount": {
-              "abbreviation": "st",
-              "namespace": "Microsoft.Storage/storageAccounts"
+              "abbreviation": "st"
             },
             "storageSyncServic": {
-              "abbreviation": "sss",
-              "namespace": "Microsoft.StorageSync/storageSyncServices"
+              "abbreviation": "sss"
             },
             "templateSpec": {
-              "abbreviation": "ts",
-              "namespace": "Microsoft.Resources/templateSpecs"
+              "abbreviation": "ts"
             },
             "timeSeriesInsightsEnvironment": {
-              "abbreviation": "tsi",
-              "namespace": "Microsoft.TimeSeriesInsights/environments"
+              "abbreviation": "tsi"
             },
             "trafficManagerProfile": {
-              "abbreviation": "traf",
-              "namespace": "Microsoft.Network/trafficManagerProfiles"
+              "abbreviation": "traf"
             },
             "translator": {
-              "abbreviation": "trsl",
-              "namespace": "Microsoft.CognitiveServices/accounts"
+              "abbreviation": "trsl"
             },
             "userDefinedRoute": {
-              "abbreviation": "udr",
-              "namespace": "Microsoft.Network/routeTables/routes"
+              "abbreviation": "udr"
             },
             "virtualDesktopApplicationGroup": {
-              "abbreviation": "vdag",
-              "namespace": "Microsoft.DesktopVirtualization/applicationGroups"
+              "abbreviation": "vdag"
             },
             "virtualDesktopHostPool": {
-              "abbreviation": "vdpool",
-              "namespace": "Microsoft.DesktopVirtualization/hostPools"
+              "abbreviation": "vdpool"
             },
             "virtualDesktopScalingPlan": {
-              "abbreviation": "vdscaling",
-              "namespace": "Microsoft.DesktopVirtualization/scalingPlans"
+              "abbreviation": "vdscaling"
             },
             "virtualDesktopWorkspace": {
-              "abbreviation": "vdws",
-              "namespace": "Microsoft.DesktopVirtualization/workspaces"
+              "abbreviation": "vdws"
             },
             "virtualMachine": {
-              "abbreviation": "vm",
-              "namespace": "Microsoft.Compute/virtualMachines"
+              "abbreviation": "vm"
             },
             "virtualMachineMaintenanceConfiguration": {
-              "abbreviation": "mc",
-              "namespace": "Microsoft.Maintenance/maintenanceConfigurations"
+              "abbreviation": "mc"
             },
             "virtualMachineScaleSet": {
-              "abbreviation": "vmss",
-              "namespace": "Microsoft.Compute/virtualMachineScaleSets"
+              "abbreviation": "vmss"
             },
             "virtualNetwork": {
-              "abbreviation": "vnet",
-              "namespace": "Microsoft.Network/virtualNetworks"
+              "abbreviation": "vnet"
             },
             "virtualNetworkGateway": {
-              "abbreviation": "vgw",
-              "namespace": "Microsoft.Network/virtualNetworkGateways"
+              "abbreviation": "vgw"
             },
             "virtualNetworkManager": {
-              "abbreviation": "vnm",
-              "namespace": "Microsoft.Network/networkManagers"
+              "abbreviation": "vnm"
             },
             "virtualNetworkPeering": {
-              "abbreviation": "peer",
-              "namespace": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings"
+              "abbreviation": "peer"
             },
             "virtualNetworkSubnet": {
-              "abbreviation": "snet",
-              "namespace": "Microsoft.Network/virtualNetworks/subnets"
+              "abbreviation": "snet"
             },
             "virtualWAN": {
-              "abbreviation": "vwan",
-              "namespace": "Microsoft.Network/virtualWans"
+              "abbreviation": "vwan"
             },
             "virtualWANHub": {
-              "abbreviation": "vhub",
-              "namespace": "Microsoft.Network/virtualHubs"
+              "abbreviation": "vhub"
             },
             "vmStorageAccount": {
-              "abbreviation": "stvm",
-              "namespace": "Microsoft.Storage/storageAccounts"
+              "abbreviation": "stvm"
             },
             "vpnConnection": {
-              "abbreviation": "vcn",
-              "namespace": "Microsoft.Network/vpnGateways/vpnConnections"
+              "abbreviation": "vcn"
             },
             "vpnGateway": {
-              "abbreviation": "vpng",
-              "namespace": "Microsoft.Network/vpnGateways"
+              "abbreviation": "vpng"
             },
             "vpnSite": {
-              "abbreviation": "vst",
-              "namespace": "Microsoft.Network/vpnGateways/vpnSites"
+              "abbreviation": "vst"
             },
             "webApp": {
-              "abbreviation": "app",
-              "namespace": "Microsoft.Web/sites"
+              "abbreviation": "app"
             },
             "webApplicationFirewallPolicy": {
-              "abbreviation": "waf",
-              "namespace": "Microsoft.Network/firewallPolicies"
+              "abbreviation": "waf"
             },
             "webApplicationFirewallPolicyRuleGroup": {
-              "abbreviation": "wafrg",
-              "namespace": "Microsoft.Network/firewallPolicies/ruleGroups"
+              "abbreviation": "wafrg"
             },
             "webPubSub": {
-              "abbreviation": "wps",
-              "namespace": "Microsoft.SignalRService/webPubSub"
+              "abbreviation": "wps"
             }
           }
         }
