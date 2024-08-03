@@ -7,7 +7,7 @@
     "region": {
       "type": "object",
       "value": {
-        "ENVIRONMENT": {
+        "REGION": {
           "allowedValues": {
             "westeurope": {
               "abbreviation": "we"
