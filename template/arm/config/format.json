@@ -32,6 +32,9 @@
           },
           "maxLength": 24,
           "casing": "lower"
+        },
+        "virtualMachine": {
+          "formatString": "{RESOURCE}[{-}{SUBRESOURCE}]"
         }
       }
     }
