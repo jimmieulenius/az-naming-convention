@@ -7,21 +7,11 @@
     "resource": {
       "type": "object",
       "value": {
-        "RESOURCE": {
-          "allowedValues": {
-            "$ref": {
-              "kind": "placeholder",
-              "name": "RESOURCE_TYPE"
-            }
-          }
+        "$ref:RESOURCE": {
+          "path": "#/placeholder/REGION"
         },
-        "SUBRESOURCE": {
-          "allowedValues": {
-            "$ref": {
-              "kind": "placeholder",
-              "name": "RESOURCE_TYPE"
-            }
-          }
+        "$ref:SUBRESOURCE": {
+          "path": "#/placeholder/REGION"
         }
       }
     }
