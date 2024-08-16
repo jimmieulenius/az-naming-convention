@@ -1,0 +1,79 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "format": {
+      "type": "string"
+    },
+    "placeholders": {
+      "type": "string"
+    },
+    "userConfig": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "utcValue": {
+      "type": "string",
+      "defaultValue": "[utcNow()]"
+    }
+  },
+  "variables": {
+    "formatName": "[concat('nc-format-', parameters('utcValue'))]",
+    "placeholdersName": "[concat('nc-ph-', parameters('utcValue'))]",
+    "userConfigName": "[concat('nc-usr-', parameters('utcValue'))]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2022-09-01",
+      "name": "[variables('formatName')]",
+      "properties": {
+        "mode": "incremental",
+        "templateLink": {
+          "uri": "[parameters('format')]",
+          "contentVersion": "1.0.0.0"
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2022-09-01",
+      "name": "[variables('placeholdersName')]",
+      "properties": {
+        "mode": "incremental",
+        "templateLink": {
+          "uri": "[parameters('placeholders')]",
+          "contentVersion": "1.0.0.0"
+        }
+      }
+    },
+    {
+      "condition": "[not(equals(parameters('userConfig'), ''))]",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2022-09-01",
+      "name": "[variables('userConfigName')]",
+      "properties": {
+        "mode": "incremental",
+        "templateLink": {
+          "uri": "[parameters('userConfig')]",
+          "contentVersion": "1.0.0.0"
+        }
+      }
+    }
+  ],
+  "outputs": {
+    "config": {
+      "type": "object",
+      "value": {
+        "format": "[if(not(equals(parameters('userConfig'), '')), union(if(contains(reference(variables('userConfigName')).outputs.userConfig.value, 'format'), if(contains(reference(variables('userConfigName')).outputs.userConfig.value.format, '$field'), if(contains(reference(variables('userConfigName')).outputs.userConfig.value.format.$field, 'setAction'), if(equals(reference(variables('userConfigName')).outputs.userConfig.value.format.$field.setAction, 'replace'), createObject(), parameters('formatOutput')), parameters('formatOutput')), parameters('formatOutput')), parameters('formatOutput')), if(contains(reference(variables('userConfigName')).outputs.userConfig.value, 'format'), reference(variables('userConfigName')).outputs.userConfig.value.format, createObject())), parameters('formatOutput'))]",
+        "placeholders": {
+          "core": "[if(not(equals(parameters('userConfig'), '')), if(contains(reference(variables('userConfigName')).outputs.userConfig.value, 'placeholders'), if(contains(reference(variables('userConfigName')).outputs.userConfig.value.placeholders, 'core'), if(contains(reference(variables('userConfigName')).outputs.userConfig.value.placeholders.core, '$field'), if(contains(reference(variables('userConfigName')).outputs.userConfig.value.placeholders.core['$field'], 'setAction'), if(equals(reference(variables('userConfigName')).outputs.userConfig.value.placeholders.core['$field'].setAction, 'replace'), createObject(), reference(variables('placeholdersName')).outputs.core.value), reference(variables('placeholdersName')).outputs.core.value), reference(variables('placeholdersName')).outputs.core.value), reference(variables('placeholdersName')).outputs.core.value), reference(variables('placeholdersName')).outputs.core.value), reference(variables('placeholdersName')).outputs.core.value)]",
+          "environment": "[if(not(equals(parameters('userConfig'), '')), if(contains(reference(variables('userConfigName')).outputs.userConfig.value, 'placeholders'), if(contains(reference(variables('userConfigName')).outputs.userConfig.value.placeholders, 'environment'), if(contains(reference(variables('userConfigName')).outputs.userConfig.value.placeholders.environment, '$field'), if(contains(reference(variables('userConfigName')).outputs.userConfig.value.placeholders.environment['$field'], 'setAction'), if(equals(reference(variables('userConfigName')).outputs.userConfig.value.placeholders.environment['$field'].setAction, 'replace'), createObject(), reference(variables('placeholdersName')).outputs.environment.value), reference(variables('placeholdersName')).outputs.environment.value), reference(variables('placeholdersName')).outputs.environment.value), reference(variables('placeholdersName')).outputs.environment.value), reference(variables('placeholdersName')).outputs.environment.value), reference(variables('placeholdersName')).outputs.environment.value)]",
+          "region": "[if(not(equals(parameters('userConfig'), '')), if(contains(reference(variables('userConfigName')).outputs.userConfig.value, 'placeholders'), if(contains(reference(variables('userConfigName')).outputs.userConfig.value.placeholders, 'region'), if(contains(reference(variables('userConfigName')).outputs.userConfig.value.placeholders.region, '$field'), if(contains(reference(variables('userConfigName')).outputs.userConfig.value.placeholders.region['$field'], 'setAction'), if(equals(reference(variables('userConfigName')).outputs.userConfig.value.placeholders.region['$field'].setAction, 'replace'), createObject(), reference(variables('placeholdersName')).outputs.region.value), reference(variables('placeholdersName')).outputs.region.value), reference(variables('placeholdersName')).outputs.region.value), reference(variables('placeholdersName')).outputs.region.value), reference(variables('placeholdersName')).outputs.region.value), reference(variables('placeholdersName')).outputs.region.value)]",
+          "resource": "[if(not(equals(parameters('userConfig'), '')), if(contains(reference(variables('userConfigName')).outputs.userConfig.value, 'placeholders'), if(contains(reference(variables('userConfigName')).outputs.userConfig.value.placeholders, 'resource'), if(contains(reference(variables('userConfigName')).outputs.userConfig.value.placeholders.resource, '$field'), if(contains(reference(variables('userConfigName')).outputs.userConfig.value.placeholders.resource['$field'], 'setAction'), if(equals(reference(variables('userConfigName')).outputs.userConfig.value.placeholders.resource['$field'].setAction, 'replace'), createObject(), reference(variables('placeholdersName')).outputs.resource.value), reference(variables('placeholdersName')).outputs.resource.value), reference(variables('placeholdersName')).outputs.resource.value), reference(variables('placeholdersName')).outputs.resource.value), reference(variables('placeholdersName')).outputs.resource.value), reference(variables('placeholdersName')).outputs.resource.value)]",
+          "resourceType": "[if(not(equals(parameters('userConfig'), '')), if(contains(reference(variables('userConfigName')).outputs.userConfig.value, 'placeholders'), if(contains(reference(variables('userConfigName')).outputs.userConfig.value.placeholders, 'resourceType'), if(contains(reference(variables('userConfigName')).outputs.userConfig.value.placeholders.resourceType, '$field'), if(contains(reference(variables('userConfigName')).outputs.userConfig.value.placeholders.resourceType['$field'], 'setAction'), if(equals(reference(variables('userConfigName')).outputs.userConfig.value.placeholders.resourceType['$field'].setAction, 'replace'), createObject(), reference(variables('placeholdersName')).outputs.resourceType.value), reference(variables('placeholdersName')).outputs.resourceType.value), reference(variables('placeholdersName')).outputs.resourceType.value), reference(variables('placeholdersName')).outputs.resourceType.value), reference(variables('placeholdersName')).outputs.resourceType.value), reference(variables('placeholdersName')).outputs.resourceType.value)]"
+        }
+      }
+    }
+  }
+}
