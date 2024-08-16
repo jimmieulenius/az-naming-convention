@@ -34,7 +34,7 @@
           "ENVIRONMENT": {
             "$type": "lookup",
             "$field": {
-              "setAction": "replace"
+              "setAction": "combine"
             },
             "source": {
               "stage": {
