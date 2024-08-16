@@ -1,80 +1,77 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {},
-  "resources": [],
-  "outputs": {
-    "userConfig": {
-      "value": {
-        "format": {
-          "$default": {
-            "formatString": "{ENVIRONMENT}{-}{ORGANIZATION}{-}{PROJECT}[{-}{SUBPROJECT}][{-}{INSTANCE}][{-}{REGION}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]"
-          },
-          "deployment": {
-            "formatString": "{ENVIRONMENT}{-}{ORGANIZATION}{-}{PROJECT}[{-}{SUBPROJECT}][{-}{INSTANCE}][{-}{REGION}][{-}{RESOURCE_TYPE}][{-}v{VERSION}][{-}{DEPLOYMENT_PHASE}][{-}{SUFFIX}][{-}{UNIQUE}]"
-          },
-          "subnet": {
-            "formatString": "{ENVIRONMENT}{-}{PROJECT}{-}{INSTANCE}[{-}{UNIQUE}]"
-          }
-        },
-        "placeholder": {
-          "ORGANIZATION": {
-            "default": "draftit",
-            "allowedValues": {
-              "draftit": {
-                "abbreviation": "dra"
-              }
-            }
-          },
-          "ENVIRONMENT": {
-            "allowedValues": {
-              "stage": {
-                "abbreviation": "stg"
-              },
-              "prod": {
-                "abbreviation": "prd"
-              }
-            }
-          },
-          "PROJECT": {
-            "default": "ju",
-            "allowedValues": {
-              "ju": {},
-              "myFirstApp": {
-                "abbreviation": "mfa"
-              },
-              "mySecondApp": {
-                "abbreviation": "msa"
-              }
-            }
-          },
-          "SUBPROJECT": {
-            "allowedValues": {
-              "api": {
-                "abbreviation": "api"
-              },
-              "client": {
-                "abbreviation": "clt"
-              }
-            }
-          },
-          "DEPLOYMENT_PHASE": {
-            "$unique": {
-              "length": 6,
-              "seed": "aaa"
-            }
-          },
-          "SUFFIX": {
-            "$instance": {
-              "maxValue": 999,
-              "padding": {
-                "totalLength": 3
-              }
-            }
-          }
+  "format": {
+    "$field": {
+      "setAction": "combine"
+    },
+    "default": {
+      "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}]{-}{RESOURCE}[{-}{RESOURCE_INSTANCE}][{SUBRESOURCE}][{-}{SUBRESOURCE_INSTANCE}][{-}{UNIQUE}]"
+    },
+    "deployment": {
+      "formatString": "{ENVIRONMENT}[{-}{ORGANIZATION}]{-}{PROJECT}[{-}{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}][{-}{RESOURCE}][{-}{RESOURCE_INSTANCE}][{SUBRESOURCE}][{-}{SUBRESOURCE_INSTANCE}][{-}v{VERSION}][{-}{DEPLOYMENT_PHASE}][{-}{SUFFIX}][{-}{UNIQUE}]"
+    },
+    "subnet": {
+      "formatString": "{ENVIRONMENT}{-}{PROJECT}{-}{INSTANCE}[{-}{UNIQUE}]"
+    }
+  },
+  "placeholders": {
+    "ORGANIZATION": {
+      "$type": "lookup",
+      "default": "draftit",
+      "source": {
+        "draftit": {
+          "value": "dra"
         }
+      }
+    },
+    "ENVIRONMENT": {
+      "$type": "lookup",
+      "$field": {
+        "setAction": "replace"
       },
-      "type": "object"
+      "source": {
+        "stage": {
+          "value": "stg"
+        },
+        "prod": {
+          "value": "prd"
+        }
+      }
+    },
+    "PROJECT": {
+      "$type": "lookup",
+      "default": "ju",
+      "source": {
+        "ju": {},
+        "myFirstApp": {
+          "value": "mfa"
+        },
+        "mySecondApp": {
+          "value": "msa"
+        }
+      }
+    },
+    "SUBPROJECT": {
+      "$type": "lookup",
+      "source": {
+        "api": {
+          "value": "api"
+        },
+        "client": {
+          "value": "clt"
+        }
+      }
+    },
+    "DEPLOYMENT_PHASE": {
+      "$type": "unique",
+      "length": 6,
+      "seed": "aaa"
+    },
+    "SUFFIX": {
+      "$type": "instance",
+      "maxValue": 999,
+      "padding": {
+        "totalLength": 3
+      }
     }
   }
 }
