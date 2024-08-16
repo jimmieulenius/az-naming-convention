@@ -7,20 +7,9 @@
     "format": {
       "type": "object",
       "value": {
-        "$default": {
+        "default": {
           "formatString": "{ENVIRONMENT}{-}{WORKLOAD}[{-}{INSTANCE}][{-}{REGION}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]",
           "separator": "-"
-        },
-        "$instance": {
-          "maxValue": 99,
-          "padding": {
-            "totalLength": 2,
-            "character": "0"
-          }
-        },
-        "$unique": {
-          "length": 4,
-          "seed": null
         },
         "deployment": {
           "formatString": "{ENVIRONMENT}{-}{WORKLOAD}[{-}{INSTANCE}][{-}{REGION}][{-}{RESOURCE_TYPE}][{-}v{VERSION}][{-}{UNIQUE}]",
