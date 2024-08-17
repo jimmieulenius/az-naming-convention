@@ -58,6 +58,9 @@
               }
             }
           },
+          "$ref:PROJECT_INSTANCE": {
+            "path": "#/placeholders/INSTANCE"
+          },
           "SUBPROJECT": {
             "$type": "lookup",
             "source": {
