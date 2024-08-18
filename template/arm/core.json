@@ -1036,7 +1036,7 @@
         "mode": "incremental",
         "templateLink": {
           "uri": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/config.json",
-          "contentVersion": ""
+          "contentVersion": "1.0.0.0"
         },
         "parameters": {
           "formatTemplateUri": {
