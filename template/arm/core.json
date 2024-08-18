@@ -2,13 +2,6 @@
   "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
   "languageVersion": "2.0",
   "contentVersion": "1.0.0.0",
-  "metadata": {
-    "_generator": {
-      "name": "bicep",
-      "version": "0.29.45.22436",
-      "templateHash": "8618030988286029437"
-    }
-  },
   "definitions": {
     "resolveItemType": {
       "type": "object",
@@ -168,7 +161,7 @@
   },
   "functions": [
     {
-      "namespace": "__bicep",
+      "namespace": "namingConvention",
       "members": {
         "formatName": {
           "parameters": [
@@ -192,10 +185,7 @@
           ],
           "output": {
             "type": "string",
-            "value": "[__bicep.evaluateName(parameters('formatString'), parameters('values'), parameters('additionalValues'), true(), parameters('config')).result]"
-          },
-          "metadata": {
-            "__bicep_export!": true
+            "value": "[namingConvention.evaluateName(parameters('formatString'), parameters('values'), parameters('additionalValues'), true(), parameters('config')).result]"
           }
         },
         "evaluateName": {
@@ -225,10 +215,7 @@
           ],
           "output": {
             "$ref": "#/definitions/formatNameResultType",
-            "value": "[map(map(map(createArray(createObject('formatInfo', __bicep.getFormatInfo(createObject('lookup', parameters('formatString'), 'value', __bicep.getFormatString(parameters('formatString'), parameters('config'))), parameters('values'), parameters('additionalValues'), coalesce(parameters('throwError'), false()), parameters('config')), 'result', null(), 'isValid', false())), lambda('item', createObject('formatInfo', lambdaVariables('item').formatInfo, 'result', lambdaVariables('item').result, 'isValid', __bicep.validate(lambdaVariables('item').formatInfo, lambdaVariables('item').result, coalesce(parameters('throwError'), false()))))), lambda('item', createObject('formatInfo', lambdaVariables('item').formatInfo, 'result', if(or(lambdaVariables('item').isValid, not(coalesce(parameters('throwError'), false()))), trim(__bicep.replacePlaceholders(lambdaVariables('item').formatInfo)), ''), 'isValid', lambdaVariables('item').isValid))), lambda('item', createObject('formatInfo', lambdaVariables('item').formatInfo, 'result', if(lambdaVariables('item').isValid, __bicep.applyCasing(lambdaVariables('item').result, lambdaVariables('item').formatInfo.casing), lambdaVariables('item').result), 'isValid', if(lambdaVariables('item').isValid, __bicep.validate(lambdaVariables('item').formatInfo, lambdaVariables('item').result, coalesce(parameters('throwError'), false())), false()))))[0]]"
-          },
-          "metadata": {
-            "__bicep_export!": true
+            "value": "[map(map(map(createArray(createObject('formatInfo', namingConvention.getFormatInfo(createObject('lookup', parameters('formatString'), 'value', namingConvention.getFormatString(parameters('formatString'), parameters('config'))), parameters('values'), parameters('additionalValues'), coalesce(parameters('throwError'), false()), parameters('config')), 'result', null(), 'isValid', false())), lambda('item', createObject('formatInfo', lambdaVariables('item').formatInfo, 'result', lambdaVariables('item').result, 'isValid', namingConvention.validate(lambdaVariables('item').formatInfo, lambdaVariables('item').result, coalesce(parameters('throwError'), false()))))), lambda('item', createObject('formatInfo', lambdaVariables('item').formatInfo, 'result', if(or(lambdaVariables('item').isValid, not(coalesce(parameters('throwError'), false()))), trim(namingConvention.replacePlaceholders(lambdaVariables('item').formatInfo)), ''), 'isValid', lambdaVariables('item').isValid))), lambda('item', createObject('formatInfo', lambdaVariables('item').formatInfo, 'result', if(lambdaVariables('item').isValid, namingConvention.applyCasing(lambdaVariables('item').result, lambdaVariables('item').formatInfo.casing), lambdaVariables('item').result), 'isValid', if(lambdaVariables('item').isValid, namingConvention.validate(lambdaVariables('item').formatInfo, lambdaVariables('item').result, coalesce(parameters('throwError'), false())), false()))))[0]]"
           }
         },
         "nameGraph": {
@@ -263,10 +250,7 @@
           ],
           "output": {
             "type": "object",
-            "value": "[__bicep.applyOnGraph0(parameters('graph'), parameters('function'), createObject('formatString', if(equals(parameters('formatString'), ''), null(), parameters('formatString')), 'values', coalesce(parameters('values'), createObject()), 'additionalValues', parameters('additionalValues'), 'config', __bicep.resolveConfig(parameters('config'))))]"
-          },
-          "metadata": {
-            "__bicep_export!": true
+            "value": "[namingConvention.applyOnGraph0(parameters('graph'), parameters('function'), createObject('formatString', if(equals(parameters('formatString'), ''), null(), parameters('formatString')), 'values', coalesce(parameters('values'), createObject()), 'additionalValues', parameters('additionalValues'), 'config', namingConvention.resolveConfig(parameters('config'))))]"
           }
         },
         "applyOnGraph0": {
@@ -287,7 +271,7 @@
           ],
           "output": {
             "type": "object",
-            "value": "[reduce(map(items(parameters('object')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', if(__bicep.isObjectItem(lambdaVariables('item')), if(__bicep.isNameObject(lambdaVariables('item').value), __bicep.invokeNameFunction(parameters('function'), __bicep.getNameFunctionParameters(lambdaVariables('item').value, parameters('params'))).result, __bicep.applyOnGraph1(lambdaVariables('item'), parameters('function'), parameters('params'))), lambdaVariables('item').value)))), createObject(), lambda('current', 'next', union(lambdaVariables('current'), createObject(format('{0}', lambdaVariables('next').key), lambdaVariables('next').value))))]"
+            "value": "[reduce(map(items(parameters('object')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', if(namingConvention.isObjectItem(lambdaVariables('item')), if(namingConvention.isNameObject(lambdaVariables('item').value), namingConvention.invokeNameFunction(parameters('function'), namingConvention.getNameFunctionParameters(lambdaVariables('item').value, parameters('params'))).result, namingConvention.applyOnGraph1(lambdaVariables('item'), parameters('function'), parameters('params'))), lambdaVariables('item').value)))), createObject(), lambda('current', 'next', union(lambdaVariables('current'), createObject(format('{0}', lambdaVariables('next').key), lambdaVariables('next').value))))]"
           }
         },
         "applyOnGraph1": {
@@ -308,7 +292,7 @@
           ],
           "output": {
             "type": "object",
-            "value": "[reduce(map(items(parameters('keyValue').value), lambda('item', createObject('key', lambdaVariables('item').key, 'value', if(__bicep.isObjectItem(lambdaVariables('item')), if(__bicep.isNameObject(lambdaVariables('item').value), __bicep.invokeNameFunction(parameters('function'), __bicep.getNameFunctionParameters(lambdaVariables('item').value, parameters('params'))).result, __bicep.applyOnGraph2(lambdaVariables('item'), parameters('function'), parameters('params'))), lambdaVariables('item').value)))), createObject(), lambda('current', 'next', union(lambdaVariables('current'), createObject(format('{0}', lambdaVariables('next').key), lambdaVariables('next').value))))]"
+            "value": "[reduce(map(items(parameters('keyValue').value), lambda('item', createObject('key', lambdaVariables('item').key, 'value', if(namingConvention.isObjectItem(lambdaVariables('item')), if(namingConvention.isNameObject(lambdaVariables('item').value), namingConvention.invokeNameFunction(parameters('function'), namingConvention.getNameFunctionParameters(lambdaVariables('item').value, parameters('params'))).result, namingConvention.applyOnGraph2(lambdaVariables('item'), parameters('function'), parameters('params'))), lambdaVariables('item').value)))), createObject(), lambda('current', 'next', union(lambdaVariables('current'), createObject(format('{0}', lambdaVariables('next').key), lambdaVariables('next').value))))]"
           }
         },
         "applyOnGraph2": {
@@ -329,7 +313,7 @@
           ],
           "output": {
             "type": "object",
-            "value": "[reduce(map(items(parameters('keyValue').value), lambda('item', createObject('key', lambdaVariables('item').key, 'value', if(__bicep.isObjectItem(lambdaVariables('item')), if(__bicep.isNameObject(lambdaVariables('item').value), __bicep.invokeNameFunction(parameters('function'), __bicep.getNameFunctionParameters(lambdaVariables('item').value, parameters('params'))).result, __bicep.applyOnGraph3(lambdaVariables('item'), parameters('function'), parameters('params'))), lambdaVariables('item').value)))), createObject(), lambda('current', 'next', union(lambdaVariables('current'), createObject(format('{0}', lambdaVariables('next').key), lambdaVariables('next').value))))]"
+            "value": "[reduce(map(items(parameters('keyValue').value), lambda('item', createObject('key', lambdaVariables('item').key, 'value', if(namingConvention.isObjectItem(lambdaVariables('item')), if(namingConvention.isNameObject(lambdaVariables('item').value), namingConvention.invokeNameFunction(parameters('function'), namingConvention.getNameFunctionParameters(lambdaVariables('item').value, parameters('params'))).result, namingConvention.applyOnGraph3(lambdaVariables('item'), parameters('function'), parameters('params'))), lambdaVariables('item').value)))), createObject(), lambda('current', 'next', union(lambdaVariables('current'), createObject(format('{0}', lambdaVariables('next').key), lambdaVariables('next').value))))]"
           }
         },
         "applyOnGraph3": {
@@ -350,7 +334,7 @@
           ],
           "output": {
             "type": "object",
-            "value": "[reduce(map(items(parameters('keyValue').value), lambda('item', createObject('key', lambdaVariables('item').key, 'value', if(__bicep.isObjectItem(lambdaVariables('item')), if(__bicep.isNameObject(lambdaVariables('item').value), __bicep.invokeNameFunction(parameters('function'), __bicep.getNameFunctionParameters(lambdaVariables('item').value, parameters('params'))).result, lambdaVariables('item').value), lambdaVariables('item').value)))), createObject(), lambda('current', 'next', union(lambdaVariables('current'), createObject(format('{0}', lambdaVariables('next').key), lambdaVariables('next').value))))]"
+            "value": "[reduce(map(items(parameters('keyValue').value), lambda('item', createObject('key', lambdaVariables('item').key, 'value', if(namingConvention.isObjectItem(lambdaVariables('item')), if(namingConvention.isNameObject(lambdaVariables('item').value), namingConvention.invokeNameFunction(parameters('function'), namingConvention.getNameFunctionParameters(lambdaVariables('item').value, parameters('params'))).result, lambdaVariables('item').value), lambdaVariables('item').value)))), createObject(), lambda('current', 'next', union(lambdaVariables('current'), createObject(format('{0}', lambdaVariables('next').key), lambdaVariables('next').value))))]"
           }
         },
         "invokeNameFunction": {
@@ -367,7 +351,7 @@
           "output": {
             "type": "object",
             "value": {
-              "result": "[if(equals(parameters('function'), 'formatName'), __bicep.formatName(parameters('params').formatString, parameters('params').values, parameters('params').additionalValues, parameters('params').config), __bicep.evaluateName(parameters('params').formatString, parameters('params').values, parameters('params').additionalValues, null(), parameters('params').config))]"
+              "result": "[if(equals(parameters('function'), 'formatName'), namingConvention.formatName(parameters('params').formatString, parameters('params').values, parameters('params').additionalValues, parameters('params').config), namingConvention.evaluateName(parameters('params').formatString, parameters('params').values, parameters('params').additionalValues, null(), parameters('params').config))]"
             }
           }
         },
@@ -440,7 +424,7 @@
           ],
           "output": {
             "$ref": "#/definitions/formatNameInfoType",
-            "value": "[map(createArray(map(createArray(createObject('formatString', parameters('formatString'), 'separator', __bicep.getSeparatorString(coalesce(coalesce(__bicep.getResourceTypeLookup(parameters('formatString').lookup, parameters('config')), __bicep.getResourceTypeLookup(coalesce(tryGet(parameters('values'), 'RESOURCE_TYPE'), tryGet(parameters('values'), 'RESOURCE')), parameters('config'))), ''), parameters('config')), 'placeholders', __bicep.getPlaceholderInfo(parameters('formatString').value, parameters('config')), 'values', parameters('values'), 'valueKeys', objectKeys(parameters('values')), 'validValueKeys', createArray(), 'casing', __bicep.getCasing(parameters('formatString').lookup, parameters('config')), 'maxLength', __bicep.getMaxLength(parameters('formatString').lookup, parameters('config')), 'additionalValues', coalesce(parameters('additionalValues'), true()))), lambda('item', createObject('formatString', lambdaVariables('item').formatString, 'separator', lambdaVariables('item').separator, 'placeholders', lambdaVariables('item').placeholders, 'values', __bicep.initializeValues(lambdaVariables('item'), parameters('throwError'), parameters('config')), 'valueKeys', lambdaVariables('item').valueKeys, 'validValueKeys', lambdaVariables('item').validValueKeys, 'casing', lambdaVariables('item').casing, 'maxLength', lambdaVariables('item').maxLength, 'additionalValues', lambdaVariables('item').additionalValues)))[0]), lambda('item', createObject('formatString', lambdaVariables('item').formatString, 'separator', lambdaVariables('item').separator, 'placeholders', lambdaVariables('item').placeholders, 'values', lambdaVariables('item').values, 'valueKeys', lambdaVariables('item').valueKeys, 'validValueKeys', __bicep.getValidValueKeys(lambdaVariables('item').placeholders, lambdaVariables('item').values), 'casing', lambdaVariables('item').casing, 'maxLength', lambdaVariables('item').maxLength, 'additionalValues', lambdaVariables('item').additionalValues)))[0]]"
+            "value": "[map(createArray(map(createArray(createObject('formatString', parameters('formatString'), 'separator', namingConvention.getSeparatorString(coalesce(coalesce(namingConvention.getResourceTypeLookup(parameters('formatString').lookup, parameters('config')), namingConvention.getResourceTypeLookup(coalesce(tryGet(parameters('values'), 'RESOURCE_TYPE'), tryGet(parameters('values'), 'RESOURCE')), parameters('config'))), ''), parameters('config')), 'placeholders', namingConvention.getPlaceholderInfo(parameters('formatString').value, parameters('config')), 'values', parameters('values'), 'valueKeys', objectKeys(parameters('values')), 'validValueKeys', createArray(), 'casing', namingConvention.getCasing(parameters('formatString').lookup, parameters('config')), 'maxLength', namingConvention.getMaxLength(parameters('formatString').lookup, parameters('config')), 'additionalValues', coalesce(parameters('additionalValues'), true()))), lambda('item', createObject('formatString', lambdaVariables('item').formatString, 'separator', lambdaVariables('item').separator, 'placeholders', lambdaVariables('item').placeholders, 'values', namingConvention.initializeValues(lambdaVariables('item'), parameters('throwError'), parameters('config')), 'valueKeys', lambdaVariables('item').valueKeys, 'validValueKeys', lambdaVariables('item').validValueKeys, 'casing', lambdaVariables('item').casing, 'maxLength', lambdaVariables('item').maxLength, 'additionalValues', lambdaVariables('item').additionalValues)))[0]), lambda('item', createObject('formatString', lambdaVariables('item').formatString, 'separator', lambdaVariables('item').separator, 'placeholders', lambdaVariables('item').placeholders, 'values', lambdaVariables('item').values, 'valueKeys', lambdaVariables('item').valueKeys, 'validValueKeys', namingConvention.getValidValueKeys(lambdaVariables('item').placeholders, lambdaVariables('item').values), 'casing', lambdaVariables('item').casing, 'maxLength', lambdaVariables('item').maxLength, 'additionalValues', lambdaVariables('item').additionalValues)))[0]]"
           }
         },
         "replacePlaceholders": {
@@ -473,7 +457,7 @@
           ],
           "output": {
             "type": "object",
-            "value": "[reduce(map(items(union(if(not(equals(coalesce(__bicep.getResourceTypeLookup(parameters('formatInfo').formatString.lookup, parameters('config')), __bicep.getResourceTypeLookup(coalesce(tryGet(parameters('formatInfo').values, 'RESOURCE_TYPE'), tryGet(parameters('formatInfo').values, 'RESOURCE')), parameters('config'))), null())), createObject('RESOURCE', coalesce(__bicep.getResourceTypeLookup(parameters('formatInfo').formatString.lookup, parameters('config')), __bicep.getResourceTypeLookup(coalesce(tryGet(parameters('formatInfo').values, 'RESOURCE_TYPE'), tryGet(parameters('formatInfo').values, 'RESOURCE')), parameters('config'))), 'RESOURCE_TYPE', coalesce(__bicep.getResourceTypeLookup(parameters('formatInfo').formatString.lookup, parameters('config')), __bicep.getResourceTypeLookup(coalesce(tryGet(parameters('formatInfo').values, 'RESOURCE_TYPE'), tryGet(parameters('formatInfo').values, 'RESOURCE')), parameters('config')))), createObject()), parameters('formatInfo').values, if(and(equals(tryGet(parameters('formatInfo').values, '-'), null()), equals(tryGet(parameters('formatInfo').values, 'SEPARATOR'), null())), createObject('-', parameters('formatInfo').separator, 'SEPARATOR', parameters('formatInfo').separator), createObject()))), lambda('item0', createObject(format('{0}', lambdaVariables('item0').key), if(greater(length(filter(parameters('formatInfo').placeholders, lambda('item1', equals(tryGet(lambdaVariables('item1'), 'name'), lambdaVariables('item0').key)))), 0), if(not(equals(lambdaVariables('item0').value, null())), if(equals(__bicep.getPlaceholderType(lambdaVariables('item0').key, parameters('config')), 'instance'), __bicep.getInstanceString(__bicep.resolveInstanceValue(lambdaVariables('item0').value, lambdaVariables('item0').key, parameters('config'))), if(equals(__bicep.getPlaceholderType(lambdaVariables('item0').key, parameters('config')), 'lookup'), tryGet(__bicep.resolvePlaceholderLookupValue(lambdaVariables('item0').key, string(coalesce(lambdaVariables('item0').value, '')), parameters('throwError'), parameters('config')), 'value'), if(equals(__bicep.getPlaceholderType(lambdaVariables('item0').key, parameters('config')), 'unique'), __bicep.getUniqueString(__bicep.resolveUniqueValue(lambdaVariables('item0').value, parameters('formatInfo').values, parameters('formatInfo').placeholders, null(), parameters('config'))), lambdaVariables('item0').value))), null()), null())))), createObject(), lambda('current', 'next', union(lambdaVariables('current'), lambdaVariables('next'))))]"
+            "value": "[reduce(map(items(union(if(not(equals(coalesce(namingConvention.getResourceTypeLookup(parameters('formatInfo').formatString.lookup, parameters('config')), namingConvention.getResourceTypeLookup(coalesce(tryGet(parameters('formatInfo').values, 'RESOURCE_TYPE'), tryGet(parameters('formatInfo').values, 'RESOURCE')), parameters('config'))), null())), createObject('RESOURCE', coalesce(namingConvention.getResourceTypeLookup(parameters('formatInfo').formatString.lookup, parameters('config')), namingConvention.getResourceTypeLookup(coalesce(tryGet(parameters('formatInfo').values, 'RESOURCE_TYPE'), tryGet(parameters('formatInfo').values, 'RESOURCE')), parameters('config'))), 'RESOURCE_TYPE', coalesce(namingConvention.getResourceTypeLookup(parameters('formatInfo').formatString.lookup, parameters('config')), namingConvention.getResourceTypeLookup(coalesce(tryGet(parameters('formatInfo').values, 'RESOURCE_TYPE'), tryGet(parameters('formatInfo').values, 'RESOURCE')), parameters('config')))), createObject()), parameters('formatInfo').values, if(and(equals(tryGet(parameters('formatInfo').values, '-'), null()), equals(tryGet(parameters('formatInfo').values, 'SEPARATOR'), null())), createObject('-', parameters('formatInfo').separator, 'SEPARATOR', parameters('formatInfo').separator), createObject()))), lambda('item0', createObject(format('{0}', lambdaVariables('item0').key), if(greater(length(filter(parameters('formatInfo').placeholders, lambda('item1', equals(tryGet(lambdaVariables('item1'), 'name'), lambdaVariables('item0').key)))), 0), if(not(equals(lambdaVariables('item0').value, null())), if(equals(namingConvention.getPlaceholderType(lambdaVariables('item0').key, parameters('config')), 'instance'), namingConvention.getInstanceString(namingConvention.resolveInstanceValue(lambdaVariables('item0').value, lambdaVariables('item0').key, parameters('config'))), if(equals(namingConvention.getPlaceholderType(lambdaVariables('item0').key, parameters('config')), 'lookup'), tryGet(namingConvention.resolvePlaceholderLookupValue(lambdaVariables('item0').key, string(coalesce(lambdaVariables('item0').value, '')), parameters('throwError'), parameters('config')), 'value'), if(equals(namingConvention.getPlaceholderType(lambdaVariables('item0').key, parameters('config')), 'unique'), namingConvention.getUniqueString(namingConvention.resolveUniqueValue(lambdaVariables('item0').value, parameters('formatInfo').values, parameters('formatInfo').placeholders, null(), parameters('config'))), lambdaVariables('item0').value))), null()), null())))), createObject(), lambda('current', 'next', union(lambdaVariables('current'), lambdaVariables('next'))))]"
           }
         },
         "getResourceTypeLookup": {
@@ -558,11 +542,11 @@
             "$ref": "#/definitions/instanceInfoType",
             "value": {
               "value": "[parameters('value')]",
-              "minValue": "[__bicep.resolveAny(createArray(createObject('key', 'minValue', 'object', tryGet(tryGet(parameters('config'), 'placeholders'), coalesce(parameters('configKey'), ''))), createObject('key', 'minValue', 'object', tryGet(tryGet(parameters('config'), 'placeholders'), 'INSTANCE')))).result]",
-              "maxValue": "[__bicep.resolveAny(createArray(createObject('key', 'maxValue', 'object', tryGet(tryGet(parameters('config'), 'placeholders'), coalesce(parameters('configKey'), ''))), createObject('key', 'maxValue', 'object', tryGet(tryGet(parameters('config'), 'placeholders'), 'INSTANCE')))).result]",
+              "minValue": "[namingConvention.resolveAny(createArray(createObject('key', 'minValue', 'object', tryGet(tryGet(parameters('config'), 'placeholders'), coalesce(parameters('configKey'), ''))), createObject('key', 'minValue', 'object', tryGet(tryGet(parameters('config'), 'placeholders'), 'INSTANCE')))).result]",
+              "maxValue": "[namingConvention.resolveAny(createArray(createObject('key', 'maxValue', 'object', tryGet(tryGet(parameters('config'), 'placeholders'), coalesce(parameters('configKey'), ''))), createObject('key', 'maxValue', 'object', tryGet(tryGet(parameters('config'), 'placeholders'), 'INSTANCE')))).result]",
               "padding": {
-                "totalLength": "[__bicep.resolveAny(createArray(createObject('key', 'totalLength', 'object', tryGet(tryGet(tryGet(parameters('config'), 'placeholders'), coalesce(parameters('configKey'), '')), 'padding')), createObject('key', 'totalLength', 'object', tryGet(tryGet(tryGet(parameters('config'), 'placeholders'), 'INSTANCE'), 'padding')))).result]",
-                "character": "[__bicep.resolveAny(createArray(createObject('key', 'character', 'object', tryGet(tryGet(tryGet(parameters('config'), 'placeholders'), coalesce(parameters('configKey'), '')), 'padding')), createObject('key', 'character', 'object', tryGet(tryGet(tryGet(parameters('config'), 'placeholders'), 'INSTANCE'), 'padding')))).result]"
+                "totalLength": "[namingConvention.resolveAny(createArray(createObject('key', 'totalLength', 'object', tryGet(tryGet(tryGet(parameters('config'), 'placeholders'), coalesce(parameters('configKey'), '')), 'padding')), createObject('key', 'totalLength', 'object', tryGet(tryGet(tryGet(parameters('config'), 'placeholders'), 'INSTANCE'), 'padding')))).result]",
+                "character": "[namingConvention.resolveAny(createArray(createObject('key', 'character', 'object', tryGet(tryGet(tryGet(parameters('config'), 'placeholders'), coalesce(parameters('configKey'), '')), 'padding')), createObject('key', 'character', 'object', tryGet(tryGet(tryGet(parameters('config'), 'placeholders'), 'INSTANCE'), 'padding')))).result]"
               }
             }
           }
@@ -598,8 +582,8 @@
           "output": {
             "$ref": "#/definitions/uniqueInfoType",
             "value": {
-              "length": "[__bicep.resolveAny(createArray(createObject('key', 'length', 'object', parameters('value')), createObject('key', 'length', 'object', tryGet(tryGet(parameters('config'), 'placeholders'), coalesce(parameters('configKey'), ''))), createObject('key', 'length', 'object', tryGet(tryGet(parameters('config'), 'placeholders'), 'UNIQUE')))).result]",
-              "seed": "[coalesce(__bicep.resolveAny(createArray(createObject('key', 'seed', 'object', parameters('value')), createObject('key', 'seed', 'object', tryGet(tryGet(parameters('config'), 'placeholders'), coalesce(parameters('configKey'), ''))), createObject('key', 'seed', 'object', tryGet(tryGet(parameters('config'), 'placeholders'), 'UNIQUE')))).result, reduce(map(items(parameters('values')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', lambdaVariables('item').value, 'result', ''))), createObject('key', '', 'value', '', 'result', ''), lambda('current', 'next', createObject('key', lambdaVariables('next').key, 'value', lambdaVariables('next').value, 'result', if(and(not(equals(lambdaVariables('next').key, 'UNIQUE')), greater(length(filter(parameters('placeholders'), lambda('item', equals(tryGet(lambdaVariables('item'), 'name'), lambdaVariables('next').key)))), 0)), if(equals(lambdaVariables('current').result, ''), lambdaVariables('next').value, format('{0},{1}', lambdaVariables('current').result, lambdaVariables('next').value)), lambdaVariables('current').result)))).result)]"
+              "length": "[namingConvention.resolveAny(createArray(createObject('key', 'length', 'object', parameters('value')), createObject('key', 'length', 'object', tryGet(tryGet(parameters('config'), 'placeholders'), coalesce(parameters('configKey'), ''))), createObject('key', 'length', 'object', tryGet(tryGet(parameters('config'), 'placeholders'), 'UNIQUE')))).result]",
+              "seed": "[coalesce(namingConvention.resolveAny(createArray(createObject('key', 'seed', 'object', parameters('value')), createObject('key', 'seed', 'object', tryGet(tryGet(parameters('config'), 'placeholders'), coalesce(parameters('configKey'), ''))), createObject('key', 'seed', 'object', tryGet(tryGet(parameters('config'), 'placeholders'), 'UNIQUE')))).result, reduce(map(items(parameters('values')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', lambdaVariables('item').value, 'result', ''))), createObject('key', '', 'value', '', 'result', ''), lambda('current', 'next', createObject('key', lambdaVariables('next').key, 'value', lambdaVariables('next').value, 'result', if(and(not(equals(lambdaVariables('next').key, 'UNIQUE')), greater(length(filter(parameters('placeholders'), lambda('item', equals(tryGet(lambdaVariables('item'), 'name'), lambdaVariables('next').key)))), 0)), if(equals(lambdaVariables('current').result, ''), lambdaVariables('next').value, format('{0},{1}', lambdaVariables('current').result, lambdaVariables('next').value)), lambdaVariables('current').result)))).result)]"
             }
           }
         },
@@ -634,7 +618,7 @@
           ],
           "output": {
             "type": "string",
-            "value": "[padLeft(__bicep.getRangedInt(parameters('instanceInfo').value, parameters('instanceInfo').minValue, parameters('instanceInfo').maxValue), parameters('instanceInfo').padding.totalLength, parameters('instanceInfo').padding.character)]"
+            "value": "[padLeft(namingConvention.getRangedInt(parameters('instanceInfo').value, parameters('instanceInfo').minValue, parameters('instanceInfo').maxValue), parameters('instanceInfo').padding.totalLength, parameters('instanceInfo').padding.character)]"
           }
         },
         "getUniqueString": {
@@ -662,7 +646,7 @@
           ],
           "output": {
             "type": "string",
-            "value": "[if(and(contains(parameters('configKey'), '{'), contains(parameters('configKey'), '}')), parameters('configKey'), coalesce(__bicep.resolveFormatValue(parameters('configKey'), 'formatString', parameters('config')), parameters('configKey')))]"
+            "value": "[if(and(contains(parameters('configKey'), '{'), contains(parameters('configKey'), '}')), parameters('configKey'), coalesce(namingConvention.resolveFormatValue(parameters('configKey'), 'formatString', parameters('config')), parameters('configKey')))]"
           }
         },
         "getSeparatorString": {
@@ -679,7 +663,7 @@
           "output": {
             "type": "string",
             "nullable": true,
-            "value": "[coalesce(__bicep.resolveFormatValue(parameters('configKey'), 'separator', parameters('config')), '')]"
+            "value": "[coalesce(namingConvention.resolveFormatValue(parameters('configKey'), 'separator', parameters('config')), '')]"
           }
         },
         "getCasing": {
@@ -696,7 +680,7 @@
           "output": {
             "type": "string",
             "nullable": true,
-            "value": "[__bicep.resolveFormatValue(parameters('configKey'), 'casing', parameters('config'))]"
+            "value": "[namingConvention.resolveFormatValue(parameters('configKey'), 'casing', parameters('config'))]"
           }
         },
         "getMaxLength": {
@@ -713,7 +697,7 @@
           "output": {
             "type": "int",
             "nullable": true,
-            "value": "[json(format('{{\"value\":{0}}}', coalesce(__bicep.resolveFormatValue(parameters('configKey'), 'maxLength', parameters('config')), 'null'))).value]"
+            "value": "[json(format('{{\"value\":{0}}}', coalesce(namingConvention.resolveFormatValue(parameters('configKey'), 'maxLength', parameters('config')), 'null'))).value]"
           }
         },
         "applyCasing": {
@@ -749,7 +733,7 @@
             "items": {
               "$ref": "#/definitions/placeholderInfoType"
             },
-            "value": "[concat(filter(reduce(map(split(parameters('formatString'), '['), lambda('item1', if(contains(lambdaVariables('item1'), ']'), reduce(map(split(lambdaVariables('item1'), ']'), lambda('item2', 'index2', map(filter(split(lambdaVariables('item2'), '{'), lambda('item3', not(equals(coalesce(lambdaVariables('item3'), ''), '')))), lambda('item4', __bicep.toPlaceholderInfo(coalesce(split(lambdaVariables('item4'), '}')[0], ''), equals(lambdaVariables('index2'), 0), parameters('config')))))), createArray(), lambda('current2', 'next2', concat(lambdaVariables('current2'), lambdaVariables('next2')))), map(filter(split(lambdaVariables('item1'), '{'), lambda('item5', not(equals(coalesce(lambdaVariables('item5'), ''), '')))), lambda('item6', __bicep.toPlaceholderInfo(coalesce(split(lambdaVariables('item6'), '}')[0], ''), false(), parameters('config'))))))), createArray(), lambda('current1', 'next1', concat(lambdaVariables('current1'), lambdaVariables('next1')))), lambda('item', not(equals(lambdaVariables('item'), null())))), createArray(createObject('name', '-', 'optional', false(), 'type', 'constant'), createObject('name', 'SEPARATOR', 'optional', false(), 'type', 'constant')))]"
+            "value": "[concat(filter(reduce(map(split(parameters('formatString'), '['), lambda('item1', if(contains(lambdaVariables('item1'), ']'), reduce(map(split(lambdaVariables('item1'), ']'), lambda('item2', 'index2', map(filter(split(lambdaVariables('item2'), '{'), lambda('item3', not(equals(coalesce(lambdaVariables('item3'), ''), '')))), lambda('item4', namingConvention.toPlaceholderInfo(coalesce(split(lambdaVariables('item4'), '}')[0], ''), equals(lambdaVariables('index2'), 0), parameters('config')))))), createArray(), lambda('current2', 'next2', concat(lambdaVariables('current2'), lambdaVariables('next2')))), map(filter(split(lambdaVariables('item1'), '{'), lambda('item5', not(equals(coalesce(lambdaVariables('item5'), ''), '')))), lambda('item6', namingConvention.toPlaceholderInfo(coalesce(split(lambdaVariables('item6'), '}')[0], ''), false(), parameters('config'))))))), createArray(), lambda('current1', 'next1', concat(lambdaVariables('current1'), lambdaVariables('next1')))), lambda('item', not(equals(lambdaVariables('item'), null())))), createArray(createObject('name', '-', 'optional', false(), 'type', 'constant'), createObject('name', 'SEPARATOR', 'optional', false(), 'type', 'constant')))]"
           }
         },
         "toPlaceholderInfo": {
@@ -792,7 +776,7 @@
           ],
           "output": {
             "type": "bool",
-            "value": "[and(and(and(__bicep.validatePlaceholders(parameters('formatInfo').placeholders, parameters('formatInfo').valueKeys, parameters('formatInfo').validValueKeys, parameters('throwError')), __bicep.validateValues(parameters('formatInfo').placeholders, parameters('formatInfo').valueKeys, parameters('formatInfo').additionalValues, parameters('throwError'))), greater(length(parameters('formatInfo').validValueKeys), 0)), if(not(equals(parameters('result'), null())), __bicep.validateLength(parameters('formatInfo'), coalesce(parameters('result'), ''), parameters('throwError')), true()))]"
+            "value": "[and(and(and(namingConvention.validatePlaceholders(parameters('formatInfo').placeholders, parameters('formatInfo').valueKeys, parameters('formatInfo').validValueKeys, parameters('throwError')), namingConvention.validateValues(parameters('formatInfo').placeholders, parameters('formatInfo').valueKeys, parameters('formatInfo').additionalValues, parameters('throwError'))), greater(length(parameters('formatInfo').validValueKeys), 0)), if(not(equals(parameters('result'), null())), namingConvention.validateLength(parameters('formatInfo'), coalesce(parameters('result'), ''), parameters('throwError')), true()))]"
           }
         },
         "validateValues": {
@@ -878,7 +862,7 @@
           ],
           "output": {
             "type": "bool",
-            "value": "[if(not(equals(parameters('result'), '')), if(not(equals(parameters('formatInfo').maxLength, null())), if(coalesce(parameters('throwError'), true()), greater(range(0, coalesce(parameters('formatInfo').maxLength, 0))[sub(length(parameters('result')), 1)], 0), lessOrEquals(length(parameters('result')), coalesce(parameters('formatInfo').maxLength, 0))), true()), not(equals(string(__bicep.emptyArray()[0]), '')))]"
+            "value": "[if(not(equals(parameters('result'), '')), if(not(equals(parameters('formatInfo').maxLength, null())), if(coalesce(parameters('throwError'), true()), greater(range(0, coalesce(parameters('formatInfo').maxLength, 0))[sub(length(parameters('result')), 1)], 0), lessOrEquals(length(parameters('result')), coalesce(parameters('formatInfo').maxLength, 0))), true()), not(equals(string(namingConvention.emptyArray()[0]), '')))]"
           }
         },
         "emptyArray": {
@@ -928,7 +912,7 @@
           "output": {
             "type": "string",
             "nullable": true,
-            "value": "[map(createArray(__bicep.resolveAny(createArray(createObject('key', '$value', 'object', if(contains(string(coalesce(tryGet(tryGet(tryGet(parameters('config'), 'format'), parameters('configKey')), parameters('valueKey')), createObject())), '\"$value\":'), tryGet(tryGet(tryGet(parameters('config'), 'format'), parameters('configKey')), parameters('valueKey')), createObject()))))), lambda('item', if(lambdaVariables('item').hasValue, lambdaVariables('item'), __bicep.resolveAny(createArray(createObject('key', parameters('valueKey'), 'object', tryGet(tryGet(parameters('config'), 'format'), parameters('configKey'))), createObject('key', parameters('valueKey'), 'object', tryGet(tryGet(parameters('config'), 'format'), 'default')))))))[0].stringResult]"
+            "value": "[map(createArray(namingConvention.resolveAny(createArray(createObject('key', '$value', 'object', if(contains(string(coalesce(tryGet(tryGet(tryGet(parameters('config'), 'format'), parameters('configKey')), parameters('valueKey')), createObject())), '\"$value\":'), tryGet(tryGet(tryGet(parameters('config'), 'format'), parameters('configKey')), parameters('valueKey')), createObject()))))), lambda('item', if(lambdaVariables('item').hasValue, lambdaVariables('item'), namingConvention.resolveAny(createArray(createObject('key', parameters('valueKey'), 'object', tryGet(tryGet(parameters('config'), 'format'), parameters('configKey'))), createObject('key', parameters('valueKey'), 'object', tryGet(tryGet(parameters('config'), 'format'), 'default')))))))[0].stringResult]"
           }
         },
         "resolveAny": {
@@ -962,9 +946,6 @@
             "value": {
               "result": "[reduce(map(skip(split(parameters('ref').path, '/'), 1), lambda('item', createObject('key', lambdaVariables('item'), 'object', null()))), createObject('object', parameters('object')), lambda('current', 'next', createObject('object', tryGet(lambdaVariables('current').object, lambdaVariables('next').key)))).object]"
             }
-          },
-          "metadata": {
-            "__bicep_export!": true
           }
         },
         "resolveConfig": {
@@ -976,10 +957,7 @@
           ],
           "output": {
             "type": "object",
-            "value": "[__bicep.resolveRefObject0(parameters('config'), parameters('config'))]"
-          },
-          "metadata": {
-            "__bicep_export!": true
+            "value": "[namingConvention.resolveRefObject0(parameters('config'), parameters('config'))]"
           }
         },
         "resolveRefObject0": {
@@ -995,7 +973,7 @@
           ],
           "output": {
             "type": "object",
-            "value": "[reduce(map(items(parameters('object')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', lambdaVariables('item').value, 'result', createObject()))), createObject('result', createObject()), lambda('current', 'next', createObject('result', union(lambdaVariables('current').result, if(startsWith(lambdaVariables('next').key, '$ref:'), createObject(format('{0}', substring(lambdaVariables('next').key, 5)), __bicep.resolveRef(lambdaVariables('next').value, parameters('root')).result), if(and(startsWith(string(coalesce(lambdaVariables('next').value, '')), '{'), endsWith(string(coalesce(lambdaVariables('next').value, '')), '}')), createObject(format('{0}', lambdaVariables('next').key), __bicep.resolveRefObject1(parameters('root'), lambdaVariables('next').value)), createObject(format('{0}', lambdaVariables('next').key), lambdaVariables('next').value))))))).result]"
+            "value": "[reduce(map(items(parameters('object')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', lambdaVariables('item').value, 'result', createObject()))), createObject('result', createObject()), lambda('current', 'next', createObject('result', union(lambdaVariables('current').result, if(startsWith(lambdaVariables('next').key, '$ref:'), createObject(format('{0}', substring(lambdaVariables('next').key, 5)), namingConvention.resolveRef(lambdaVariables('next').value, parameters('root')).result), if(and(startsWith(string(coalesce(lambdaVariables('next').value, '')), '{'), endsWith(string(coalesce(lambdaVariables('next').value, '')), '}')), createObject(format('{0}', lambdaVariables('next').key), namingConvention.resolveRefObject1(parameters('root'), lambdaVariables('next').value)), createObject(format('{0}', lambdaVariables('next').key), lambdaVariables('next').value))))))).result]"
           }
         },
         "resolveRefObject1": {
@@ -1011,7 +989,7 @@
           ],
           "output": {
             "type": "object",
-            "value": "[reduce(map(items(parameters('object')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', lambdaVariables('item').value, 'result', createObject()))), createObject('result', createObject()), lambda('current', 'next', createObject('result', union(lambdaVariables('current').result, if(startsWith(lambdaVariables('next').key, '$ref:'), createObject(format('{0}', substring(lambdaVariables('next').key, 5)), __bicep.resolveRef(lambdaVariables('next').value, parameters('root')).result), if(and(startsWith(string(coalesce(lambdaVariables('next').value, '')), '{'), endsWith(string(coalesce(lambdaVariables('next').value, '')), '}')), createObject(format('{0}', lambdaVariables('next').key), __bicep.resolveRefObject2(parameters('root'), lambdaVariables('next').value)), createObject(format('{0}', lambdaVariables('next').key), lambdaVariables('next').value))))))).result]"
+            "value": "[reduce(map(items(parameters('object')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', lambdaVariables('item').value, 'result', createObject()))), createObject('result', createObject()), lambda('current', 'next', createObject('result', union(lambdaVariables('current').result, if(startsWith(lambdaVariables('next').key, '$ref:'), createObject(format('{0}', substring(lambdaVariables('next').key, 5)), namingConvention.resolveRef(lambdaVariables('next').value, parameters('root')).result), if(and(startsWith(string(coalesce(lambdaVariables('next').value, '')), '{'), endsWith(string(coalesce(lambdaVariables('next').value, '')), '}')), createObject(format('{0}', lambdaVariables('next').key), namingConvention.resolveRefObject2(parameters('root'), lambdaVariables('next').value)), createObject(format('{0}', lambdaVariables('next').key), lambdaVariables('next').value))))))).result]"
           }
         },
         "resolveRefObject2": {
@@ -1027,7 +1005,7 @@
           ],
           "output": {
             "type": "object",
-            "value": "[reduce(map(items(parameters('object')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', lambdaVariables('item').value, 'result', createObject()))), createObject('result', createObject()), lambda('current', 'next', createObject('result', union(lambdaVariables('current').result, if(startsWith(lambdaVariables('next').key, '$ref:'), createObject(format('{0}', substring(lambdaVariables('next').key, 5)), __bicep.resolveRef(lambdaVariables('next').value, parameters('root')).result), if(and(startsWith(string(coalesce(lambdaVariables('next').value, '')), '{'), endsWith(string(coalesce(lambdaVariables('next').value, '')), '}')), createObject(format('{0}', lambdaVariables('next').key), __bicep.resolveRefObject3(parameters('root'), lambdaVariables('next').value)), createObject(format('{0}', lambdaVariables('next').key), lambdaVariables('next').value))))))).result]"
+            "value": "[reduce(map(items(parameters('object')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', lambdaVariables('item').value, 'result', createObject()))), createObject('result', createObject()), lambda('current', 'next', createObject('result', union(lambdaVariables('current').result, if(startsWith(lambdaVariables('next').key, '$ref:'), createObject(format('{0}', substring(lambdaVariables('next').key, 5)), namingConvention.resolveRef(lambdaVariables('next').value, parameters('root')).result), if(and(startsWith(string(coalesce(lambdaVariables('next').value, '')), '{'), endsWith(string(coalesce(lambdaVariables('next').value, '')), '}')), createObject(format('{0}', lambdaVariables('next').key), namingConvention.resolveRefObject3(parameters('root'), lambdaVariables('next').value)), createObject(format('{0}', lambdaVariables('next').key), lambdaVariables('next').value))))))).result]"
           }
         },
         "resolveRefObject3": {
@@ -1043,7 +1021,7 @@
           ],
           "output": {
             "type": "object",
-            "value": "[reduce(map(items(parameters('object')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', lambdaVariables('item').value, 'result', createObject()))), createObject('result', createObject()), lambda('current', 'next', createObject('result', union(lambdaVariables('current').result, if(startsWith(lambdaVariables('next').key, '$ref:'), createObject(format('{0}', substring(lambdaVariables('next').key, 5)), __bicep.resolveRef(lambdaVariables('next').value, parameters('root')).result), createObject(format('{0}', lambdaVariables('next').key), lambdaVariables('next').value)))))).result]"
+            "value": "[reduce(map(items(parameters('object')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', lambdaVariables('item').value, 'result', createObject()))), createObject('result', createObject()), lambda('current', 'next', createObject('result', union(lambdaVariables('current').result, if(startsWith(lambdaVariables('next').key, '$ref:'), createObject(format('{0}', substring(lambdaVariables('next').key, 5)), namingConvention.resolveRef(lambdaVariables('next').value, parameters('root')).result), createObject(format('{0}', lambdaVariables('next').key), lambdaVariables('next').value)))))).result]"
           }
         }
       }
@@ -1106,12 +1084,10 @@
       "defaultValue": ""
     },
     "formatTemplateUri": {
-      "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/config/format.json"
+      "type": "string"
     },
     "placeholdersTemplateUri": {
-      "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/config/placeholder/placeholders.json"
+      "type": "string"
     },
     "utcValue": {
       "type": "string",
@@ -1121,7 +1097,7 @@
   "outputs": {
     "nameGraph": {
       "type": "object",
-      "value": "[__bicep.nameGraph(parameters('formatString'), parameters('values'), parameters('graph'), parameters('function'), parameters('additionalValues'), __bicep.resolveConfig(reference('config').outputs.config.value))]"
+      "value": "[namingConvention.nameGraph(parameters('formatString'), parameters('values'), parameters('graph'), parameters('function'), parameters('additionalValues'), namingConvention.resolveConfig(reference('config').outputs.config.value))]"
     }
   }
 }
