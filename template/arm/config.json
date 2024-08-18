@@ -52,7 +52,7 @@
       }
     },
     {
-      "condition": "[not(equals(parameters('userConfig'), ''))]",
+      "condition": "[not(equals(parameters('userConfigTemplateUri'), ''))]",
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2022-09-01",
       "name": "[variables('userConfigName')]",
