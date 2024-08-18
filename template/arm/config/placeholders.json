@@ -56,8 +56,170 @@
         "REGION": {
           "$type": "lookup",
           "source": {
+            "australiacentral": {
+              "value": "auc"
+            },
+            "australiacentral2": {
+              "value": "auc2"
+            },
+            "australiaeast": {
+              "value": "aue"
+            },
+            "australiasoutheast": {
+              "value": "ause"
+            },
+            "brazilsouth": {
+              "value": "bs"
+            },
+            "brazilsoutheast": {
+              "value": "bse"
+            },
+            "brazilus": {
+              "value": "bus"
+            },
+            "canadacentral": {
+              "value": "cnc"
+            },
+            "canadaeast": {
+              "value": "cne"
+            },
+            "centralindia": {
+              "value": "inc"
+            },
+            "centralus": {
+              "value": "usc"
+            },
+            "centraluseuap": {
+              "value": "usce"
+            },
+            "eastasia": {
+              "value": "ase"
+            },
+            "eastus": {
+              "value": "use"
+            },
+            "eastus2": {
+              "value": "use2"
+            },
+            "eastus2euap": {
+              "value": "usee"
+            },
+            "eastusstg": {
+              "value": "uses"
+            },
+            "francecentral": {
+              "value": "frc"
+            },
+            "francesouth": {
+              "value": "frs"
+            },
+            "germanynorth": {
+              "value": "gn"
+            },
+            "germanywestcentral": {
+              "value": "gwc"
+            },
+            "israelcentral": {
+              "value": "isc"
+            },
+            "italynorth": {
+              "value": "itn"
+            },
+            "japaneast": {
+              "value": "jpe"
+            },
+            "japanwest": {
+              "value": "jpw"
+            },
+            "jioindiacentral": {
+              "value": "jic"
+            },
+            "jioindiawest": {
+              "value": "jiw"
+            },
+            "koreacentral": {
+              "value": "krc"
+            },
+            "koreasouth": {
+              "value": "krs"
+            },
+            "mexicocentral": {
+              "value": "mxc"
+            },
+            "northcentralus": {
+              "value": "uscn"
+            },
+            "northeurope": {
+              "value": "eun"
+            },
+            "norwayeast": {
+              "value": "nwe"
+            },
+            "norwaywest": {
+              "value": "nww"
+            },
+            "polandcentral": {
+              "value": "plc"
+            },
+            "qatarcentral": {
+              "value": "qac"
+            },
+            "southafricanorth": {
+              "value": "san"
+            },
+            "southafricawest": {
+              "value": "saw"
+            },
+            "southcentralus": {
+              "value": "uscs"
+            },
+            "southeastasia": {
+              "value": "asse"
+            },
+            "southindia": {
+              "value": "ins"
+            },
+            "spaincentral": {
+              "value": "spc"
+            },
+            "swedencentral": {
+              "value": "sdc"
+            },
+            "switzerlandnorth": {
+              "value": "szn"
+            },
+            "switzerlandwest": {
+              "value": "szw"
+            },
+            "uaecentral": {
+              "value": "uac"
+            },
+            "uaenorth": {
+              "value": "uan"
+            },
+            "uksouth": {
+              "value": "uks"
+            },
+            "ukwest": {
+              "value": "ukw"
+            },
+            "westcentralus": {
+              "value": "uscw"
+            },
             "westeurope": {
-              "value": "we"
+              "value": "euw"
+            },
+            "westindia": {
+              "value": "inw"
+            },
+            "westus": {
+              "value": "usw"
+            },
+            "westus2": {
+              "value": "usw2"
+            },
+            "westus3": {
+              "value": "usw3"
             }
           }
         }
@@ -294,7 +456,7 @@
               "value": "cs"
             },
             "customVision": {
-              "value": "cstv"
+              "value": "cstvt"
             },
             "databaseMigrationServiceInstance": {
               "value": "dms"
@@ -450,7 +612,7 @@
               "value": "logic"
             },
             "managedDisk": {
-              "value": "osdisk"
+              "value": "disk"
             },
             "managedIdentity": {
               "value": "id"
