@@ -518,7 +518,7 @@
           "output": {
             "$ref": "#/definitions/placeholderLookupItemType",
             "nullable": true,
-            "value": "[map(createArray(if(equals(parameters('config').placeholders[parameters('configKey')].source[replace(coalesce(parameters('valueKey'), ''), ' ', '')], null()), if(coalesce(parameters('throwError'), true()), parameters('config').placeholders[parameters('configKey')].source[replace(coalesce(parameters('valueKey'), ''), ' ', '')], null()), parameters('config').placeholders[parameters('configKey')].source[replace(coalesce(parameters('valueKey'), ''), ' ', '')])), lambda('item', createObject('value', coalesce(tryGet(lambdaVariables('item'), 'value'), ''), 'name', replace(coalesce(parameters('valueKey'), ''), ' ', ''))))[0]]"
+            "value": "[map(createArray(if(coalesce(parameters('config').placeholders[parameters('configKey')].source[replace(coalesce(parameters('valueKey'), ''), ' ', '')], equals(tryGet(parameters('config').placeholders[parameters('configKey')], 'default'), null())), if(coalesce(parameters('throwError'), true()), parameters('config').placeholders[parameters('configKey')].source[replace(coalesce(parameters('valueKey'), ''), ' ', '')], null()), parameters('config').placeholders[parameters('configKey')].source[replace(coalesce(parameters('valueKey'), ''), ' ', '')])), lambda('item', createObject('value', coalesce(tryGet(lambdaVariables('item'), 'value'), ''), 'name', replace(coalesce(parameters('valueKey'), ''), ' ', ''))))[0]]"
           }
         },
         "resolveInstanceValue": {
@@ -1036,7 +1036,7 @@
         "mode": "incremental",
         "templateLink": {
           "uri": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/config.json",
-          "contentVersion": "1.0.0.0"
+          "contentVersion": ""
         },
         "parameters": {
           "formatTemplateUri": {
