@@ -1,0 +1,8 @@
+{
+  "$ref:RESOURCE": {
+    "path": "#/placeholders/RESOURCE_TYPE"
+  },
+  "$ref:SUBRESOURCE": {
+    "path": "#/placeholders/RESOURCE_TYPE"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "languageVersion": "2.0",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "formatString": {
+      "type": "string",
+      "nullable": true
+    },
+    "values": {
+      "type": "object",
+      "defaultValue": {}
+    },
+    "graph": {
+      "type": "object"
+    },
+    "function": {
+      "type": "string",
+      "defaultValue": "formatName"
+    },
+    "additionalValues": {
+      "type": "bool",
+      "defaultValue": true
+    },
+    "userConfig": {
+      "type": "object",
+      "defaultValue": {}
+    },
+    "userConfigTemplateUri": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "formatTemplateUri": {
+      "type": "string"
+    },
+    "placeholdersTemplateUri": {
+      "type": "string"
+    },
+    "utcValue": {
+      "type": "string",
+      "defaultValue": "[utcNow()]"
+    }
+  },
+  "resources": {
+    "config": {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2022-09-01",
+      "name": "[concat('nc-config-', parameters('utcValue'))]",
+      "properties": {
+        "mode": "incremental",
+        "templateLink": {
+          "uri": "",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "formatTemplateUri": {
+            "value": "[parameters('formatTemplateUri')]"
+          },
+          "placeholdersTemplateUri": {
+            "value": "[parameters('placeholdersTemplateUri')]"
+          },
+          "userConfigTemplateUri": {
+            "value": "[parameters('userConfigTemplateUri')]"
+          },
+          "userConfig": {
+            "value": "[parameters('userConfig')]"
+          }
+        }
+      }
+    }
+  },
+  "outputs": {
+    "nameGraph": {
+      "type": "object",
+      "value": "[__bicep.nameGraph(parameters('formatString'), parameters('values'), parameters('graph'), parameters('function'), parameters('additionalValues'), __bicep.resolveConfig(reference('config').outputs.config.value))]"
+    }
+  }
+}

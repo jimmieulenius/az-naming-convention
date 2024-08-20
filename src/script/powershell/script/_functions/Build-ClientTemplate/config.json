@@ -1,0 +1,5 @@
+{
+  "coreTemplateUri": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/core.json",
+  "formatTemplateUri": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/config/format.json",
+  "placeholdersTemplateUri": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/config/placeholders.json"
+}

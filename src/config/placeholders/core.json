@@ -1,0 +1,15 @@
+{
+  "INSTANCE": {
+    "$type": "instance",
+    "maxValue": 99,
+    "padding": {
+      "totalLength": 2,
+      "character": "0"
+    }
+  },
+  "UNIQUE": {
+    "$type": "unique",
+    "length": 4,
+    "seed": null
+  }
+}

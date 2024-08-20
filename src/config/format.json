@@ -1,0 +1,20 @@
+{
+  "default": {
+    "formatString": "{ENVIRONMENT}{-}{WORKLOAD}[{-}{INSTANCE}][{-}{REGION}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]",
+    "separator": "-"
+  },
+  "deployment": {
+    "formatString": "{ENVIRONMENT}{-}{WORKLOAD}[{-}{INSTANCE}][{-}{REGION}][{-}{RESOURCE_TYPE}][{-}v{VERSION}][{-}{UNIQUE}]",
+    "maxLength": 64
+  },
+  "storageAccount": {
+    "separator": {
+      "$value": null
+    },
+    "maxLength": 24,
+    "casing": "lower"
+  },
+  "virtualMachine": {
+    "formatString": "{RESOURCE}[{-}{SUBRESOURCE}]"
+  }
+}

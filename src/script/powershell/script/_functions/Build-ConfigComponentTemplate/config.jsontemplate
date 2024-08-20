@@ -3,14 +3,5 @@
   "contentVersion": "1.0.0.0",
   "parameters": {},
   "resources": [],
-  "outputs": {
-    "region": {
-      "type": "object",
-      "value": {
-        "westeurope": {
-          "abbreviation": "we"
-        }
-      }
-    }
-  }
+  "outputs": {}
 }

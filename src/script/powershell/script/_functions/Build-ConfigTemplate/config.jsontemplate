@@ -1,0 +1,76 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "formatTemplateUri": {
+      "type": "string"
+    },
+    "placeholdersTemplateUri": {
+      "type": "string"
+    },
+    "userConfigTemplateUri": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "userConfig": {
+      "type": "object",
+      "defaultValue": {}
+    },
+    "utcValue": {
+      "type": "string",
+      "defaultValue": "[utcNow()]"
+    }
+  },
+  "variables": {
+    "formatName": "[concat('nc-format-', parameters('utcValue'))]",
+    "placeholdersName": "[concat('nc-ph-', parameters('utcValue'))]",
+    "userConfigName": "[concat('nc-usr-', parameters('utcValue'))]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2022-09-01",
+      "name": "[variables('formatName')]",
+      "properties": {
+        "mode": "incremental",
+        "templateLink": {
+          "uri": "[parameters('formatTemplateUri')]",
+          "contentVersion": "1.0.0.0"
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2022-09-01",
+      "name": "[variables('placeholdersName')]",
+      "properties": {
+        "mode": "incremental",
+        "templateLink": {
+          "uri": "[parameters('placeholdersTemplateUri')]",
+          "contentVersion": "1.0.0.0"
+        }
+      }
+    },
+    {
+      "condition": "[not(equals(parameters('userConfigTemplateUri'), ''))]",
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2022-09-01",
+      "name": "[variables('userConfigName')]",
+      "properties": {
+        "mode": "incremental",
+        "templateLink": {
+          "uri": "[parameters('userConfigTemplateUri')]",
+          "contentVersion": "1.0.0.0"
+        }
+      }
+    }
+  ],
+  "outputs": {
+    "config": {
+      "type": "object",
+      "value": {
+        "format": "[union(if(contains(union(if(not(equals(parameters('userConfigTemplateUri'), '')), reference(variables('userConfigName')).outputs.userConfig.value, createObject()), parameters('userConfig')), 'format'), if(contains(union(if(not(equals(parameters('userConfigTemplateUri'), '')), reference(variables('userConfigName')).outputs.userConfig.value, createObject()), parameters('userConfig')).format, '$field'), if(contains(union(if(not(equals(parameters('userConfigTemplateUri'), '')), reference(variables('userConfigName')).outputs.userConfig.value, createObject()), parameters('userConfig')).format.$field, 'setAction'), if(equals(union(if(not(equals(parameters('userConfigTemplateUri'), '')), reference(variables('userConfigName')).outputs.userConfig.value, createObject()), parameters('userConfig')).format.$field.setAction, 'replace'), createObject(), reference(variables('formatName')).outputs.format.value), reference(variables('formatName')).outputs.format.value), reference(variables('formatName')).outputs.format.value), reference(variables('formatName')).outputs.format.value), if(contains(union(if(not(equals(parameters('userConfigTemplateUri'), '')), union(if(not(equals(parameters('userConfigTemplateUri'), '')), reference(variables('userConfigName')).outputs.userConfig.value, createObject()), parameters('userConfig')), createObject()), parameters('userConfig')), 'format'), union(if(not(equals(parameters('userConfigTemplateUri'), '')), reference(variables('userConfigName')).outputs.userConfig.value, createObject()), parameters('userConfig')).format, createObject()))]"
+      }
+    }
+  }
+}

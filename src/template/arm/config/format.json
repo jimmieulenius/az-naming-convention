@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "resources": [],
+  "outputs": {
+    "format": {
+      "value": {
+        "default": {
+          "formatString": "{ENVIRONMENT}{-}{WORKLOAD}[{-}{INSTANCE}][{-}{REGION}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]",
+          "separator": "-"
+        },
+        "deployment": {
+          "formatString": "{ENVIRONMENT}{-}{WORKLOAD}[{-}{INSTANCE}][{-}{REGION}][{-}{RESOURCE_TYPE}][{-}v{VERSION}][{-}{UNIQUE}]",
+          "maxLength": 64
+        },
+        "storageAccount": {
+          "separator": {
+            "$value": null
+          },
+          "maxLength": 24,
+          "casing": "lower"
+        },
+        "virtualMachine": {
+          "formatString": "{RESOURCE}[{-}{SUBRESOURCE}]"
+        }
+      },
+      "type": "object"
+    }
+  }
+}

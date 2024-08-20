@@ -1,0 +1,25 @@
+{
+  "ENVIRONMENT": {
+    "$type": "lookup",
+    "source": {
+      "dev": {
+        "value": "d"
+      },
+      "feat": {
+        "value": "f"
+      },
+      "prod": {
+        "value": "p"
+      },
+      "qa": {
+        "value": "q"
+      },
+      "stage": {
+        "value": "s"
+      },
+      "test": {
+        "value": "t"
+      }
+    }
+  }
+}
