@@ -5,4 +5,4 @@
     -AllowClobber
 
 Build-ClientTemplate `
-    -Destination "$PSScriptRoot/../../../template/arm"
+    -Destination "$PSScriptRoot/../../../.."
