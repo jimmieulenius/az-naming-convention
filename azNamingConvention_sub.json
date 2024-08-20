@@ -1,0 +1,101 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "formatString": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "values": {
+      "type": "object",
+      "defaultValue": {}
+    },
+    "graph": {
+      "type": "object"
+    },
+    "function": {
+      "type": "string",
+      "defaultValue": "formatName"
+    },
+    "additionalValues": {
+      "type": "bool",
+      "defaultValue": true
+    },
+    "userConfig": {
+      "type": "object",
+      "defaultValue": {}
+    },
+    "userConfigTemplateUri": {
+      "type": "string",
+      "defaultValue": ""
+    },
+    "formatTemplateUri": {
+      "type": "string",
+      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/config/format.json"
+    },
+    "placeholdersTemplateUri": {
+      "type": "string",
+      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/config/placeholders.json"
+    },
+    "coreTemplateUri": {
+      "type": "string",
+      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/core.json"
+    },
+    "utcValue": {
+      "type": "string",
+      "defaultValue": "[utcNow()]"
+    }
+  },
+  "variables": {
+    "deploymentName": "[concat('nc-core-', parameters('utcValue'))]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2022-09-01",
+      "name": "[variables('deploymentName')]",
+      "properties": {
+        "mode": "incremental",
+        "templateLink": {
+          "uri": "[parameters('coreTemplateUri')]",
+          "contentVersion": "1.0.0.0"
+        },
+        "parameters": {
+          "formatString": {
+            "value": "[parameters('formatString')]"
+          },
+          "values": {
+            "value": "[parameters('values')]"
+          },
+          "graph": {
+            "value": "[parameters('graph')]"
+          },
+          "function": {
+            "value": "[parameters('function')]"
+          },
+          "additionalValues": {
+            "value": "[parameters('additionalValues')]"
+          },
+          "userConfig": {
+            "value": "[parameters('userConfig')]"
+          },
+          "userConfigTemplateUri": {
+            "value": "[parameters('userConfigTemplateUri')]"
+          },
+          "formatTemplateUri": {
+            "value": "[parameters('formatTemplateUri')]"
+          },
+          "placeholdersTemplateUri": {
+            "value": "[parameters('placeholdersTemplateUri')]"
+          }
+        }
+      }
+    }
+  ],
+  "outputs": {
+    "nameGraph": {
+      "type": "object",
+      "value": "[reference(variables('deploymentName')).outputs.nameGraph.value]"
+    }
+  }
+}

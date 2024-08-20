@@ -1,7 +1,14 @@
 param (
     [Parameter(Mandatory = $true)]
     [String]
-    $Destination
+    $Destination,
+
+    [ValidateSet(
+        'resourceGroup',
+        'subscription'
+    )]
+    [String]
+    $Scope = 'resourceGroup'
 )
 
 function Edit-Template {
@@ -19,6 +26,12 @@ function Edit-Template {
         -Raw `
     | ConvertFrom-Json `
         -AsHashtable
+
+    switch ($Scope) {
+        ('subscription') {
+            $InputObject.'$schema' = 'https://schema.management.azure.com/schemas/2018-05-01/subscriptionDeploymentTemplate.json#'
+        }
+    }
 
     $InputObject.parameters.coreTemplateUri.defaultValue = $config.coreTemplateUri
     $InputObject.parameters.formatTemplateUri.defaultValue = $config.formatTemplateUri
@@ -43,8 +56,19 @@ $result = Get-Content `
 | ConvertFrom-Json `
     -AsHashtable
 
+$fileBaseName = 'azNamingConvention'
+
+switch ($Scope) {
+    ('subscription') {
+        $fileBaseName = "$($fileBaseName)_sub"
+    }
+    default {
+        $fileBaseName = "$($fileBaseName)_rg"
+    }
+}
+
 New-Item `
-    -Path "$Destination/azNamingConvention.json" `
+    -Path "$Destination/$fileBaseName.json" `
     -ItemType 'File' `
     -Value (
         $result `

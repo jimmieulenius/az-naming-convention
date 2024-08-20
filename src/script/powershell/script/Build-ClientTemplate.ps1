@@ -5,4 +5,9 @@
     -AllowClobber
 
 Build-ClientTemplate `
-    -Destination "$PSScriptRoot/../../../.."
+    -Destination "$PSScriptRoot/../../../.." `
+    -Scope 'resourceGroup'
+
+Build-ClientTemplate `
+    -Destination "$PSScriptRoot/../../../.." `
+    -Scope 'subscription'
