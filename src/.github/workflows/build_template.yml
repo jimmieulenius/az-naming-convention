@@ -1,0 +1,23 @@
+on:
+  schedule:
+    - cron: '0 1 * * *'
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - shell: pwsh
+        run: |
+          & 'src/'script/powershell/script/Build-ConfigTemplate.ps1
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
