@@ -3,10 +3,6 @@
     "abbreviation": "srch",
     "namespace": "Microsoft.Search/searchServices"
   },
-  "aksCluster": {
-    "abbreviation": "aks",
-    "namespace": "Microsoft.ContainerService/managedClusters"
-  },
   "aksSystemNodePool": {
     "abbreviation": "npsystem",
     "namespace": "Microsoft.ContainerService/managedClusters/agentPools"
