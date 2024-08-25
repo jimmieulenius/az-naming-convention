@@ -250,7 +250,7 @@
           ],
           "output": {
             "type": "object",
-            "value": "[namingConvention.applyOnGraph0(parameters('graph'), parameters('function'), createObject('formatString', if(equals(parameters('formatString'), ''), null(), parameters('formatString')), 'values', coalesce(parameters('values'), createObject()), 'additionalValues', parameters('additionalValues'), 'config', namingConvention.resolveConfig(parameters('config'))))]"
+            "value": "[map(createArray(namingConvention.applyOnGraph0(parameters('graph'), parameters('function'), createObject('formatString', if(equals(parameters('formatString'), ''), null(), parameters('formatString')), 'values', coalesce(parameters('values'), createObject()), 'additionalValues', parameters('additionalValues'), 'config', namingConvention.resolveConfig(parameters('config'))))), lambda('item', if(equals(parameters('function'), 'evaluateName'), createObject('items', namingConvention.flattenObject(lambdaVariables('item'))), lambdaVariables('item'))))[0]]"
           }
         },
         "applyOnGraph0": {
@@ -1022,6 +1022,94 @@
           "output": {
             "type": "object",
             "value": "[reduce(map(items(parameters('object')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', lambdaVariables('item').value, 'result', createObject()))), createObject('result', createObject()), lambda('current', 'next', createObject('result', union(lambdaVariables('current').result, if(startsWith(lambdaVariables('next').key, '$ref:'), createObject(format('{0}', substring(lambdaVariables('next').key, 5)), namingConvention.resolveRef(lambdaVariables('next').value, parameters('root')).result), createObject(format('{0}', lambdaVariables('next').key), lambdaVariables('next').value)))))).result]"
+          }
+        },
+        "flattenObject": {
+          "parameters": [
+            {
+              "type": "object",
+              "name": "object"
+            }
+          ],
+          "output": {
+            "type": "array",
+            "value": "[reduce(map(items(parameters('object')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', lambdaVariables('item').value, 'result', createArray()))), createObject('result', createArray()), lambda('current', 'next', createObject('result', union(lambdaVariables('current').result, if(and(startsWith(string(coalesce(lambdaVariables('next').value, '')), '{'), endsWith(string(coalesce(lambdaVariables('next').value, '')), '}')), if(namingConvention.isEvaluateObject(lambdaVariables('next').value), createArray(union(createObject('path', format('#/{0}', lambdaVariables('next').key)), lambdaVariables('next').value)), namingConvention.flattenObject0(lambdaVariables('next').value, format('#/{0}', lambdaVariables('next').key))), createArray()))))).result]"
+          }
+        },
+        "flattenObject0": {
+          "parameters": [
+            {
+              "type": "object",
+              "name": "object"
+            },
+            {
+              "type": "string",
+              "name": "path"
+            }
+          ],
+          "output": {
+            "type": "array",
+            "value": "[reduce(map(items(parameters('object')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', lambdaVariables('item').value, 'result', createArray()))), createObject('result', createArray()), lambda('current', 'next', createObject('result', union(lambdaVariables('current').result, if(and(startsWith(string(coalesce(lambdaVariables('next').value, '')), '{'), endsWith(string(coalesce(lambdaVariables('next').value, '')), '}')), if(namingConvention.isEvaluateObject(lambdaVariables('next').value), createArray(union(createObject('path', format('{0}/{1}', parameters('path'), lambdaVariables('next').key)), lambdaVariables('next').value)), namingConvention.flattenObject1(lambdaVariables('next').value, format('{0}/{1}', parameters('path'), lambdaVariables('next').key))), createArray()))))).result]"
+          }
+        },
+        "flattenObject1": {
+          "parameters": [
+            {
+              "type": "object",
+              "name": "object"
+            },
+            {
+              "type": "string",
+              "name": "path"
+            }
+          ],
+          "output": {
+            "type": "array",
+            "value": "[reduce(map(items(parameters('object')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', lambdaVariables('item').value, 'result', createArray()))), createObject('result', createArray()), lambda('current', 'next', createObject('result', union(lambdaVariables('current').result, if(and(startsWith(string(coalesce(lambdaVariables('next').value, '')), '{'), endsWith(string(coalesce(lambdaVariables('next').value, '')), '}')), if(namingConvention.isEvaluateObject(lambdaVariables('next').value), createArray(union(createObject('path', format('{0}/{1}', parameters('path'), lambdaVariables('next').key)), lambdaVariables('next').value)), namingConvention.flattenObject2(lambdaVariables('next').value, format('{0}/{1}', parameters('path'), lambdaVariables('next').key))), createArray()))))).result]"
+          }
+        },
+        "flattenObject2": {
+          "parameters": [
+            {
+              "type": "object",
+              "name": "object"
+            },
+            {
+              "type": "string",
+              "name": "path"
+            }
+          ],
+          "output": {
+            "type": "array",
+            "value": "[reduce(map(items(parameters('object')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', lambdaVariables('item').value, 'result', createArray()))), createObject('result', createArray()), lambda('current', 'next', createObject('result', union(lambdaVariables('current').result, if(and(startsWith(string(coalesce(lambdaVariables('next').value, '')), '{'), endsWith(string(coalesce(lambdaVariables('next').value, '')), '}')), if(namingConvention.isEvaluateObject(lambdaVariables('next').value), createArray(union(createObject('path', format('{0}/{1}', parameters('path'), lambdaVariables('next').key)), lambdaVariables('next').value)), namingConvention.flattenObject3(lambdaVariables('next').value, format('{0}/{1}', parameters('path'), lambdaVariables('next').key))), createArray()))))).result]"
+          }
+        },
+        "flattenObject3": {
+          "parameters": [
+            {
+              "type": "object",
+              "name": "object"
+            },
+            {
+              "type": "string",
+              "name": "path"
+            }
+          ],
+          "output": {
+            "type": "array",
+            "value": "[reduce(map(items(parameters('object')), lambda('item', createObject('key', lambdaVariables('item').key, 'value', lambdaVariables('item').value, 'result', createArray()))), createObject('result', createArray()), lambda('current', 'next', createObject('result', union(lambdaVariables('current').result, if(and(startsWith(string(coalesce(lambdaVariables('next').value, '')), '{'), endsWith(string(coalesce(lambdaVariables('next').value, '')), '}')), if(namingConvention.isEvaluateObject(lambdaVariables('next').value), createArray(union(createObject('path', format('{0}/{1}', parameters('path'), lambdaVariables('next').key)), lambdaVariables('next').value)), createArray()), createArray()))))).result]"
+          }
+        },
+        "isEvaluateObject": {
+          "parameters": [
+            {
+              "type": "object",
+              "name": "object"
+            }
+          ],
+          "output": {
+            "type": "bool",
+            "value": "[and(and(not(equals(tryGet(parameters('object'), 'formatInfo'), null())), not(equals(tryGet(parameters('object'), 'isValid'), null()))), not(equals(tryGet(parameters('object'), 'result'), null())))]"
           }
         }
       }

@@ -145,18 +145,27 @@ func nameGraph(
   function nameFunctionOptionType,
   additionalValues bool?,
   config object
-) object => applyOnGraph0(
-  graph,
-  function,
-  {
-    formatString: formatString == ''
-      ? null
-      : formatString
-    values: values ?? {}
-    additionalValues: additionalValues
-    config: resolveConfig(config)
-  }
-)
+) object => sys.map(
+  [
+    applyOnGraph0(
+      graph,
+      function,
+      {
+        formatString: formatString == ''
+          ? null
+          : formatString
+        values: values ?? {}
+        additionalValues: additionalValues
+        config: resolveConfig(config)
+      }
+    )
+  ],
+  item => function == 'evaluateName'
+    ? {
+        items: flattenObject(item)
+      }
+    : item
+)[0]
 
 func applyOnGraph0(
   object object,
@@ -1259,3 +1268,185 @@ func resolveRefObject3(
     )
   }
 ).result
+
+@export()
+func flattenObject(object object) array => sys.reduce(
+  sys.map(
+    sys.items(object),
+    item => {
+      key: item.key
+      value: item.value
+      result: []
+    }
+  ),
+  {
+    result: []
+  },
+  (current, next) => {
+    result: sys.union(
+      current.result,
+      sys.startsWith(sys.string(next.value ?? ''), '{') && sys.endsWith(sys.string(next.value ?? ''), '}')
+        ? isEvaluateObject(next.value)
+          ? [
+              sys.union(
+                {
+                  path: '#/${next.key}'
+                },
+                next.value
+              )
+            ]
+          : flattenObject0(
+              next.value,
+              '#/${next.key}'
+            )
+        : []
+    )
+  }
+).result
+
+func flattenObject0(
+  object object,
+  path string
+  ) array => sys.reduce(
+  sys.map(
+    sys.items(object),
+    item => {
+      key: item.key
+      value: item.value
+      result: []
+    }
+  ),
+  {
+    result: []
+  },
+  (current, next) => {
+    result: sys.union(
+      current.result,
+      sys.startsWith(sys.string(next.value ?? ''), '{') && sys.endsWith(sys.string(next.value ?? ''), '}')
+        ? isEvaluateObject(next.value)
+          ? [
+              sys.union(
+                {
+                  path: '${path}/${next.key}'
+                },
+                next.value
+              )
+            ]
+          : flattenObject1(
+              next.value,
+              '${path}/${next.key}'
+            )
+        : []
+    )
+  }
+).result
+
+func flattenObject1(
+  object object,
+  path string
+  ) array => sys.reduce(
+  sys.map(
+    sys.items(object),
+    item => {
+      key: item.key
+      value: item.value
+      result: []
+    }
+  ),
+  {
+    result: []
+  },
+  (current, next) => {
+    result: sys.union(
+      current.result,
+      sys.startsWith(sys.string(next.value ?? ''), '{') && sys.endsWith(sys.string(next.value ?? ''), '}')
+        ? isEvaluateObject(next.value)
+          ? [
+              sys.union(
+                {
+                  path: '${path}/${next.key}'
+                },
+                next.value
+              )
+            ]
+          : flattenObject2(
+              next.value,
+              '${path}/${next.key}'
+            )
+        : []
+    )
+  }
+).result
+
+func flattenObject2(
+  object object,
+  path string
+  ) array => sys.reduce(
+  sys.map(
+    sys.items(object),
+    item => {
+      key: item.key
+      value: item.value
+      result: []
+    }
+  ),
+  {
+    result: []
+  },
+  (current, next) => {
+    result: sys.union(
+      current.result,
+      sys.startsWith(sys.string(next.value ?? ''), '{') && sys.endsWith(sys.string(next.value ?? ''), '}')
+        ? isEvaluateObject(next.value)
+          ? [
+              sys.union(
+                {
+                  path: '${path}/${next.key}'
+                },
+                next.value
+              )
+            ]
+          : flattenObject3(
+              next.value,
+              '${path}/${next.key}'
+            )
+        : []
+    )
+  }
+).result
+
+func flattenObject3(
+  object object,
+  path string
+  ) array => sys.reduce(
+  sys.map(
+    sys.items(object),
+    item => {
+      key: item.key
+      value: item.value
+      result: []
+    }
+  ),
+  {
+    result: []
+  },
+  (current, next) => {
+    result: sys.union(
+      current.result,
+      sys.startsWith(sys.string(next.value ?? ''), '{') && sys.endsWith(sys.string(next.value ?? ''), '}')
+        ? isEvaluateObject(next.value)
+          ? [
+              sys.union(
+                {
+                  path: '${path}/${next.key}'
+                },
+                next.value
+              )
+            ]
+          : []
+        : []
+    )
+  }
+).result
+
+func isEvaluateObject(object object) bool => object.?formatInfo != null && object.?isValid != null && object.?result != null

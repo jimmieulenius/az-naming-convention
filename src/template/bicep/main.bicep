@@ -8,6 +8,7 @@ import {
   nameGraph
   resolveRef
   resolveConfig
+  flattenObject
 } from './core.bicep'
 // import {
 //   resourceName
@@ -17,101 +18,101 @@ import {
 // var shouldDeploy = false
 var userConfig = sys.loadJsonContent('../../config/userDefined.json')
 
-var formatNameOutput = formatName(
-    // '{PROJECT}{-}{INSTANCE}[{-}{SUFFIX}][{DEPLOYMENT_PHASE}]',
-    'default',
-    {
-      ENVIRONMENT: 'stage'
-      ORGANIZATION: 'draftit'
-      PROJECT: 'my first app'
-      PROJECT_INSTANCE: 2
-      // SUBPROJECT: 'api'
-      INSTANCE: 1
-      RESOURCE_TYPE: 'storage account'
-      REGION: 'west europe'
-      VERSION: '0.0.1'
-      SUFFIX: 2
-      DEPLOYMENT_PHASE: {
-        length: 3
-        seed: 'bbb'
-      }
-      UNIQUE: {
-        length: 6
-        seed: 'AAA'
-      }
-    },
-    null,
-    resolveConfig(config.outputs.config)
-  )
-output formatNameOutput string = formatNameOutput
+// var formatNameOutput = formatName(
+//     // '{PROJECT}{-}{INSTANCE}[{-}{SUFFIX}][{DEPLOYMENT_PHASE}]',
+//     'default',
+//     {
+//       ENVIRONMENT: 'stage'
+//       ORGANIZATION: 'draftit'
+//       PROJECT: 'my first app'
+//       PROJECT_INSTANCE: 2
+//       // SUBPROJECT: 'api'
+//       INSTANCE: 1
+//       RESOURCE_TYPE: 'storage account'
+//       REGION: 'west europe'
+//       VERSION: '0.0.1'
+//       SUFFIX: 2
+//       DEPLOYMENT_PHASE: {
+//         length: 3
+//         seed: 'bbb'
+//       }
+//       UNIQUE: {
+//         length: 6
+//         seed: 'AAA'
+//       }
+//     },
+//     null,
+//     resolveConfig(config.outputs.config)
+//   )
+// output formatNameOutput string = formatNameOutput
 
-// var nameGraph_var = nameGraph(
-//   '',
-//   {
-//     ENVIRONMENT: 'stage'
-//     ORGANIZATION: 'draftit'
-//     PROJECT: 'myFirstApp'
-//     // SUBPROJECT: 'api'
-//     INSTANCE: 1
-//     // RESOURCE_TYPE: 'storageAccount'
-//     REGION: 'west europe'
-//     VERSION: '0.0.1'
-//     SUFFIX: 2
-//     DEPLOYMENT_PHASE: {
-//       length: 3
-//       seed: 'bbb'
-//     }
-//     UNIQUE: {}
-//   },
-//   {
-//     a: {
-//       a1: {
-//         formatString: null
-//         values: {
-//           RESOURCE_TYPE: 'resourceGroup'
-//         }
-//       }
-//       a2: {
-//         formatString: 'subnet'
-//       }
-//       aa: {
-//         aa1: {
-//           formatString: 'deployment'
-//         }
-//         aaa: {
-//           aaa1: {
-//             formatString: 'storageAccount'
-//             values: {
-//               // RESOURCE_TYPE: 'storageAccount'
-//             }
-//           }
-//         }
-//       }
-//     }
-//     b: {
-//       bb: 'bb'
-//     }
-//     c: {
-//       formatString: '{AAA}[{-}{BBB}]'
-//       values: {
-//         AAA: 'aaa'
-//         BBB: 'bbb'
-//         CCC: 'ccc'
-//       }
-//     }
-//     vm: {
-//       formatString: 'virtualMachine'
-//       values: {
-//         // RESOURCE: 'virtualMachine'
-//         SUBRESOURCE: 'networkInterface'
-//       }
-//     }
-//   },
-//   'formatName',
-//   null,
-//   config.outputs.config
-// )
-// output nameGraphVar object = nameGraph_var
+var nameGraph_var = nameGraph(
+  '',
+  {
+    ENVIRONMENT: 'stage'
+    ORGANIZATION: 'draftit'
+    PROJECT: 'myFirstApp'
+    // SUBPROJECT: 'api'
+    INSTANCE: 1
+    // RESOURCE_TYPE: 'storageAccount'
+    REGION: 'west europe'
+    VERSION: '0.0.1'
+    SUFFIX: 2
+    DEPLOYMENT_PHASE: {
+      length: 3
+      seed: 'bbb'
+    }
+    UNIQUE: {}
+  },
+  {
+    a: {
+      a1: {
+        formatString: null
+        values: {
+          RESOURCE_TYPE: 'resourceGroup'
+        }
+      }
+      a2: {
+        formatString: 'subnet'
+      }
+      aa: {
+        aa1: {
+          formatString: 'deployment'
+        }
+        aaa: {
+          aaa1: {
+            formatString: 'storageAccount'
+            values: {
+              // RESOURCE_TYPE: 'storageAccount'
+            }
+          }
+        }
+      }
+    }
+    b: {
+      bb: 'bb'
+    }
+    c: {
+      formatString: '{AAA}[{-}{BBB}]'
+      values: {
+        AAA: 'aaa'
+        BBB: 'bbb'
+        CCC: 'ccc'
+      }
+    }
+    vm: {
+      formatString: 'virtualMachine'
+      values: {
+        // RESOURCE: 'virtualMachine'
+        SUBRESOURCE: 'networkInterface'
+      }
+    }
+  },
+  'evaluateName',
+  null,
+  resolveConfig(config.outputs.config)
+)
+output nameGraphVar object = nameGraph_var
 
 // output resolveRef object = resolveRef(
 //   {
@@ -123,96 +124,97 @@ output formatNameOutput string = formatNameOutput
 //   config.outputs.config
 // )
 
-module namingConvention_mod '../arm/azNamingConvention.json' = {
-  name: 'nc'
-  params: {
-    // value: {
-    //   ENVIRONMENT: environment
-    //   ORGANIZATION: null
-    //   PROJECT: project
-    //   SUBPROJECT: null
-    //   REGION: az.resourceGroup().location
-    //   INSTANCE: instance
-    //   UNIQUE: null
-    // }
-    values: {
-      ENVIRONMENT: 'stage'
-      ORGANIZATION: null
-      PROJECT: 'myFirstApp'
-      // SUBPROJECT: 'api'
-      // PROJECT_INSTANCE: 1
-      REGION: 'west europe'
-      // RESOURCE_INSTANCE: 1
-      VERSION: '0.0.1'
-      SUFFIX: 2
-      DEPLOYMENT_PHASE: {
-        length: 3
-        seed: 'bbb'
-      }
-      UNIQUE: {}
-    }
-    graph: {
-      '${project}': {
-        storage: {
-          account: {
-            formatString: 'storageAccount'
-            values: {
-              SUBPROJECT: 'api'
-            }
-          }
-        }
-        vm: {
-          main: {
-            formatString: 'virtualMachine'
-            values: {
-              RESOURCE_INSTANCE: 1
-            }
-          }
-          nic: {
-            formatString: 'virtualMachine'
-            values: {
-              RESOURCE_INSTANCE: 1
-              SUBRESOURCE: 'networkInterface'
-            }
-          }
-        }
-      }
-      // resourceGroup: {
-      //   resourceType: 'resourceGroup'
-      // }
-      // deployment: {
-      //   format: 'deployment'
-      //   value: {
-      //     PROJECT: 'myFirstApp'
-      //     VERSION: '0.0.1'
-      //     DEPLOYMENT_PHASE: {}
-      //     SUFFIX: 'awa'
-      //   }
-      // }
-      // subnet: {
-      //   // format: '{ENVIRONMENT}-{PROJECT}-{INSTANCE}[{-}{UNIQUE}]'
-      //   format: 'subnet'
-      //   // format: '{ENVIRONMENT}-{WORKLOAD}-{INSTANCE}[{-}{UNIQUE}]'
-      //   value: {
-      //     ENVIRONMENT: 'test'
-      //     UNIQUE: {}
-      //   }
-      // }
-    }
-    userConfig: userConfig
-    // environmentTemplateUri: 'https://raw.githubusercontent.com/jimmieulenius/az-config/main/template/arm/naming-convention/environment.json'
-    // formatTemplateUri: 'https://raw.githubusercontent.com/jimmieulenius/az-config/main/template/arm/naming-convention/format.json'
-    // userConfigTemplateUri: 'https://raw.githubusercontent.com/jimmieulenius/az-config/main/template/arm/naming-convention/userConfig.json'
-  }
-}
-output nameGraphMod object = namingConvention_mod.outputs.nameGraph
+// module namingConvention_mod '../../../azNamingConvention_rg.json' = {
+//   name: 'nc'
+//   params: {
+//     // value: {
+//     //   ENVIRONMENT: environment
+//     //   ORGANIZATION: null
+//     //   PROJECT: project
+//     //   SUBPROJECT: null
+//     //   REGION: az.resourceGroup().location
+//     //   INSTANCE: instance
+//     //   UNIQUE: null
+//     // }
+//     values: {
+//       ENVIRONMENT: 'stage'
+//       ORGANIZATION: null
+//       PROJECT: 'myFirstApp'
+//       // SUBPROJECT: 'api'
+//       // PROJECT_INSTANCE: 1
+//       REGION: 'west europe'
+//       // RESOURCE_INSTANCE: 1
+//       VERSION: '0.0.1'
+//       SUFFIX: 2
+//       DEPLOYMENT_PHASE: {
+//         length: 3
+//         seed: 'bbb'
+//       }
+//       UNIQUE: {}
+//     }
+//     graph: {
+//       '${project}': {
+//         storage: {
+//           account: {
+//             formatString: 'storageAccount'
+//             values: {
+//               SUBPROJECT: 'api'
+//             }
+//           }
+//         }
+//         vm: {
+//           main: {
+//             formatString: 'virtualMachine'
+//             values: {
+//               RESOURCE_INSTANCE: 1
+//             }
+//           }
+//           nic: {
+//             formatString: 'virtualMachine'
+//             values: {
+//               RESOURCE_INSTANCE: 1
+//               SUBRESOURCE: 'networkInterface'
+//             }
+//           }
+//         }
+//       }
+//       // resourceGroup: {
+//       //   resourceType: 'resourceGroup'
+//       // }
+//       // deployment: {
+//       //   format: 'deployment'
+//       //   value: {
+//       //     PROJECT: 'myFirstApp'
+//       //     VERSION: '0.0.1'
+//       //     DEPLOYMENT_PHASE: {}
+//       //     SUFFIX: 'awa'
+//       //   }
+//       // }
+//       // subnet: {
+//       //   // format: '{ENVIRONMENT}-{PROJECT}-{INSTANCE}[{-}{UNIQUE}]'
+//       //   format: 'subnet'
+//       //   // format: '{ENVIRONMENT}-{WORKLOAD}-{INSTANCE}[{-}{UNIQUE}]'
+//       //   value: {
+//       //     ENVIRONMENT: 'test'
+//       //     UNIQUE: {}
+//       //   }
+//       // }
+//     }
+//     function: 'evaluateName'
+//     userConfig: userConfig
+//     // environmentTemplateUri: 'https://raw.githubusercontent.com/jimmieulenius/az-config/main/template/arm/naming-convention/environment.json'
+//     // formatTemplateUri: 'https://raw.githubusercontent.com/jimmieulenius/az-config/main/template/arm/naming-convention/format.json'
+//     // userConfigTemplateUri: 'https://raw.githubusercontent.com/jimmieulenius/az-config/main/template/arm/naming-convention/userConfig.json'
+//   }
+// }
+// output nameGraphMod object = namingConvention_mod.outputs.nameGraph
 
 module config '../arm/config.json' = {
   name: 'nc-config'
   params: {
-    formatTemplateUri: 'https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/config/format.json'
-    placeholdersTemplateUri: 'https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/config/placeholders.json'
-    userConfigTemplateUri: 'https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/userDefined.json'
+    formatTemplateUri: 'https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/src/template/arm/config/format.json'
+    placeholdersTemplateUri: 'https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/src/template/arm/config/placeholders.json'
+    userConfigTemplateUri: 'https://raw.githubusercontent.com/jimmieulenius/az-config/main/naming-convention/template/arm/userConfig.json'
     userConfig: {
       placeholders: {
         REGION: {
@@ -228,6 +230,17 @@ module config '../arm/config.json' = {
 }
 // output config object = resolveConfig(config.outputs.config)
 output config object = config.outputs.config
+
+// output flattenObject array = flattenObject({
+//   a: {
+//     aa: 'aa'
+//     bb: {
+//       formatInfo: {}
+//       isValid: true
+//       result: 'hjsh'
+//     }
+//   }
+// })
 
 // output resourceName string = resourceNameObject2
 
