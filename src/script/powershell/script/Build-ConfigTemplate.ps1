@@ -1,3 +1,11 @@
+param (
+    [Switch]
+    $Region,
+
+    [Switch]
+    $ResourceType
+)
+
 & "$PSScriptRoot/_functions/Import-FunctionScript.ps1" `
     -Name @(
         'Build-ConfigComponentTemplate/',
@@ -19,43 +27,47 @@ $destinationBasePath = "$PSScriptRoot/../../../template/arm/"
 $destinationConfigPath = "$PSScriptRoot/../../../template/arm/config"
 "$PSScriptRoot/../../../template/arm"
 
-$configFile = Initialize-ResourceTypeConfig `
-    -Destination $configBasePath `
-    -PassThru
+if ($ResourceType) {
+    $configFile = Initialize-ResourceTypeConfig `
+        -Destination $configBasePath `
+        -PassThru
 
-Build-PlaceholderConfig `
-    -ConfigPath $configFile.FullName `
-    -Name 'RESOURCE_TYPE' `
-    -Destination $configPlaceholdersPath `
-    -Type 'lookup' `
-    -Process {
-        $result = [Ordered]@{}
+    Build-PlaceholderConfig `
+        -ConfigPath $configFile.FullName `
+        -Name 'RESOURCE_TYPE' `
+        -Destination $configPlaceholdersPath `
+        -Type 'lookup' `
+        -Process {
+            $result = [Ordered]@{}
 
-        if ($_.abbreviation) {
-            $result.value = $_.abbreviation
+            if ($_.abbreviation) {
+                $result.value = $_.abbreviation
+            }
+
+            $result
         }
+}
 
-        $result
-    }
+if ($Region) {
+    $configFile = Initialize-RegionConfig `
+        -Destination $configBasePath `
+        -PassThru
 
-$configFile = Initialize-RegionConfig `
-    -Destination $configBasePath `
-    -PassThru
+    Build-PlaceholderConfig `
+        -ConfigPath $configFile.FullName `
+        -Name 'REGION' `
+        -Destination $configPlaceholdersPath `
+        -Type 'lookup' `
+        -Process {
+            $result = [Ordered]@{}
 
-Build-PlaceholderConfig `
-    -ConfigPath $configFile.FullName `
-    -Name 'REGION' `
-    -Destination $configPlaceholdersPath `
-    -Type 'lookup' `
-    -Process {
-        $result = [Ordered]@{}
+            if ($_.abbreviation) {
+                $result.value = $_.abbreviation
+            }
 
-        if ($_.abbreviation) {
-            $result.value = $_.abbreviation
+            $result
         }
-
-        $result
-    }
+}
 
 Build-ConfigComponentTemplate `
     -ConfigPath @(

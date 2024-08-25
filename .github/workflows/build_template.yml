@@ -18,6 +18,7 @@ jobs:
 
       - shell: pwsh
         run: |
-          & 'src/'script/powershell/script/Build-ConfigTemplate.ps1
+          & 'src/script/powershell/script/Build-ConfigTemplate.ps1' `
+            -ResourceType
 
       - uses: stefanzweifel/git-auto-commit-action@v5
