@@ -46,16 +46,15 @@ $outputObject = $output `
 #     -Depth 100 `
 # | Out-Default
 
-$outputObject.properties.outputs.nameGraphVar.value.items `
-| Where-Object { -not $_.isValid } `
-| ConvertTo-Json `
-    -Depth 100 `
-| Out-Default
-
-# $outputObject.properties.outputs.nameGraphMod.value `
+# $outputObject.properties.outputs.nameGraphVar.value.items `
 # | ConvertTo-Json `
 #     -Depth 100 `
 # | Out-Default
+
+$outputObject.properties.outputs.nameGraphMod.value `
+| ConvertTo-Json `
+    -Depth 100 `
+| Out-Default
 
 # $outputObject.properties.outputs.flattenObject.value `
 # | ConvertTo-Json `

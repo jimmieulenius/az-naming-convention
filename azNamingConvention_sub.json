@@ -31,15 +31,15 @@
     },
     "formatTemplateUri": {
       "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/config/format.json"
+      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/src/template/arm/config/format.json"
     },
     "placeholdersTemplateUri": {
       "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/config/placeholders.json"
+      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/src/template/arm/config/placeholders.json"
     },
     "coreTemplateUri": {
       "type": "string",
-      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/template/arm/core.json"
+      "defaultValue": "https://raw.githubusercontent.com/jimmieulenius/az-naming-convention/main/src/template/arm/core.json"
     },
     "utcValue": {
       "type": "string",
