@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "resources": [],
+  "outputs": {
+    "userConfig": {
+      "type": "object",
+      "value": {
+        "format": {
+          "$field": {
+            "setAction": "combine"
+          },
+          "default": {
+            "formatString": "{ENVIRONMENT}{-}{PROJECT}[{PROJECT_INSTANCE}][{-}{SUBPROJECT}][{-}{REGION}]{-}{RESOURCE}[{RESOURCE_INSTANCE}][{SUBRESOURCE}][{SUBRESOURCE_INSTANCE}][{-}{FREE_TEXT}][{-}{UNIQUE}]"
+          }
+        },
+        "placeholders": {
+          "PROJECT": {
+            "$type": "lookup",
+            "source": {
+              "azname": {}
+            }
+          },
+          "$ref:PROJECT_INSTANCE": {
+            "path": "#/placeholders/INSTANCE"
+          },
+          "SUBPROJECT": {
+            "$type": "text",
+            "source": {
+              "api": {
+                "value": "api"
+              },
+              "client": {
+                "value": "clt"
+              }
+            }
+          },
+          "$ref:SUBPROJECT_INSTANCE": {
+            "path": "#/placeholders/INSTANCE"
+          },
+          "$ref:RESOURCE_INSTANCE": {
+            "path": "#/placeholders/INSTANCE"
+          },
+          "$ref:SUBRESOURCE_INSTANCE": {
+            "path": "#/placeholders/INSTANCE"
+          },
+          "FREE_TEXT": {
+            "$type": "text"
+          }
+        }
+      }
+    }
+  }
+}
