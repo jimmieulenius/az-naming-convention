@@ -5,7 +5,6 @@
   "resources": [],
   "outputs": {
     "format": {
-      "type": "object",
       "value": {
         "default": {
           "formatString": "{ENVIRONMENT}{-}{WORKLOAD}[{-}{INSTANCE}][{-}{REGION}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]",
@@ -25,7 +24,8 @@
         "virtualMachine": {
           "formatString": "{RESOURCE}[{-}{SUBRESOURCE}]"
         }
-      }
+      },
+      "type": "object"
     }
   }
 }
