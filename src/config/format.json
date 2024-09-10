@@ -3,6 +3,10 @@
     "formatString": "{ENVIRONMENT}{-}{WORKLOAD}[{-}{INSTANCE}][{-}{REGION}]{-}{RESOURCE_TYPE}[{-}{UNIQUE}]",
     "separator": "-"
   },
+  "containerApps": {
+    "maxLength": 32,
+    "casing": "lower"
+  },
   "deployment": {
     "formatString": "{ENVIRONMENT}{-}{WORKLOAD}[{-}{INSTANCE}][{-}{REGION}][{-}{RESOURCE_TYPE}][{-}v{VERSION}][{-}{UNIQUE}]",
     "maxLength": 64
