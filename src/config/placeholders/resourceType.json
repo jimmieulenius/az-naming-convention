@@ -62,6 +62,9 @@
       "azureArcEnabledServer": {
         "value": "arcs"
       },
+      "azureArcPrivateLinkScope": {
+        "value": "pls"
+      },
       "azureBastion": {
         "value": "bas"
       },

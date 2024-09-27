@@ -79,6 +79,10 @@
     "abbreviation": "arcs",
     "namespace": "Microsoft.HybridCompute/machines"
   },
+  "azureArcPrivateLinkScope": {
+    "abbreviation": "pls",
+    "namespace": "Microsoft.HybridCompute/privateLinkScopes"
+  },
   "azureBastion": {
     "abbreviation": "bas",
     "namespace": "Microsoft.Network/bastionHosts"
