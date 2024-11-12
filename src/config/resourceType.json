@@ -359,6 +359,10 @@
     "abbreviation": "erc",
     "namespace": "Microsoft.Network/expressRouteCircuits"
   },
+  "expressRouteDirect": {
+    "abbreviation": "erd",
+    "namespace": "Microsoft.Network/expressRoutePorts"
+  },
   "expressRouteGateway": {
     "abbreviation": "ergw",
     "namespace": "Microsoft.Network/virtualNetworkGateways"

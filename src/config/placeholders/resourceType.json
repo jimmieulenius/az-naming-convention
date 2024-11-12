@@ -272,6 +272,9 @@
       "expressRouteCircuit": {
         "value": "erc"
       },
+      "expressRouteDirect": {
+        "value": "erd"
+      },
       "expressRouteGateway": {
         "value": "ergw"
       },
