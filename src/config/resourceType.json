@@ -79,6 +79,10 @@
     "abbreviation": "arcs",
     "namespace": "Microsoft.HybridCompute/machines"
   },
+  "azureArcGateway": {
+    "abbreviation": "arcgw",
+    "namespace": "Microsoft.HybridCompute/gateways"
+  },
   "azureArcPrivateLinkScope": {
     "abbreviation": "pls",
     "namespace": "Microsoft.HybridCompute/privateLinkScopes"
