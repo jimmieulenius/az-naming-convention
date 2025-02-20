@@ -41,6 +41,12 @@
       "availabilitySet": {
         "value": "avail"
       },
+      "azureAIFoundryHub": {
+        "value": "hub"
+      },
+      "azureAIFoundryProject": {
+        "value": "proj"
+      },
       "azureAIServices": {
         "value": "ais"
       },

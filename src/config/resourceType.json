@@ -51,6 +51,14 @@
     "abbreviation": "avail",
     "namespace": "Microsoft.Compute/availabilitySets"
   },
+  "azureAIFoundryHub": {
+    "abbreviation": "hub",
+    "namespace": "Microsoft.MachineLearningServices/workspaces"
+  },
+  "azureAIFoundryProject": {
+    "abbreviation": "proj",
+    "namespace": "Microsoft.MachineLearningServices/workspaces"
+  },
   "azureAIServices": {
     "abbreviation": "ais",
     "namespace": "Microsoft.CognitiveServices/accounts"
