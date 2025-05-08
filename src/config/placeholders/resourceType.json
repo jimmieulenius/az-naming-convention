@@ -422,6 +422,9 @@
       "networkSecurityGroupSecurityRules": {
         "value": "nsgsr"
       },
+      "networkSecurityPerimeter": {
+        "value": "nsp"
+      },
       "networkWatcher": {
         "value": "nw"
       },

@@ -559,6 +559,10 @@
     "abbreviation": "nsgsr",
     "namespace": "Microsoft.Network/networkSecurityGroups/securityRules"
   },
+  "networkSecurityPerimeter": {
+    "abbreviation": "nsp",
+    "namespace": "Microsoft.Network/networkSecurityPerimeters"
+  },
   "networkWatcher": {
     "abbreviation": "nw",
     "namespace": "Microsoft.Network/networkWatchers"
