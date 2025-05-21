@@ -41,6 +41,9 @@
       "availabilitySet": {
         "value": "avail"
       },
+      "azureAIFoundry": {
+        "value": "aif"
+      },
       "azureAIFoundryHub": {
         "value": "hub"
       },
@@ -262,6 +265,9 @@
       },
       "eventGridDomain": {
         "value": "evgd"
+      },
+      "eventGridNamespace": {
+        "value": "evgns"
       },
       "eventGridSubscriptions": {
         "value": "evgs"
