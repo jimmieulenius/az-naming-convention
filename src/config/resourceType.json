@@ -323,6 +323,10 @@
     "abbreviation": "dls",
     "namespace": "Microsoft.DataLakeStore/accounts"
   },
+  "deploymentScripts": {
+    "abbreviation": "script",
+    "namespace": "Microsoft.Resources/deploymentScripts"
+  },
   "diskEncryptionSet": {
     "abbreviation": "des",
     "namespace": "Microsoft.Compute/diskEncryptionSets"

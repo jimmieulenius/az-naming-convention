@@ -484,6 +484,9 @@
             "dataLakeStoreAccount": {
               "value": "dls"
             },
+            "deploymentScripts": {
+              "value": "script"
+            },
             "diskEncryptionSet": {
               "value": "des"
             },
