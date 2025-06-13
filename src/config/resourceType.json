@@ -55,8 +55,20 @@
     "abbreviation": "aif",
     "namespace": "Microsoft.CognitiveServices/accounts"
   },
+  "azureAIFoundryAccount": {
+    "abbreviation": "aif",
+    "namespace": "Microsoft.CognitiveServices/accounts"
+  },
+  "azureAIFoundryAccountProject": {
+    "abbreviation": "proj",
+    "namespace": "Microsoft.CognitiveServices/accounts/projects"
+  },
   "azureAIFoundryHub": {
     "abbreviation": "hub",
+    "namespace": "Microsoft.MachineLearningServices/workspaces"
+  },
+  "azureAIFoundryHubProject": {
+    "abbreviation": "proj",
     "namespace": "Microsoft.MachineLearningServices/workspaces"
   },
   "azureAIFoundryProject": {

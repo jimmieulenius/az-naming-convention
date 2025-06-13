@@ -44,8 +44,17 @@
       "azureAIFoundry": {
         "value": "aif"
       },
+      "azureAIFoundryAccount": {
+        "value": "aif"
+      },
+      "azureAIFoundryAccountProject": {
+        "value": "proj"
+      },
       "azureAIFoundryHub": {
         "value": "hub"
+      },
+      "azureAIFoundryHubProject": {
+        "value": "proj"
       },
       "azureAIFoundryProject": {
         "value": "proj"
