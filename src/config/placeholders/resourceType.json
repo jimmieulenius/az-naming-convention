@@ -113,6 +113,9 @@
       "azureCosmosDBPostgreSQLCluster": {
         "value": "cospos"
       },
+      "azureDatabricksAccessConnector": {
+        "value": "dbac"
+      },
       "azureDatabricksWorkspace": {
         "value": "dbw"
       },

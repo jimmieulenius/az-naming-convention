@@ -147,6 +147,10 @@
     "abbreviation": "cospos",
     "namespace": "Microsoft.DBforPostgreSQL/serverGroupsv2"
   },
+  "azureDatabricksAccessConnector": {
+    "abbreviation": "dbac",
+    "namespace": "Microsoft.Databricks/workspaces/accessConnectors"
+  },
   "azureDatabricksWorkspace": {
     "abbreviation": "dbw",
     "namespace": "Microsoft.Databricks/workspaces"
