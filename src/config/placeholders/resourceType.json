@@ -230,6 +230,9 @@
       "containerAppsEnvironment": {
         "value": "cae"
       },
+      "containerAppsJob": {
+        "value": "caj"
+      },
       "containerInstance": {
         "value": "ci"
       },

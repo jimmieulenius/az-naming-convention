@@ -303,6 +303,10 @@
     "abbreviation": "cae",
     "namespace": "Microsoft.App/managedEnvironments"
   },
+  "containerAppsJob": {
+    "abbreviation": "caj",
+    "namespace": "Microsoft.App/jobs"
+  },
   "containerInstance": {
     "abbreviation": "ci",
     "namespace": "Microsoft.ContainerInstance/containerGroups"
