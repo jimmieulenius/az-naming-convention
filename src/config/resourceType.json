@@ -411,6 +411,10 @@
     "abbreviation": "ergw",
     "namespace": "Microsoft.Network/virtualNetworkGateways"
   },
+  "fabricCapacity": {
+    "abbreviation": "fc",
+    "namespace": "Microsoft.Fabric/capacities"
+  },
   "faceAPI": {
     "abbreviation": "face",
     "namespace": "Microsoft.CognitiveServices/accounts"

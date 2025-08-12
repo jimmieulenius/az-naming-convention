@@ -550,6 +550,9 @@
             "expressRouteGateway": {
               "value": "ergw"
             },
+            "fabricCapacity": {
+              "value": "fc"
+            },
             "faceAPI": {
               "value": "face"
             },
