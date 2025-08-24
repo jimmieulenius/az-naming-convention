@@ -5,7 +5,6 @@
   "resources": [],
   "outputs": {
     "core": {
-      "type": "object",
       "value": {
         "INSTANCE": {
           "$type": "instance",
@@ -20,10 +19,10 @@
           "length": 4,
           "seed": null
         }
-      }
+      },
+      "type": "object"
     },
     "environment": {
-      "type": "object",
       "value": {
         "ENVIRONMENT": {
           "$type": "lookup",
@@ -48,10 +47,10 @@
             }
           }
         }
-      }
+      },
+      "type": "object"
     },
     "region": {
-      "type": "object",
       "value": {
         "REGION": {
           "$type": "lookup",
@@ -223,10 +222,10 @@
             }
           }
         }
-      }
+      },
+      "type": "object"
     },
     "resource": {
-      "type": "object",
       "value": {
         "$ref:RESOURCE": {
           "path": "#/placeholders/RESOURCE_TYPE"
@@ -234,10 +233,10 @@
         "$ref:SUBRESOURCE": {
           "path": "#/placeholders/RESOURCE_TYPE"
         }
-      }
+      },
+      "type": "object"
     },
     "resourceType": {
-      "type": "object",
       "value": {
         "RESOURCE_TYPE": {
           "$type": "lookup",
@@ -877,7 +876,8 @@
             }
           }
         }
-      }
+      },
+      "type": "object"
     }
   }
 }
