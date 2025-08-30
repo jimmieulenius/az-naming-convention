@@ -140,6 +140,9 @@
       "azureManagedGrafana": {
         "value": "amg"
       },
+      "azureManagedRedis": {
+        "value": "amr"
+      },
       "azureMigrateProject": {
         "value": "migr"
       },

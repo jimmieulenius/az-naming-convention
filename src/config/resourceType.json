@@ -183,6 +183,10 @@
     "abbreviation": "amg",
     "namespace": "Microsoft.Dashboard/grafana"
   },
+  "azureManagedRedis": {
+    "abbreviation": "amr",
+    "namespace": "Microsoft.Cache/RedisEnterprise"
+  },
   "azureMigrateProject": {
     "abbreviation": "migr",
     "namespace": "Microsoft.Migrate/assessmentProjects"
