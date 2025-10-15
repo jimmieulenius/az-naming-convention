@@ -693,7 +693,7 @@
   },
   "serviceEndpointPolicy": {
     "abbreviation": "se",
-    "namespace": "Microsoft.serviceEndPointPolicies"
+    "namespace": "Microsoft.Network/serviceEndPointPolicies"
   },
   "serviceFabricCluster": {
     "abbreviation": "sf",
