@@ -329,6 +329,18 @@
       "firewallPolicy": {
         "value": "afwp"
       },
+      "foundryAccount": {
+        "value": "aif"
+      },
+      "foundryAccountProject": {
+        "value": "proj"
+      },
+      "foundryHub": {
+        "value": "hub"
+      },
+      "foundryHubProject": {
+        "value": "proj"
+      },
       "frontDoor": {
         "value": "afd"
       },

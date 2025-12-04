@@ -435,6 +435,22 @@
     "abbreviation": "afwp",
     "namespace": "Microsoft.Network/firewallPolicies"
   },
+  "foundryAccount": {
+    "abbreviation": "aif",
+    "namespace": "Microsoft.CognitiveServices/accounts"
+  },
+  "foundryAccountProject": {
+    "abbreviation": "proj",
+    "namespace": "Microsoft.CognitiveServices/accounts/projects"
+  },
+  "foundryHub": {
+    "abbreviation": "hub",
+    "namespace": "Microsoft.MachineLearningServices/workspaces"
+  },
+  "foundryHubProject": {
+    "abbreviation": "proj",
+    "namespace": "Microsoft.MachineLearningServices/workspaces"
+  },
   "frontDoor": {
     "abbreviation": "afd",
     "namespace": "Microsoft.Network/frontDoors"
