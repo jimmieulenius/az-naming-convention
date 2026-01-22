@@ -668,6 +668,9 @@
             "logicApp": {
               "value": "logic"
             },
+            "managedDevOpsPools": {
+              "value": "mdp"
+            },
             "managedDisk": {
               "value": "disk"
             },

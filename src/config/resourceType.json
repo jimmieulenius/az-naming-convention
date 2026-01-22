@@ -567,6 +567,10 @@
     "abbreviation": "logic",
     "namespace": "Microsoft.Logic/workflows"
   },
+  "managedDevOpsPools": {
+    "abbreviation": "mdp",
+    "namespace": "Microsoft.DevOpsInfrastructure/pools"
+  },
   "managedDisk": {
     "abbreviation": "disk",
     "namespace": "Microsoft.Compute/disks"
