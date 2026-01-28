@@ -451,6 +451,10 @@
     "abbreviation": "proj",
     "namespace": "Microsoft.MachineLearningServices/workspaces"
   },
+  "foundryTools": {
+    "abbreviation": "ais",
+    "namespace": "Microsoft.CognitiveServices/accounts"
+  },
   "frontDoor": {
     "abbreviation": "afd",
     "namespace": "Microsoft.Network/frontDoors"
