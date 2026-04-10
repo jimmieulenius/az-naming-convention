@@ -111,6 +111,10 @@
     "abbreviation": "pls",
     "namespace": "Microsoft.HybridCompute/privateLinkScopes"
   },
+  "azureBackupResourceGuard": {
+    "abbreviation": "rgd",
+    "namespace": "Microsoft.DataProtection/resourceGuards"
+  },
   "azureBastion": {
     "abbreviation": "bas",
     "namespace": "Microsoft.Network/bastionHosts"

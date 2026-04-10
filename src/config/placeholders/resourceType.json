@@ -86,6 +86,9 @@
       "azureArcPrivateLinkScope": {
         "value": "pls"
       },
+      "azureBackupResourceGuard": {
+        "value": "rgd"
+      },
       "azureBastion": {
         "value": "bas"
       },
