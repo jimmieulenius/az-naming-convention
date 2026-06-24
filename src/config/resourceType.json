@@ -647,6 +647,10 @@
     "abbreviation": "psql",
     "namespace": "Microsoft.DBforPostgreSQL/servers"
   },
+  "postgreSQLFlexibleServer": {
+    "abbreviation": "pgsql",
+    "namespace": "Microsoft.DBforPostgreSQL/flexibleServers"
+  },
   "powerBIEmbedded": {
     "abbreviation": "pbi",
     "namespace": "Microsoft.PowerBIDedicated/capacities"

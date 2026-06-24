@@ -488,6 +488,9 @@
       "postgreSQLDatabase": {
         "value": "psql"
       },
+      "postgreSQLFlexibleServer": {
+        "value": "pgsql"
+      },
       "powerBIEmbedded": {
         "value": "pbi"
       },
