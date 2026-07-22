@@ -175,6 +175,38 @@
     "abbreviation": "dt",
     "namespace": "Microsoft.DigitalTwins/digitalTwinsInstances"
   },
+  "azureEnclaveCommunity": {
+    "abbreviation": "cmt",
+    "namespace": "Microsoft.Mission/communities"
+  },
+  "azureEnclaveCommunityEndpoint": {
+    "abbreviation": "ce",
+    "namespace": "Microsoft.Mission/communities/communityEndpoints"
+  },
+  "azureEnclaveDedicatedHub": {
+    "abbreviation": "dh",
+    "namespace": "Microsoft.Mission/communities/dedicatedHubs"
+  },
+  "azureEnclaveEnclave": {
+    "abbreviation": "ve",
+    "namespace": "Microsoft.Mission/virtualEnclaves"
+  },
+  "azureEnclaveEnclaveConnections": {
+    "abbreviation": "ec",
+    "namespace": "Microsoft.Mission/enclaveConnections"
+  },
+  "azureEnclaveEnclaveEndpoints": {
+    "abbreviation": "ee",
+    "namespace": "Microsoft.Mission/virtualEnclaves/enclaveEndpoints"
+  },
+  "azureEnclaveTransitHubs": {
+    "abbreviation": "th",
+    "namespace": "Microsoft.Mission/communities/transitHubs"
+  },
+  "azureEnclaveWorkloads": {
+    "abbreviation": "wl",
+    "namespace": "Microsoft.Mission/virtualEnclaves/workloads"
+  },
   "azureLoadTestingInstance": {
     "abbreviation": "lt",
     "namespace": "Microsoft.LoadTestService/loadTests"

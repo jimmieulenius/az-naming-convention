@@ -134,6 +134,30 @@
       "azureDigitalTwinInstance": {
         "value": "dt"
       },
+      "azureEnclaveCommunity": {
+        "value": "cmt"
+      },
+      "azureEnclaveCommunityEndpoint": {
+        "value": "ce"
+      },
+      "azureEnclaveDedicatedHub": {
+        "value": "dh"
+      },
+      "azureEnclaveEnclave": {
+        "value": "ve"
+      },
+      "azureEnclaveEnclaveConnections": {
+        "value": "ec"
+      },
+      "azureEnclaveEnclaveEndpoints": {
+        "value": "ee"
+      },
+      "azureEnclaveTransitHubs": {
+        "value": "th"
+      },
+      "azureEnclaveWorkloads": {
+        "value": "wl"
+      },
       "azureLoadTestingInstance": {
         "value": "lt"
       },
