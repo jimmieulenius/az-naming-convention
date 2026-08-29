@@ -8,6 +8,9 @@
       "aksCluster": {
         "value": "aks"
       },
+      "aksFleetManager": {
+        "value": "fleet"
+      },
       "aksSystemNodePool": {
         "value": "npsystem"
       },

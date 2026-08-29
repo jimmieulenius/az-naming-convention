@@ -7,6 +7,10 @@
     "abbreviation": "aks",
     "namespace": "Microsoft.ContainerService/managedClusters"
   },
+  "aksFleetManager": {
+    "abbreviation": "fleet",
+    "namespace": "Microsoft.ContainerService/fleets"
+  },
   "aksSystemNodePool": {
     "abbreviation": "npsystem",
     "namespace": "Microsoft.ContainerService/managedClusters/agentPools"
