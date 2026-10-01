@@ -439,6 +439,10 @@
     "abbreviation": "evh",
     "namespace": "Microsoft.EventHub/namespaces/eventHubs"
   },
+  "eventHubConsumerGroup": {
+    "abbreviation": "evhcg",
+    "namespace": "Microsoft.EventHub/namespaces/eventhubs/consumerGroups"
+  },
   "eventHubsNamespace": {
     "abbreviation": "evhns",
     "namespace": "Microsoft.EventHub/namespaces"

@@ -332,6 +332,9 @@
       "eventHub": {
         "value": "evh"
       },
+      "eventHubConsumerGroup": {
+        "value": "evhcg"
+      },
       "eventHubsNamespace": {
         "value": "evhns"
       },
