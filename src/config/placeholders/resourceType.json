@@ -185,6 +185,9 @@
       "azureMonitorDataCollectionRule": {
         "value": "dcr"
       },
+      "azureMonitorPrivateLinkScope": {
+        "value": "ampls"
+      },
       "azureOpenAIService": {
         "value": "oai"
       },

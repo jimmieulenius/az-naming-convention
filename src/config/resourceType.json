@@ -243,6 +243,10 @@
     "abbreviation": "dcr",
     "namespace": "Microsoft.Insights/dataCollectionRules"
   },
+  "azureMonitorPrivateLinkScope": {
+    "abbreviation": "ampls",
+    "namespace": "Microsoft.Insights/privateLinkScopes"
+  },
   "azureOpenAIService": {
     "abbreviation": "oai",
     "namespace": "Microsoft.CognitiveServices/accounts"
