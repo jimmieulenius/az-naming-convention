@@ -767,6 +767,10 @@
     "abbreviation": "sbts",
     "namespace": "Microsoft.ServiceBus/namespaces/topics/subscriptions"
   },
+  "serviceBusTopicSubscriptionFilter": {
+    "abbreviation": "sbtsf",
+    "namespace": "Microsoft.ServiceBus/namespaces/topics/subscriptions/rules"
+  },
   "serviceEndpointPolicy": {
     "abbreviation": "se",
     "namespace": "Microsoft.Network/serviceEndPointPolicies"

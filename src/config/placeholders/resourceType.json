@@ -578,6 +578,9 @@
       "serviceBusTopicSubscription": {
         "value": "sbts"
       },
+      "serviceBusTopicSubscriptionFilter": {
+        "value": "sbtsf"
+      },
       "serviceEndpointPolicy": {
         "value": "se"
       },
